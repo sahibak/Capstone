@@ -18,12 +18,19 @@ export default class Main extends React.Component{
         .catch((error)=> console.log(error));
     }    
     render(){
+        if(this.state.recipesData.length>0){
+            return(
+                <>
+                    <Recipes recipesData = {this.state.recipesData}></Recipes>
+                    {/* take file input from use */}
+                    {/* <input type="file" accept="image/*" ></input> */}
+                </>
+            )
+        }
         return(
             <>
-                <Recipes recipesData = {this.state.recipesData}></Recipes>
-                {/* take file input from use */}
-                {/* <input type="file" accept="image/*" ></input> */}
             </>
         )
+
     }
 }

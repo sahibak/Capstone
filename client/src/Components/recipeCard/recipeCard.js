@@ -36,16 +36,10 @@ export default class RecipeCard extends React.Component{
 
 
     render(){
-        if(this.props.recipesData.length > 0){
-            return(
-                <>
-                    <ul>{this.displayIngredients()}</ul>
-                    <ul>{this.displayRecipeSteps()}</ul>
-                </>
-            )
-        }
         return(
             <>
+                <ul>{this.displayIngredients()}</ul>
+                <ul>{this.displayRecipeSteps()}</ul>
             </>
         )
     }

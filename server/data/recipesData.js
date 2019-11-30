@@ -26,7 +26,7 @@ module.exports = [
         "type":"Indian",
         "category": "Vegan",
         "feeds":5,
-        "image":"https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        "image":"https://static01.nyt.com/images/2019/01/17/dining/mc-red-lentil-soup/merlin_146234352_d7bc8486-b067-4cff-a4c0-7741f166fb60-articleLarge.jpg",
         "recipe": "dfjhsfksjhfskfhskfhdskjfhsdjfnfkjsdfns",
         "ingredients":[
             {
