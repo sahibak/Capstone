@@ -15,6 +15,7 @@ export default class Recipes extends React.Component{
         newCountValue >= this.props.recipesData.length ? this.setState({count: 0}) : this.setState({count:newCountValue});
     }
     render(){
+        console.log(this.props)
         return(
             <>
                 <RecipeImage recipeSwipe={this.recipeSwipe} recipeImage={this.props.recipesData[this.state.count]["image"]}></RecipeImage>
