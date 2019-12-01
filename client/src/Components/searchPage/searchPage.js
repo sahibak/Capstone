@@ -5,6 +5,7 @@ export default class SearchPage extends React.Component{
         return(
             <>
                 <form onSubmit={event=> {this.props.userSelection(event)}}>
+                <input type="text" name="searchbar" placeholder="enter keyword to search by.."></input>
                     <p>Food Category</p>
                     <div>
                         <label>Vegetarian</label>

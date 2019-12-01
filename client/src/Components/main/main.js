@@ -3,12 +3,11 @@ import axios from "axios";
 import Recipes from "../recipes/recipes.js";
 import SearchPage from "../searchPage/searchPage.js";
 
-
 export default class Main extends React.Component{
     state={
         recipesData:[],
         userInput:[],
-        // categoryList:[],
+        userSearch: "",
         dataCaptured: false
     }
 
@@ -17,8 +16,9 @@ export default class Main extends React.Component{
         console.log("userselection func")
         event.preventDefault();
         let userInput = []
-        // let userInputCategoryList = []
-        // let userInputAllergyList = []
+        // getting input from search field
+        let userSearch = ""
+        userSearch = event.target.searchbar.value.trim().toLowerCase()
         // checking if Vegetarian was selected and adding it to list if applicable @TODO could not get ternary to work, why?
         if(event.target.category1.checked){
             userInput.push(event.target.category1.value)
@@ -42,12 +42,11 @@ export default class Main extends React.Component{
        
 
         // If there is any user input, updating state
-        if(userInput.length > 0){
+        if(userInput.length > 0 || userSearch.length > 0){
             console.log("userInput",userInput)
-            
             this.setState({
                 userInput: userInput,
-                // categoryList: userInputCategoryList,
+                userSearch: userSearch,
                 dataCaptured: false
             })
         }
@@ -57,10 +56,10 @@ export default class Main extends React.Component{
         if(!this.state.dataCaptured){
             axios.get("http://localhost:8080/recipes",{
                 params: {
-                    userInput: this.state.userInput
-                    // categoryList: this.state.categoryList
-                }}
-            )
+                    userInput: this.state.userInput,
+                    userSearch: this.state.userSearch
+                }
+            })
             .then((response)=> {
                 console.log("axios",response.data)
                 this.setState({
@@ -75,6 +74,7 @@ export default class Main extends React.Component{
         // if(this.state.recipesData.length>0){
             return(
                 <>
+                    {/* <SearchBar></SearchBar> */}
                     <SearchPage userSelection={this.userSelection}></SearchPage>
                     {/* <Recipes recipesData = {this.state.recipesData}></Recipes> */}
                     {/* take file input from use */}
