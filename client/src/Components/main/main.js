@@ -7,8 +7,8 @@ import SearchPage from "../searchPage/searchPage.js";
 export default class Main extends React.Component{
     state={
         recipesData:[],
-        allergyList:[],
-        categoryList:[],
+        userInput:[],
+        // categoryList:[],
         dataCaptured: false
     }
 
@@ -16,35 +16,39 @@ export default class Main extends React.Component{
     userSelection = (event)=>{
         console.log("userselection func")
         event.preventDefault();
-        let userInputCategoryList = []
-        let userInputAllergyList = []
+        let userInput = []
+        // let userInputCategoryList = []
+        // let userInputAllergyList = []
         // checking if Vegetarian was selected and adding it to list if applicable @TODO could not get ternary to work, why?
         if(event.target.category1.checked){
-            userInputCategoryList.push(event.target.category1.value)
+            userInput.push(event.target.category1.value)
         };
         // checking if Vegan was selected and adding it to list if applicable
         if(event.target.category2.checked){
-            userInputCategoryList.push(event.target.category2.value)
+            userInput.push(event.target.category2.value)
         };
         // checking if Peanut allergy was selected and adding it to list if applicable 
         if(event.target.allergy1.checked){
-            userInputAllergyList.push(event.target.allergy1.value)
+            userInput.push(event.target.allergy1.value)
         };
         // checking if Gluten allergy was selected and adding it to list if applicable
         if(event.target.allergy2.checked){
-            userInputAllergyList.push(event.target.allergy2.value)
+            userInput.push(event.target.allergy2.value)
         };
         // checking if Dairy allergy was selected and adding it to list if applicable
         if(event.target.allergy3.checked){
-            userInputAllergyList.push(event.target.allergy3.value)
+            userInput.push(event.target.allergy3.value)
         };
+       
 
         // If there is any user input, updating state
-        if(userInputCategoryList > 0 || userInputAllergyList.length > 0){
+        if(userInput.length > 0){
+            console.log("userInput",userInput)
+            
             this.setState({
-                allergyList: userInputAllergyList,
-                categoryList: userInputCategoryList,
-                dataCaptures: false
+                userInput: userInput,
+                // categoryList: userInputCategoryList,
+                dataCaptured: false
             })
         }
     }
@@ -53,8 +57,8 @@ export default class Main extends React.Component{
         if(!this.state.dataCaptured){
             axios.get("http://localhost:8080/recipes",{
                 params: {
-                    allergyList: this.state.allergyList,
-                    categoryList: this.state.categoryList
+                    userInput: this.state.userInput
+                    // categoryList: this.state.categoryList
                 }}
             )
             .then((response)=> {
