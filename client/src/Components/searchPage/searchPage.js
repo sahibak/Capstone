@@ -1,4 +1,6 @@
 import React from "react";
+import {Link} from "react-router-dom";
+import Recipes from "../recipes/recipes.js";
 
 export default class SearchPage extends React.Component{
     render(){
@@ -28,7 +30,9 @@ export default class SearchPage extends React.Component{
                         <label>Dairy</label>
                         <input type="checkbox" name="allergy3" value="Dairy"></input>
                     </div>
-                    <button type="submit">Enter</button>
+                    {/* <Link to={Recipes}> */}
+                        <button type="submit">Enter</button>
+                    {/* </Link> */}
                 </form>
             </>
         )

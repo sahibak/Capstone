@@ -56,8 +56,8 @@ filterBasedOnUserPreferances = (userInput, userSearch) => {
         // if user has provided only search term
         else if (userSearch){
             console.log("search defined")
-            if(recipesData[i]["name"].includes(userSearch) ||
-            recipesData[i]["type"].includes(userSearch) ||
+            if(recipesData[i]["name"] == userSearch ||
+            recipesData[i]["type"] == userSearch ||
             recipesData[i]["ingredientList"].includes(userSearch)) {
                 updatedRecipesData.push(recipesData[i])
             }

@@ -18,3 +18,7 @@ app.use(express.json());
 // GET request for recipes
 const recipesRoute = require("./routes/recipesRoute.js");
 app.use("/recipes",recipesRoute);
+
+// POST request for shopping cart
+const shoppingCartRoute = require("./routes/shoppingCartRoute.js");
+app.use("/shoppingcart",shoppingCartRoute);

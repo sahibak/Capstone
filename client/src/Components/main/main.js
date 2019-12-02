@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import Recipes from "../recipes/recipes.js";
 import SearchPage from "../searchPage/searchPage.js";
+import{BrowserRouter, Route, Switch} from "react-router-dom";
 
 export default class Main extends React.Component{
     state={
@@ -18,7 +19,9 @@ export default class Main extends React.Component{
         let userInput = []
         // getting input from search field
         let userSearch = ""
+        console.log(event.target.searchbar.value.trim().toLowerCase())
         userSearch = event.target.searchbar.value.trim().toLowerCase()
+        console.log(userSearch,userSearch.length)
         // checking if Vegetarian was selected and adding it to list if applicable @TODO could not get ternary to work, why?
         if(event.target.category1.checked){
             userInput.push(event.target.category1.value)
@@ -52,8 +55,11 @@ export default class Main extends React.Component{
         }
     }
 
-    componentDidUpdate(){
+    componentDidMount(){
+        // update this to component did mount when testing recipes and componentDidUpdate for search.
         if(!this.state.dataCaptured){
+            console.log("----update---")
+            console.log(this.state.userInput,this.state.userSearch)
             axios.get("http://localhost:8080/recipes",{
                 params: {
                     userInput: this.state.userInput,
@@ -71,21 +77,20 @@ export default class Main extends React.Component{
         }
     }    
     render(){
-        // if(this.state.recipesData.length>0){
+        if(this.state.recipesData.length>0){
             return(
                 <>
-                    {/* <SearchBar></SearchBar> */}
-                    <SearchPage userSelection={this.userSelection}></SearchPage>
-                    {/* <Recipes recipesData = {this.state.recipesData}></Recipes> */}
+                    {/* <SearchPage userSelection={this.userSelection}></SearchPage> */}
+                    <Recipes recipesData = {this.state.recipesData}></Recipes>
                     {/* take file input from use */}
                     {/* {/* <input type="file" accept="image/*" ></input> */}
                 </>
             )
-        // }
-        // return(
-        //     <>
-        //     </>
-        // )
+        }
+        return(
+            <>
+            </>
+        )
 
     }
 }

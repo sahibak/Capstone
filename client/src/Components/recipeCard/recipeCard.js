@@ -34,7 +34,6 @@ export default class RecipeCard extends React.Component{
         return recipeList; 
     }
 
-
     render(){
         return(
             <>
