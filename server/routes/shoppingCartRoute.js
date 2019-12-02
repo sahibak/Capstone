@@ -13,6 +13,12 @@ router.use(express.json());
 
 // POST Request
 router.post("/",(request,response) => {
+    // adding ingredients to the shopping list
     shoppingCartData.push(request.body)
-    response.status(200)
+    response.send("items posted")
+})
+
+// GET Request
+router.get("/",(request,response) => {
+    response.send(shoppingCartData)
 })

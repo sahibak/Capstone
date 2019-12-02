@@ -1,8 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Recipes from "../recipes/recipes.js";
-import SearchPage from "../searchPage/searchPage.js";
-import{BrowserRouter, Route, Switch} from "react-router-dom";
+import Footer from "../footer/footer.js";
 
 export default class Main extends React.Component{
     state={
@@ -80,8 +79,8 @@ export default class Main extends React.Component{
         if(this.state.recipesData.length>0){
             return(
                 <>
-                    {/* <SearchPage userSelection={this.userSelection}></SearchPage> */}
                     <Recipes recipesData = {this.state.recipesData}></Recipes>
+                    <Footer></Footer>
                     {/* take file input from use */}
                     {/* {/* <input type="file" accept="image/*" ></input> */}
                 </>

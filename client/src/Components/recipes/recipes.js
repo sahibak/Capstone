@@ -27,6 +27,7 @@ export default class Recipes extends React.Component{
             ingredients: this.props.recipesData[this.state.count]["ingredients"]
         })
         .then((response) => {
+            // console.log(response.data)
             // showing the next recipe
             this.recipeSwipe(event)
         })
@@ -39,6 +40,7 @@ export default class Recipes extends React.Component{
                 <RecipeImage recipeAdd ={this.recipeAdd} recipeSwipe={this.recipeSwipe} recipeImage={this.props.recipesData[this.state.count]["image"]}></RecipeImage>
                 <p>{this.props.recipesData[this.state.count]["name"]}</p>
                 <RecipeCard recipesData={this.props.recipesData} count={this.state.count}></RecipeCard>
+    
             </>
         )
     }
