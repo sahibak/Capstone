@@ -21,7 +21,7 @@ module.exports = [
             {
                 "name":"pasta",
                 "category": "dry item",
-                "qty":"1",
+                "qty":"10",
                 "unit":"box" 
             },
         ]

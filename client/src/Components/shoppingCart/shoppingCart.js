@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Footer from "../footer/footer.js";
+import uuid from "uuid";
 
 export default class ShoppingCart extends React.Component{
     state = {
@@ -26,8 +27,10 @@ export default class ShoppingCart extends React.Component{
         .catch(error => {console.log(error)})
     }
 
-     // function to show ingredients on the screen
+     // function to modigy data recieved from the server
+    //  Function details - looping over the recipes, to find the ingredients and saving them in an Obj with category
     renderingIngredient(){
+        // creating empty objective
         let renderingList = {}
         // looping over each recipe 
         for (let i = 0; i < this.state.recipeIngredientsList.length; i++){
@@ -40,36 +43,71 @@ export default class ShoppingCart extends React.Component{
                 let unit = ingredientsForRecipe[n]["unit"]
                 let categoryToCheck = ingredientsForRecipe[n]["category"]
                 console.log("ingredient",itemName,qty,unit,categoryToCheck)
-                // if rendering list is empty, adding in 1st item adding 1st item
-
+                // cheking if the category exists, if category doesnt exist creating empty obj
                 if (!(categoryToCheck in renderingList)) {
                     renderingList[categoryToCheck] = {}
                 }
-        
+                // cheking if the item exists under the category, if item doesnt exist adding it in and initializing it to zero
                 if (!(itemName in renderingList[categoryToCheck])) {
                     renderingList[categoryToCheck][itemName] = 0
                 }
-        
-                renderingList[categoryToCheck][itemName] += qty
-                
+                // updating the qty of the item
+                renderingList[categoryToCheck][itemName] += Number(qty)
                 }
-            }
-            console.log(renderingList)
         }
-    
-        
+            return(renderingList)
+    }
+
+    // rendering JSX to display items on the screen
+    renderingShoppingList(){
+        // creating empty array to add JSX 
+        let shoppingCart = []
+        let shoppingIngredients = []
+        let renderingList = this.renderingIngredient()
+        // Overview: looping over each key(category) and getting items obj (obj of ingredients)
+        //  looping over items obj to get key (item name) and value (qty)
+
+        // returning list of category keys
+        let categoryList = Object.keys(renderingList)
+
+        // determing key for JSX Obj
+        let i = 0;
+        // getting obj of items under each category
+        categoryList.forEach(category => {
+            shoppingCart.push(
+                <p key={i+category}>{category}</p>
+            )
+            let itemsObj = renderingList[category]
+            console.log("itemObj",itemsObj)
+            for (let item in itemsObj){
+                console.log("item",item)
+                let qty = itemsObj[item]
+                i ++
+                shoppingIngredients.push(
+                    <ul key={i+item}>
+                        <li>{item} {qty}</li>
+                    </ul>
+                )
+            }
+            i++;
+            shoppingCart.push(shoppingIngredients)
+            shoppingIngredients = []
+        })
+        return shoppingCart
+    }    
     
 
     render(){
         
         if(this.state.recipeIngredientsList.length >0){
-        {this.renderingIngredient()}
+        // {this.renderingShoppingList()}
         
 
 
         return(
             <>
             <p>test</p>
+            {this.renderingShoppingList()}
             
             <Footer></Footer>
             </>
