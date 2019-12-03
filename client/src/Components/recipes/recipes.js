@@ -8,6 +8,11 @@ export default class Recipes extends React.Component{
         count: 0
     }
 
+    componentDidMount(){
+        // get recipes' data on mounting
+        this.props.getRecipes();
+    }
+       
     // when the user swipes for the next recipe
     recipeSwipe = (event) => {
         event.preventDefault();
@@ -22,9 +27,9 @@ export default class Recipes extends React.Component{
         console.log("in add function")
         // posting data on shopping cart
         axios.post("http://localhost:8080/shoppingcart", {
-            id: this.props.recipesData[this.state.count]["id"],
-            ingredientList: this.props.recipesData[this.state.count]["ingredientList"],
-            ingredients: this.props.recipesData[this.state.count]["ingredients"]
+            id: this.state.recipesData[this.state.count]["id"],
+            ingredientList: this.state.recipesData[this.state.count]["ingredientList"],
+            ingredients: this.state.recipesData[this.state.count]["ingredients"]
         })
         .then((response) => {
             // console.log(response.data)
@@ -35,13 +40,18 @@ export default class Recipes extends React.Component{
     }
 
     render(){
-        return(
-            <>
-                <RecipeImage recipeAdd ={this.recipeAdd} recipeSwipe={this.recipeSwipe} recipeImage={this.props.recipesData[this.state.count]["image"]}></RecipeImage>
-                <p>{this.props.recipesData[this.state.count]["name"]}</p>
-                <RecipeCard recipesData={this.props.recipesData} count={this.state.count}></RecipeCard>
-    
-            </>
-        )
+        if(this.props.dataCaptured === true){
+            return(
+                <>
+                    <RecipeImage recipeAdd ={this.recipeAdd} recipeSwipe={this.recipeSwipe} recipeImage={this.props.recipesData[this.state.count]["image"]}></RecipeImage>
+                    <p>{this.props.recipesData[this.state.count]["name"]}</p>
+                    <RecipeCard recipesData={this.props.recipesData} count={this.state.count}></RecipeCard>
+                </>
+            )
+        } else {
+            return(
+                <p>"no data"</p>
+            )
+        }
     }
 }

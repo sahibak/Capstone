@@ -11,52 +11,10 @@ export default class Main extends React.Component{
         dataCaptured: false
     }
 
-    // function to capture the search parameters
-    userSelection = (event)=>{
-        console.log("userselection func")
-        event.preventDefault();
-        let userInput = []
-        // getting input from search field
-        let userSearch = ""
-        console.log(event.target.searchbar.value.trim().toLowerCase())
-        userSearch = event.target.searchbar.value.trim().toLowerCase()
-        console.log(userSearch,userSearch.length)
-        // checking if Vegetarian was selected and adding it to list if applicable @TODO could not get ternary to work, why?
-        if(event.target.category1.checked){
-            userInput.push(event.target.category1.value)
-        };
-        // checking if Vegan was selected and adding it to list if applicable
-        if(event.target.category2.checked){
-            userInput.push(event.target.category2.value)
-        };
-        // checking if Peanut allergy was selected and adding it to list if applicable 
-        if(event.target.allergy1.checked){
-            userInput.push(event.target.allergy1.value)
-        };
-        // checking if Gluten allergy was selected and adding it to list if applicable
-        if(event.target.allergy2.checked){
-            userInput.push(event.target.allergy2.value)
-        };
-        // checking if Dairy allergy was selected and adding it to list if applicable
-        if(event.target.allergy3.checked){
-            userInput.push(event.target.allergy3.value)
-        };
-       
-
-        // If there is any user input, updating state
-        if(userInput.length > 0 || userSearch.length > 0){
-            console.log("userInput",userInput)
-            this.setState({
-                userInput: userInput,
-                userSearch: userSearch,
-                dataCaptured: false
-            })
-        }
-    }
-
-    componentDidMount(){
+    runAxios(){
+        console.log(run)
         // update this to component did mount when testing recipes and componentDidUpdate for search.
-        if(!this.state.dataCaptured){
+        // if(!this.state.dataCaptured){
             console.log("----update---")
             console.log(this.state.userInput,this.state.userSearch)
             axios.get("http://localhost:8080/recipes",{
@@ -76,10 +34,11 @@ export default class Main extends React.Component{
         }
     }    
     render(){
+        console.log()
         if(this.state.recipesData.length>0){
             return(
                 <>
-                    <Recipes recipesData = {this.state.recipesData}></Recipes>
+                    <Recipes recipesData = {this.state.recipesData} runAxios={this.runAxios}></Recipes>
                     <Footer></Footer>
                     {/* take file input from use */}
                     {/* {/* <input type="file" accept="image/*" ></input> */}

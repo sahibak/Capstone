@@ -2,10 +2,11 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 export default class SearchPage extends React.Component{
+
     render(){
         return(
             <>
-                <form onSubmit={event=> {this.props.userSelection(event)}}>
+                <form onSubmit={event => this.props.userSelection(event)}>
                 <input type="text" name="searchbar" placeholder="enter keyword to search by.."></input>
                     <p>Food Category</p>
                     <div>
@@ -29,9 +30,9 @@ export default class SearchPage extends React.Component{
                         <label>Dairy</label>
                         <input type="checkbox" name="allergy3" value="Dairy"></input>
                     </div>
-                    <Link to="/recipes">
-                        <button type="submit">Enter</button>
-                    </Link>
+                        {/* <Link to="/recipes"> */}
+                            <button type="submit">Enter</button>
+                        {/* </Link> */}
                 </form>
             </>
         )

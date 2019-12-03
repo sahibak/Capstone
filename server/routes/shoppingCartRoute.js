@@ -14,11 +14,13 @@ router.use(express.json());
 // POST Request
 router.post("/",(request,response) => {
     // adding ingredients to the shopping list
+    console.log(request.body)
     shoppingCartData.push(request.body)
     response.send("items posted")
 })
 
 // GET Request
 router.get("/",(request,response) => {
+    console.log(shoppingCartData)
     response.send(shoppingCartData)
 })
