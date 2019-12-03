@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
 import Footer from "../footer/footer.js";
-import uuid from "uuid";
 
 export default class ShoppingCart extends React.Component{
     state = {

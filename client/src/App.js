@@ -75,8 +75,8 @@ export default class App extends React.Component{
         <div className="App">
           <BrowserRouter>
             <Switch>
-                <Route path="/" exact render = {(props) => <SearchPage {...props} userSelection={this.userSelection}></SearchPage>}></Route>
-                <Route path="/recipes" render = {() => <Recipes userSearch= {this.state.userSearch} userInput={this.state.userInput} getRecipes={this.getRecipes} recipesData={this.state.recipesData} dataCaptured={this.state.dataCaptured}></Recipes>}></Route>
+                <Route path="/search" exact render = {(props) => <SearchPage {...props} userSelection={this.userSelection}></SearchPage>}></Route>
+                <Route path="/" exact render = {() => <Recipes userSearch= {this.state.userSearch} userInput={this.state.userInput} getRecipes={this.getRecipes} recipesData={this.state.recipesData} dataCaptured={this.state.dataCaptured}></Recipes>}></Route>
                 <Route path="/shoppingcart" exact component = {ShoppingCart}></Route>
                 <Route path="/recipebook" exact component = {ShoppingCart}></Route>
             </Switch>

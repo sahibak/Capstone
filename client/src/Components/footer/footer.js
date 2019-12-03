@@ -11,10 +11,10 @@ export default class Footer extends React.Component{
             <Link to="/recipebook">
                 Recipe Book
             </Link>
-            <Link to="/recipes">
+            <Link to="/">
                 Recipes
             </Link>
-            <Link to="/">
+            <Link to="/search">
                 Search Page
             </Link>
             </>

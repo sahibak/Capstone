@@ -4,7 +4,7 @@ export default class SearchPage extends React.Component{
 
     searchSubmit = (event) => {
         this.props.userSelection(event);
-        this.props.history.push('/recipes')
+        this.props.history.push('/')
     }
 
     render(){
