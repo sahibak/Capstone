@@ -28,7 +28,7 @@ export default class ShoppingCart extends React.Component{
 
      // function to show ingredients on the screen
     renderingIngredient(){
-        let renderingList = []
+        let renderingList = {}
         // looping over each recipe 
         for (let i = 0; i < this.state.recipeIngredientsList.length; i++){
             // For each recipe's ingredients, set them as ingredientsForRecipe
@@ -41,65 +41,31 @@ export default class ShoppingCart extends React.Component{
                 let categoryToCheck = ingredientsForRecipe[n]["category"]
                 console.log("ingredient",itemName,qty,unit,categoryToCheck)
                 // if rendering list is empty, adding in 1st item adding 1st item
-                if(renderingList.length === 0){
-                    console.log("length",renderingList.length)
-                    renderingList.push(
-                        {
-                            category: categoryToCheck,
-                            items: [{
-                                [itemName]:[qty,unit]
-                            }]
-                        }
-                    )
-                } else {
-                    console.log("rederingList has items")
-                    // checking the rederingList to see if the categoryToCheck exists
-                    for (let i = 0; i<=this.state.count; i++){
-                        let categoryMatch = (renderingList[i]["category"] == categoryToCheck)
-                        if(i<renderingList.length && categoryMatch){
-                            console.log("cat match")
-                            // // checking if the item already exists under the category
-                            // for(let n = 0; n<=this.state.count;n++ ){
-                            //     let item = renderingList[i]["items"][n]
-                            //     console.log(item)
-                            //     if(itemName in item){
-                            //         console.log("item matched")
-                            //         item[0] = item[0]+qty
-                            //         break;
-                            //     } 
-                            //     // if item doesnt exist under category, adding it in
-                            //     else if ( n == this.state.count){
-                            //         renderingList[i]["items"].push({
-                            //             [itemName]:[qty,unit]
-                            //         })
-                            //     }
-                            // }
-                            break;
-                        }
-                        else if (i = this.state.count){
-                            console.log("cat does not match")
-                            // adding category and product to the list
-                            renderingList.push(
-                                {
-                                    category: categoryToCheck,
-                                    items: [{
-                                        [itemName]:[qty,unit]
-                                    }]
-                                }
-                            )
-                        }
-                    }
+
+                if (!(categoryToCheck in renderingList)) {
+                    renderingList[categoryToCheck] = {}
+                }
+        
+                if (!(itemName in renderingList[categoryToCheck])) {
+                    renderingList[categoryToCheck][itemName] = 0
+                }
+        
+                renderingList[categoryToCheck][itemName] += qty
+                
                 }
             }
+            console.log(renderingList)
         }
-        console.log(renderingList)
-    }
+    
         
     
 
     render(){
+        
         if(this.state.recipeIngredientsList.length >0){
         {this.renderingIngredient()}
+        
+
 
         return(
             <>
