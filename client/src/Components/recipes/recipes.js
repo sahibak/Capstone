@@ -2,6 +2,7 @@ import React from "react";
 import RecipeCard from "../recipeCard/recipeCard.js";
 import RecipeImage from "../recipeImage/recipeImage.js";
 import axios from "axios";
+import Footer from "../footer/footer.js";
 
 export default class Recipes extends React.Component{
     state = {
@@ -27,9 +28,9 @@ export default class Recipes extends React.Component{
         console.log("in add function")
         // posting data on shopping cart
         axios.post("http://localhost:8080/shoppingcart", {
-            id: this.state.recipesData[this.state.count]["id"],
-            ingredientList: this.state.recipesData[this.state.count]["ingredientList"],
-            ingredients: this.state.recipesData[this.state.count]["ingredients"]
+            id: this.props.recipesData[this.state.count]["id"],
+            ingredientList: this.props.recipesData[this.state.count]["ingredientList"],
+            ingredients: this.props.recipesData[this.state.count]["ingredients"]
         })
         .then((response) => {
             // console.log(response.data)
@@ -46,6 +47,7 @@ export default class Recipes extends React.Component{
                     <RecipeImage recipeAdd ={this.recipeAdd} recipeSwipe={this.recipeSwipe} recipeImage={this.props.recipesData[this.state.count]["image"]}></RecipeImage>
                     <p>{this.props.recipesData[this.state.count]["name"]}</p>
                     <RecipeCard recipesData={this.props.recipesData} count={this.state.count}></RecipeCard>
+                    <Footer></Footer>
                 </>
             )
         } else {
