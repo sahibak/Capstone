@@ -3,10 +3,15 @@ import {Link} from "react-router-dom";
 
 export default class SearchPage extends React.Component{
 
+    searchSubmit = (event) => {
+        this.props.userSelection(event);
+        this.props.history.push('/recipes')
+    }
+
     render(){
         return(
             <>
-                <form onSubmit={event => this.props.userSelection(event)}>
+                <form onSubmit={this.searchSubmit}>
                 <input type="text" name="searchbar" placeholder="enter keyword to search by.."></input>
                     <p>Food Category</p>
                     <div>

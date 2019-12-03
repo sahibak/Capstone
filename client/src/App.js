@@ -45,14 +45,13 @@ export default class App extends React.Component{
     };
     this.setState({
       userInput: userInput,
-      userSearch: userSearch,
-      dataCaptured: true
+      userSearch: userSearch
     })
   }
 
   // GET request for recipes to render on Main component
   getRecipes = () => {
-    if(!this.state.dataCaptured){
+    // if(!this.state.dataCaptured){
       console.log("inp",this.state.userInput)
       console.log("search",this.state.userSelection)
       axios.get("http://localhost:8080/recipes",{
@@ -69,7 +68,7 @@ export default class App extends React.Component{
           })
       })
       .catch((error)=> console.log(error));
-    }
+    // }
   }
 
   render(){
@@ -77,7 +76,7 @@ export default class App extends React.Component{
         <div className="App">
           <BrowserRouter>
             <Switch>
-                <Route path="/" exact render = {() => <SearchPage userSelection={this.userSelection}></SearchPage>}></Route>
+                <Route path="/" exact render = {(props) => <SearchPage {...props} userSelection={this.userSelection}></SearchPage>}></Route>
                 <Route path="/recipes" render = {() => <Recipes userSearch= {this.state.userSearch} userInput={this.state.userInput} getRecipes={this.getRecipes} recipesData={this.state.recipesData} dataCaptured={this.state.dataCaptured}></Recipes>}></Route>
                 <Route path="/shoppingcart" exact component = {ShoppingCart}></Route>
                 <Route path="/recipebook" exact component = {ShoppingCart}></Route>

@@ -11,6 +11,8 @@ export default class Recipes extends React.Component{
 
     componentDidMount(){
         // get recipes' data on mounting
+        console.log("recipes mounted")
+        console.log(this.props)
         this.props.getRecipes();
     }
        
@@ -37,7 +39,7 @@ export default class Recipes extends React.Component{
             // showing the next recipe
             this.recipeSwipe(event)
         })
-        .catch((error)=> {console.log("error")})
+        .catch((error)=> {console.log(error)})
     }
 
     render(){
