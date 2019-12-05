@@ -1,4 +1,6 @@
 import React from "react";
+import RecipeImage from "../recipeImage/recipeImage.js";
+import "./style.scss";
 
 export default class RecipeCard extends React.Component{
     
@@ -8,12 +10,21 @@ export default class RecipeCard extends React.Component{
         // getting the details from the props, for the recipe to be displayed 
         let recipeDetails = this.props.recipesData[this.props.count]
         // getting ingredient list
+        console.log(recipeDetails)
         let ingredients = recipeDetails["ingredients"]
         // for every item in ingridients, run the loop and create JSX
         for (let i=0; i<ingredients.length; i++){
-            let { name, qty, unit } = ingredients[i]
+            let { name, qty, unit, image } = ingredients[i]
             ingredientList.push(
-                <li key = {i}>{qty} {unit} of {name}</li>
+                <>
+                    <div className="ingredient__Group">
+                        <img className="z-depth-4 ingredient__Image" src={image} alt=""/>
+                        <ul className="ingredient__List">
+                            <li key = {i}>{name}</li>
+                            <li className="ingredient__Qty">{qty} {unit}</li>
+                        </ul>
+                    </div>
+                </>
             )
         }   
         return ingredientList;     
@@ -37,8 +48,12 @@ export default class RecipeCard extends React.Component{
     render(){
         return(
             <>
-                <ul>{this.displayIngredients()}</ul>
-                <ul>{this.displayRecipeSteps()}</ul>
+                <article className="ingredient__all">
+                    <img className="z-depth-4 ingredient__Image ingredient__heroImage" src={this.props.recipesData[this.props.count]["image"]} alt=""/>
+                    <p>{this.props.recipesData[this.props.count]["name"]}</p>
+                    {this.displayIngredients()}
+                </article>
+                {/* <ul>{this.displayRecipeSteps()}</ul> */}
             </>
         )
     }

@@ -3,6 +3,7 @@ import RecipeCard from "../recipeCard/recipeCard.js";
 import RecipeImage from "../recipeImage/recipeImage.js";
 import axios from "axios";
 import Footer from "../footer/footer.js";
+import "./style.scss";
 
 export default class Recipes extends React.Component{
     state = {
@@ -11,8 +12,6 @@ export default class Recipes extends React.Component{
 
     componentDidMount(){
         // get recipes' data on mounting
-        console.log("recipes mounted")
-        console.log(this.props)
         this.props.getRecipes();
     }
        
@@ -46,8 +45,7 @@ export default class Recipes extends React.Component{
         if(this.props.dataCaptured === true){
             return(
                 <>
-                    <RecipeImage recipeAdd ={this.recipeAdd} recipeSwipe={this.recipeSwipe} recipeImage={this.props.recipesData[this.state.count]["image"]}></RecipeImage>
-                    <p>{this.props.recipesData[this.state.count]["name"]}</p>
+                    <RecipeImage className="circle" recipeAdd ={this.recipeAdd} recipeSwipe={this.recipeSwipe} recipeImage={this.props.recipesData[this.state.count]["image"]}></RecipeImage>
                     <RecipeCard recipesData={this.props.recipesData} count={this.state.count}></RecipeCard>
                     <Footer></Footer>
                 </>

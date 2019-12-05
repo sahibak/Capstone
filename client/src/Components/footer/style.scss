@@ -1,0 +1,17 @@
+*{
+    margin:0;
+}
+
+.footer-links{
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;    
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+}

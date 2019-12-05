@@ -5,6 +5,7 @@ import SearchPage from './Components/searchPage/searchPage';
 import Recipes from './Components/recipes/recipes.js';
 import ShoppingCart from "./Components/shoppingCart/shoppingCart.js";
 import axios from "axios";
+import 'materialize-css/dist/css/materialize.min.css';
 
 export default class App extends React.Component{
   state= {
