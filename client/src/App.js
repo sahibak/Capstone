@@ -51,9 +51,6 @@ export default class App extends React.Component{
 
   // GET request for recipes to render on Main component
   getRecipes = () => {
-    // if(!this.state.dataCaptured){
-      console.log("inp",this.state.userInput)
-      console.log("search",this.state.userSelection)
       axios.get("http://localhost:8080/recipes",{
           params: {
               userInput: this.state.userInput,

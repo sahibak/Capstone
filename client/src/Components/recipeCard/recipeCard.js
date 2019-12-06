@@ -2,7 +2,7 @@ import React from "react";
 import RecipeImage from "../recipeImage/recipeImage.js";
 import Like from '../../assets/like.svg';
 import Dislike from '../../assets/face-dislike.svg';
-import "./style.scss";
+import "./recipeCardStyle.scss";
 import Crop from "../../assets/crop.png";
 
 export default class RecipeCard extends React.Component{
@@ -52,8 +52,9 @@ export default class RecipeCard extends React.Component{
         return(
             <>
                 <article className="ingredient__all">
-                    {/* <img className="z-depth-4 ingredient__heroImage" src={this.props.recipesData[this.props.count]["image"]} alt=""/> */}
-                     <img className="z-depth-2 ingredient__heroImage" src={Crop} alt=""/>
+                    {/* actual image for the recipe */}
+                    <img className="z-depth-4 ingredient__heroImage" src={this.props.recipesData[this.props.count]["image"]} alt=""/>
+                     {/* <img className="z-depth-2 ingredient__heroImage" src={Crop} alt=""/> */}
                     {/* <p>{this.props.recipesData[this.props.count]["name"]}</p> */}
                     {/* {this.displayIngredients()} */}
                     {/* <div className="emotions">

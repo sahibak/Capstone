@@ -3,7 +3,7 @@ import RecipeCard from "../recipeCard/recipeCard.js";
 import RecipeImage from "../recipeImage/recipeImage.js";
 import axios from "axios";
 import Footer from "../footer/footer.js";
-import "./style.scss";
+import "./recipeStyle.scss";
 
 
 export default class Recipes extends React.Component{

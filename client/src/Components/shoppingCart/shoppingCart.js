@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Footer from "../footer/footer.js";
-import "./style.scss"
+import "./shoppingCartStyle.scss"
 
 export default class ShoppingCart extends React.Component{
     state = {

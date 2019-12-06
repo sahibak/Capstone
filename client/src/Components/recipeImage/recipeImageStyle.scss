@@ -3,10 +3,20 @@
     width: 350px;
     overflow: hidden;
     opacity: .2;
+    
+ 
     // position: fixed;
     border-radius: 0 0 200px 200px;
-    background-size: contain;
-    background-position: center;
+    // background-size: contain;
+    // background-position: center;
+
+    &-img {
+        width: 100%;
+        // height: 100%;
+        object-fit: cover;
+        position: relative;
+        top: -140px;
+    }
     
 }
 
