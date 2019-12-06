@@ -1,25 +1,21 @@
-.oval{
-
-    height:45px;
-    width:180px;
-    border-radius: 90px / 45px;
-    background-color: white;
-    left: 6em;
-    position: relative;
-    top: 100px;
-    border: 2px solid black;
+.oval {
+  height: 45px;
+  width: 180px;
+  border-radius: 90px / 45px;
+  background-color: white;
+  left: 6em;
+  position: relative;
+  top: 100px;
+  border: 2px solid black;
 }
 
-.body{
-    background-image: url("../../assets/background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    width:100vw;
-    height: 100vh;
-    // position: fixed;
-    // top:0;
-    // bottom: 0;
-
-
-   
+.body {
+  background-image: url("../../assets/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  // position: fixed;
+  // top:0;
+  // bottom: 0;
 }
