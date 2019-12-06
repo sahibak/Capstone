@@ -1,21 +1,18 @@
 import React from "react";
-import M from "materialize-css/dist/js/materialize.min.js";
 import "./style.scss";
-import Footer from "../footer/footer.js";
-import Headroom from "react-headroom";
+import Peanut from "../../assets/peanut-outline.svg";
+import PeanutOff from "../../assets/peanut-off-outline.svg";
+import Green from "../../assets/green.svg";
+import GreenSelected from "../../assets/green-selected.svg";
+import Vegan from "../../assets/vegan.svg";
+import VeganSelected from "../../assets/vegan-selected.svg";
+import Shellfish from "../../assets/shellfish.svg";
+import ShellfishOff from "../../assets/shellfish-selected.svg";
+import Fish from "../../assets/fish.svg";
+import FishOff from "../../assets/fishOff.svg";
 
 export default class SearchPage extends React.Component{
-    componentDidMount(){
-        document.addEventListener('DOMContentLoaded', function() {
-            let elems = document.querySelectorAll('.collapsible');
-            let elems2 = document.querySelectorAll('.autocomplete');
-            
-            let instances = M.Collapsible.init(elems, {})
-            let instances2 = M.Autocomplete.init(elems, {
-                data:"currinder"
-            });
-        });
-    }
+
     searchSubmit = (event) => {
         this.props.userSelection(event);
         this.props.history.push('/')
@@ -24,31 +21,40 @@ export default class SearchPage extends React.Component{
     render(){
         return(
             <div className="container">
-                <form onSubmit={this.searchSubmit}>
+                <form classname="form" onSubmit={this.searchSubmit} >
                     <div className="input-field col s2">
                         <i className="material-icons prefix">search</i>
                         <input type="text" id="autocomplete-input" className="autocomplete" type="text" name="searchbar" placeholder="Enter Search"></input>
                     </div>
                     <div>
-                        <p>Food Category</p>
+                        {/* <p>Food Category</p> */}
                         <div className ="space-between">
-                            <label>
-                                <input type="checkbox" name="category1" value="Vegetarian" className="red"/>
-                                <span>Vegetarian</span>
-                            </label>
-                            <label>
-                                <input type="checkbox" name="category2" value="Vegan"/>
-                                <span>Vegan</span>
-                            </label>
+                        <label className="fancy-checkbox">
+                            <input type="checkbox" name="category1" value="Vegetarian"/>
+                                <img className="checked" src={GreenSelected}/>
+                                <img className="unchecked" src={Green}/>
+                        </label>
+                        <label className="fancy-checkbox">
+                            <input type="checkbox" name="category2" value="Vegan"/>
+                                <img className="checked" src={VeganSelected}/>
+                                <img className="unchecked" src={Vegan}/>
+                        </label>
+                        <label className="fancy-checkbox">
+                            <input type="checkbox" name="category3" value="Fish"/>
+                                <img className="checked" src={FishOff}/>
+                                <img className="unchecked" src={Fish}/>
+                        </label>
                         </div>
                     </div>
                     <div>
-                        <p>Allergies</p>
+                        {/* <p>Allergies</p> */}
                         <div className ="space-between">
-                            <label>
+                            <label className="fancy-checkbox">
                                 <input type="checkbox" name="allergy1" value="Peanuts"/>
-                                <span>Peanuts</span>
+                                <img className="checked" src={PeanutOff}/>
+                                <img className="unchecked" src={Peanut}/>
                             </label>
+                            
                             <label>
                                 <input type="checkbox" name="allergy2" value="Gluten"/>
                                 <span>Gluten</span>
@@ -57,11 +63,16 @@ export default class SearchPage extends React.Component{
                                 <input type="checkbox" name="allergy3" value="Dairy"/>
                                 <span>Dairy</span>
                             </label>
+                            <label className="fancy-checkbox">
+                                <input type="checkbox" name="allergy4" value="Shellfish"/>
+                                <img className="checked" src={ShellfishOff}/>
+                                <img className="unchecked" src={Shellfish}/>
+                            </label>
                         </div>
                     </div>
                     <button class="waves-effect waves-light btn submit-btn" type="submit">Submit</button>
                 </form>
-                <Footer className="footer-class"></Footer>
+                {/* <Footer className="footer-class"></Footer> */}
              </div>
 
 

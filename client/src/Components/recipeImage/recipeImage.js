@@ -1,6 +1,7 @@
 import React from "react";
 import"./style.scss";
 import M from "materialize-css";
+import Crop from "../../assets/crop.png";
 
 export default class RecipeImage extends React.Component{
     componentDidMount(){
@@ -15,8 +16,9 @@ export default class RecipeImage extends React.Component{
         return(
             <>
             {/* move to next recipe button */}
-            <button onClick={this.props.recipeSwipe}>
-                <img className="circle-dim" src={this.props.recipeImage} alt="food"/>
+            <button className="circle-dim" onClick={this.props.recipeSwipe}>
+                {/* <img src={this.props.recipeImage} alt="food"/> */}
+                <img src={Crop} alt="food"/>
             </button> 
             {/* add to shopping cart button */}
             <button onClick={this.props.recipeAdd} className="btn-floating btn-large red recipe_add-to-shopping-cart"> + </button>
