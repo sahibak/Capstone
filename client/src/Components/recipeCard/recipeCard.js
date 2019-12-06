@@ -60,8 +60,9 @@ export default class RecipeCard extends React.Component{
                         <img src={Dislike} height="20px" width="20px"></img>
                     </div>
                     <p className="btn btn-light font-weight-bold">{this.props.recipesData[this.props.count]["name"]}</p>
+                    {/* add to shopping cart button */}
+                    <button onClick={this.props.recipeAdd} className="btn btn-dark font-weight-bold">Add To Cart</button>
                 </article>
-                <button className="btn btn-dark font-weight-bold">Add To Cart</button>
                 {/* <ul>{this.displayRecipeSteps()}</ul> */}
             </>
         )

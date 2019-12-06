@@ -21,13 +21,13 @@ export default class SearchPage extends React.Component{
     render(){
         return(
             <div className="container">
-                <form classname="form" onSubmit={this.searchSubmit} >
-                    <div className="input-field col s2">
+                <form className="form" onSubmit={this.searchSubmit} >
+                    <div className="input-field col s2 searchbar">
                         <i className="material-icons prefix">search</i>
                         <input type="text" id="autocomplete-input" className="autocomplete" type="text" name="searchbar" placeholder="Enter Search"></input>
                     </div>
                     <div>
-                        {/* <p>Food Category</p> */}
+                        <p className="label font-weight-bold">Food Category</p>
                         <div className ="space-between">
                         <label className="fancy-checkbox">
                             <input type="checkbox" name="category1" value="Vegetarian"/>
@@ -47,7 +47,7 @@ export default class SearchPage extends React.Component{
                         </div>
                     </div>
                     <div>
-                        {/* <p>Allergies</p> */}
+                        <p className="label font-weight-bold">Allergies</p>
                         <div className ="space-between">
                             <label className="fancy-checkbox">
                                 <input type="checkbox" name="allergy1" value="Peanuts"/>
@@ -70,7 +70,7 @@ export default class SearchPage extends React.Component{
                             </label>
                         </div>
                     </div>
-                    <button class="waves-effect waves-light btn submit-btn" type="submit">Submit</button>
+                    <button className="btn btn-dark font-weight-bold" type="submit">Submit</button>
                 </form>
                 {/* <Footer className="footer-class"></Footer> */}
              </div>

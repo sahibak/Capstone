@@ -34,5 +34,29 @@
 }
 
 .form {
-  padding-top: 50px;
+  padding-top: 150px;
+}
+
+.searchbar{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  height: 50px;
+}
+
+.label{
+  display: flex;
+  margin-top: 20px;
+  
+}
+
+.autocomplete{
+  flex-basis: 50%;
+}
+
+.prefix{
+  margin-right: 5px;
 }

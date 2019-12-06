@@ -11,8 +11,6 @@ export default class RecipeImageBckgrnd extends React.Component{
                 <img src={this.props.recipeImage} alt="food"/>
                 {/* <img className="circle-dim-img"src={Crop} alt="food"/> */}
             </button> 
-            {/* add to shopping cart button */}
-            <button onClick={this.props.recipeAdd} className="btn-floating btn-large red recipe_add-to-shopping-cart"> + </button>
             </>
         )
     }

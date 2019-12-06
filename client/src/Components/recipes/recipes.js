@@ -45,13 +45,16 @@ export default class Recipes extends React.Component{
     render(){
         if(this.props.dataCaptured === true){
             return(
-                <section className="body">
+                <>
+                <section className="body">  
                     {/* <p className="oval"></p> */}
                     {/* <button className="btn btn-success">test</button> */}
-                    <RecipeImageBckgrnd className="circle" recipeAdd ={this.recipeAdd} recipeSwipe={this.recipeSwipe} recipeImage={this.props.recipesData[this.state.count]["image"]}></RecipeImageBckgrnd>
-                    <RecipeCard recipesData={this.props.recipesData} count={this.state.count}></RecipeCard>
+                    <RecipeImageBckgrnd className="circle" recipeSwipe={this.recipeSwipe} recipeImage={this.props.recipesData[this.state.count]["image"]}></RecipeImageBckgrnd>
+                    <RecipeCard recipesData={this.props.recipesData} count={this.state.count} recipeAdd ={this.recipeAdd}></RecipeCard>
                     {/* <Footer></Footer> */}
                 </section>
+                <Footer></Footer>
+                </>
             )
         } else {
             return(

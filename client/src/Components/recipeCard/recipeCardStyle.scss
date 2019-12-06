@@ -32,6 +32,8 @@
         // margin-left: 50vw;
         align-items: center;
         padding-bottom: 50px;
+        position: relative;
+        top: -20vh;
     }
 
     &__heroImage{
@@ -39,7 +41,7 @@
         width:200px;
         border-radius: 50%;
         position: relative;
-        top: -20vh;
+        // top: -20vh;
         object-fit: cover;
     }
 }
