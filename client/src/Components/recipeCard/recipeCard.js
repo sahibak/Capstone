@@ -1,5 +1,7 @@
 import React from "react";
 import RecipeImage from "../recipeImage/recipeImage.js";
+import Like from '../../assets/like.svg';
+import Dislike from '../../assets/face-dislike.svg';
 import "./style.scss";
 
 export default class RecipeCard extends React.Component{
@@ -49,9 +51,13 @@ export default class RecipeCard extends React.Component{
         return(
             <>
                 <article className="ingredient__all">
-                    <img className="z-depth-4 ingredient__Image ingredient__heroImage" src={this.props.recipesData[this.props.count]["image"]} alt=""/>
+                    <img className="z-depth-4 ingredient__heroImage" src={this.props.recipesData[this.props.count]["image"]} alt=""/>
                     <p>{this.props.recipesData[this.props.count]["name"]}</p>
-                    {this.displayIngredients()}
+                    {/* {this.displayIngredients()} */}
+                    {/* <div className="emotions">
+                        <img src={Like} height="50px" width="50px"></img>
+                        <img src={Dislike} height="50px" width="50px"></img>
+                    </div> */}
                 </article>
                 {/* <ul>{this.displayRecipeSteps()}</ul> */}
             </>

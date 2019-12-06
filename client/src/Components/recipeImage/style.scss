@@ -1,9 +1,10 @@
 .circle-dim{
-    height: 500px;
-    width: 100%;
+    height: 200px;
+    width: 350px;
     overflow: hidden;
     opacity: .2;
-    position: fixed;
+    // position: fixed;
+    border-radius: 0 0 200px 200px;
 }
 
 .recipe_add-to-shopping-cart{

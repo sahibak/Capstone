@@ -37,6 +37,17 @@
     &__heroImage{
         height: 200px;
         width:200px;
+        border-radius: 50%;
+        position: relative;
+        top: -10vh;
+        border: black 2px solid;
 
     }
+}
+
+.emotions{
+    display: flex;
+    justify-content: space-between;
+    width:150px;
+    height: 150px;
 }

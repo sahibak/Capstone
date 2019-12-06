@@ -35,7 +35,7 @@ module.exports = [
             },
             {
                 "name":"pankcake mix",
-                "category": "dry items",
+                "category": "dry item",
                 "qty":"2",
                 "unit":"lb" ,
                 "image":"https://images-gmi-pmc.edge-generalmills.com/edfaaf9f-9bde-426a-8d67-3284e9e496ae.jpg"

@@ -45,9 +45,11 @@ export default class Recipes extends React.Component{
         if(this.props.dataCaptured === true){
             return(
                 <>
+                    <p className="oval"></p>
+                    <button className="btn btn-success">test</button>
                     <RecipeImage className="circle" recipeAdd ={this.recipeAdd} recipeSwipe={this.recipeSwipe} recipeImage={this.props.recipesData[this.state.count]["image"]}></RecipeImage>
                     <RecipeCard recipesData={this.props.recipesData} count={this.state.count}></RecipeCard>
-                    <Footer></Footer>
+                    {/* <Footer></Footer> */}
                 </>
             )
         } else {
