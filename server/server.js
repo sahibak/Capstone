@@ -22,3 +22,7 @@ app.use("/recipes",recipesRoute);
 // POST request for shopping cart
 const shoppingCartRoute = require("./routes/shoppingCartRoute.js");
 app.use("/shoppingcart",shoppingCartRoute);
+
+// // POST request for recipe book
+// const recipeBookRoute = require("./routes/recipeBookRoute.js");
+// app.use("/recipebook",recipeBookRoute);

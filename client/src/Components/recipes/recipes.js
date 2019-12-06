@@ -31,11 +31,11 @@ export default class Recipes extends React.Component{
         // posting data on shopping cart
         axios.post("http://localhost:8080/shoppingcart", {
             id: this.props.recipesData[this.state.count]["id"],
-            ingredientList: this.props.recipesData[this.state.count]["ingredientList"],
+            // ingredientList: this.props.recipesData[this.state.count]["ingredientList"],
             ingredients: this.props.recipesData[this.state.count]["ingredients"]
         })
         .then((response) => {
-            // console.log(response.data)
+            console.log(response.data)
             // showing the next recipe
             this.recipeSwipe(event)
         })
