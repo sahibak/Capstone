@@ -1,17 +1,8 @@
 import React from "react";
-import"./recipeImageStyle.scss";
-import M from "materialize-css";
+import"./recipeImageBckgrndStyles.scss";
 import Crop from "../../assets/crop.png";
 
-export default class RecipeImage extends React.Component{
-    // componentDidMount(){
-    //     document.addEventListener('DOMContentLoaded', function() {
-    //         let elems = document.querySelectorAll('.fixed-action-btn');
-    //         let instances = M.FloatingActionButton.init(elems, {
-    //             direction:"left"
-    //         });
-    //       });
-    // }
+export default class RecipeImageBckgrnd extends React.Component{
     render(){
         return(
             <>

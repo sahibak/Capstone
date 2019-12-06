@@ -1,5 +1,4 @@
 import React from "react";
-import RecipeImage from "../recipeImage/recipeImage.js";
 import Like from '../../assets/like.svg';
 import Dislike from '../../assets/face-dislike.svg';
 import "./recipeCardStyle.scss";

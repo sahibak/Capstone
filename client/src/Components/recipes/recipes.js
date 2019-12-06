@@ -1,6 +1,6 @@
 import React from "react";
 import RecipeCard from "../recipeCard/recipeCard.js";
-import RecipeImage from "../recipeImage/recipeImage.js";
+import RecipeImageBckgrnd from "../recipeImageBckgrnd/recipeImageBckgrnd.js";
 import axios from "axios";
 import Footer from "../footer/footer.js";
 import "./recipeStyle.scss";
@@ -48,7 +48,7 @@ export default class Recipes extends React.Component{
                 <section>
                     {/* <p className="oval"></p> */}
                     {/* <button className="btn btn-success">test</button> */}
-                    <RecipeImage className="circle" recipeAdd ={this.recipeAdd} recipeSwipe={this.recipeSwipe} recipeImage={this.props.recipesData[this.state.count]["image"]}></RecipeImage>
+                    <RecipeImageBckgrnd className="circle" recipeAdd ={this.recipeAdd} recipeSwipe={this.recipeSwipe} recipeImage={this.props.recipesData[this.state.count]["image"]}></RecipeImageBckgrnd>
                     <RecipeCard recipesData={this.props.recipesData} count={this.state.count}></RecipeCard>
                     {/* <Footer></Footer> */}
                 </section>
