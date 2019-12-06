@@ -10,7 +10,7 @@ export default class RecipeImageBckgrnd extends React.Component{
             <button className="circle-dim" onClick={this.props.recipeSwipe}>
                 <img src={this.props.recipeImage} alt="food"/>
                 {/* <img className="circle-dim-img"src={Crop} alt="food"/> */}
-            </button> 
+            </button>   
             </>
         )
     }

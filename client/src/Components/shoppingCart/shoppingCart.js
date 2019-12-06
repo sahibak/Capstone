@@ -76,16 +76,17 @@ export default class ShoppingCart extends React.Component{
         let categoryList = Object.keys(this.renderingList)
         // getting obj of items under each category
         categoryList.forEach(category => {
-            // //pushing product category into shoppping cart render
-            // shoppingCart.push(
-            //     <p key={i+category}>{category}</p>
-            // )
+            //pushing product category into shoppping cart render
+            this.shoppingList.push(
+                <p className ="label font-weight-bold" key={i+category}>{category}</p>
+            )
+
             let itemsObj = this.renderingList[category]
             for (let item in itemsObj){
                 let qty = itemsObj[item]
                 shoppingIngredients.push(
                     <ul key={item} className={`${this.determineCategory(category)}`}>
-                        <li onClick={(event) => this.itemPurchased(item,qty)} >{item} {qty}</li>
+                        <li className="shadow p-3 mb-2 rounded " onClick={(event) => this.itemPurchased(item,qty)} >{item} {qty}</li>
                     </ul>
                 )
                 i ++
@@ -131,7 +132,9 @@ export default class ShoppingCart extends React.Component{
         if(this.state.recipeIngredientsList.length>0){
             return(
                 <>
-                    {this.state.shoppingCart}
+                    <div className="shoppingCart">
+                        {this.state.shoppingCart}
+                    </div>
                 </>
             )
         }
