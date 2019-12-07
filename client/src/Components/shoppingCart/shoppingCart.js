@@ -86,7 +86,7 @@ export default class ShoppingCart extends React.Component{
                 let qty = itemsObj[item]
                 shoppingIngredients.push(
                     <ul key={item} className={`${this.determineCategory(category)}`}>
-                        <li className="shadow p-3 mb-2 rounded " onClick={(event) => this.itemPurchased(item,qty)} >{item} {qty}</li>
+                        <li className="shadow p-3 mb-2 font-weight-bold rounded " onClick={(event) => this.itemPurchased(item,qty)} >{item} {qty}</li>
                     </ul>
                 )
                 i ++
