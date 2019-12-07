@@ -29,6 +29,7 @@ export default class Recipes extends React.Component{
     recipeAdd = (event) => {
         event.preventDefault();
         console.log("in add function")
+        console.log(this.props.recipesData[this.state.count])
         // posting data on shopping cart
         axios.post("http://localhost:8080/shoppingcart", {
             id: this.props.recipesData[this.state.count]["id"],
