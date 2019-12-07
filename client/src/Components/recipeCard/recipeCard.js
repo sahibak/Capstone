@@ -3,6 +3,7 @@ import Like from '../../assets/like.svg';
 import Dislike from '../../assets/face-dislike.svg';
 import "./recipeCardStyle.scss";
 import Sun from "../../assets/sun-with-face.svg";
+import Timer from "../../assets/timer-clock.svg";
 // import Crop from "../../assets/crop.png";
 
 export default class RecipeCard extends React.Component{
@@ -55,7 +56,7 @@ export default class RecipeCard extends React.Component{
         console.log(food, time)
         if(food === "breakfast"){
             return (
-                <p><img src={Sun}/> {time} mins</p>
+                <p><img src={Sun}/> <img src={Timer}/>{time} mins</p>
             )
         } else if (food === "lunch"){
             return (
