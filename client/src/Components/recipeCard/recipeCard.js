@@ -2,7 +2,8 @@ import React from "react";
 import Like from '../../assets/like.svg';
 import Dislike from '../../assets/face-dislike.svg';
 import "./recipeCardStyle.scss";
-import Crop from "../../assets/crop.png";
+import Sun from "../../assets/sun-with-face.svg";
+// import Crop from "../../assets/crop.png";
 
 export default class RecipeCard extends React.Component{
     
@@ -47,7 +48,32 @@ export default class RecipeCard extends React.Component{
         return recipeList; 
     }
 
+    // Overview: Display recipe summary - food and time to cook
+    displaySummary(){
+        
+        let {food, time} = this.props.recipesData[this.props.count]
+        console.log(food, time)
+        if(food === "breakfast"){
+            return (
+                <p><img src={Sun}/> {time} mins</p>
+            )
+        } else if (food === "lunch"){
+            return (
+                <p><img src={Sun}/> {time} mins</p>
+            )
+        } else if (food === "dinner"){
+            return (
+                <p><img src={Sun}/> {time} mins</p>
+            )
+        } else if (food === "dessert"){
+            return (
+                <p><img src={Sun}/> {time} mins</p>
+            )
+        }
+    }
+
     render(){
+        console.log(this.props.recipesData)
         return(
             <>
                 <article className="ingredient__all">
@@ -56,9 +82,10 @@ export default class RecipeCard extends React.Component{
                      {/* <img className="z-depth-2 ingredient__heroImage" src={Crop} alt=""/> */}
                     {/* {this.displayIngredients()} */}
                     <p className="btn btn-light font-weight-bold recipe-name">{this.props.recipesData[this.props.count]["name"]}</p>
+                    {this.displaySummary()}
                     <div className="emotions">
-                        <img src={Like} height="20px" width="20px"></img>
-                        <img src={Dislike} height="20px" width="20px"></img>
+                        <img src={Like} height="20px" width="20px" alt=""></img>
+                        <img src={Dislike} height="20px" width="20px" alt=""></img>
                     </div>
                     {/* add to shopping cart button */}
                     <button onClick={this.props.recipeAdd} className="btn btn-dark font-weight-bold">Add To Recipe Book</button>
