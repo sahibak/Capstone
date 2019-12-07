@@ -4,6 +4,7 @@ import RecipeImageBckgrnd from "../recipeImageBckgrnd/recipeImageBckgrnd.js";
 import axios from "axios";
 import Footer from "../footer/footer.js";
 import "./recipeStyle.scss";
+import ArrowL from "../../assets/arrow-left.svg";
 
 
 export default class Recipes extends React.Component{
@@ -49,7 +50,8 @@ export default class Recipes extends React.Component{
                 <section className="body">  
                     {/* <p className="oval"></p> */}
                     {/* <button className="btn btn-success">test</button> */}
-                    <RecipeImageBckgrnd className="circle" recipeSwipe={this.recipeSwipe} recipeImage={this.props.recipesData[this.state.count]["image"]}></RecipeImageBckgrnd>
+                    <RecipeImageBckgrnd className="circle" recipeImage={this.props.recipesData[this.state.count]["image"]}></RecipeImageBckgrnd>
+                    <button className="next-recipe-swipe" onClick={this.recipeSwipe}><img src={ArrowL} alt="arrow left"/></button>
                     <RecipeCard recipesData={this.props.recipesData} count={this.state.count} recipeAdd ={this.recipeAdd}></RecipeCard>
                     {/* <Footer></Footer> */}
                 </section>

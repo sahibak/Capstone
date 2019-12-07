@@ -52,16 +52,16 @@ export default class RecipeCard extends React.Component{
             <>
                 <article className="ingredient__all">
                     {/* actual image for the recipe */}
-                    <img className="z-depth-4 ingredient__heroImage" src={this.props.recipesData[this.props.count]["image"]} alt=""/>
+                    <img className="z-depth-1 ingredient__heroImage" src={this.props.recipesData[this.props.count]["image"]} alt=""/>
                      {/* <img className="z-depth-2 ingredient__heroImage" src={Crop} alt=""/> */}
                     {/* {this.displayIngredients()} */}
+                    <p className="btn btn-light font-weight-bold recipe-name">{this.props.recipesData[this.props.count]["name"]}</p>
                     <div className="emotions">
                         <img src={Like} height="20px" width="20px"></img>
                         <img src={Dislike} height="20px" width="20px"></img>
                     </div>
-                    <p className="btn btn-light font-weight-bold">{this.props.recipesData[this.props.count]["name"]}</p>
                     {/* add to shopping cart button */}
-                    <button onClick={this.props.recipeAdd} className="btn btn-dark font-weight-bold">Add To Cart</button>
+                    <button onClick={this.props.recipeAdd} className="btn btn-dark font-weight-bold">Add To Recipe Book</button>
                 </article>
                 {/* <ul>{this.displayRecipeSteps()}</ul> */}
             </>
