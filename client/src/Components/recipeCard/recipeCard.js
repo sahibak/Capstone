@@ -1,12 +1,18 @@
 import React from "react";
 import Like from '../../assets/like.svg';
-import Dislike from '../../assets/face-dislike.svg';
+import NotLike from '../../assets/notlike.svg';
+import NotDislike from '../../assets/dislike-outline.svg';
+import Dislike from '../../assets/dislike-active.svg';
 import "./recipeCardStyle.scss";
 import Sun from "../../assets/sun-with-face.svg";
 import Timer from "../../assets/timer-clock.svg";
 // import Crop from "../../assets/crop.png";
 
 export default class RecipeCard extends React.Component{
+    state={
+        liked:"false",
+        disliked:"false"
+    }
     
     displayIngredients(){
         // empty list to push JSX into
@@ -73,6 +79,29 @@ export default class RecipeCard extends React.Component{
         }
     }
 
+    likeImage(){
+        if(this.state.liked==="true"){
+            return Like
+        }
+            return  NotLike
+    }
+    recipeLiked(){
+        this.setState({
+            liked:"true"
+        })
+    }
+    dislikeImage(){
+        if(this.state.disliked==="true"){
+            return Dislike
+        }
+            return  NotDislike
+    }
+    recipeDisliked(){
+        this.setState({
+            disliked:"true"
+        })
+    }
+
     render(){
         console.log(this.props.recipesData)
         return(
@@ -82,11 +111,11 @@ export default class RecipeCard extends React.Component{
                     <img className="z-depth-1 ingredient__heroImage" src={this.props.recipesData[this.props.count]["image"]} alt=""/>
                      {/* <img className="z-depth-2 ingredient__heroImage" src={Crop} alt=""/> */}
                     {/* {this.displayIngredients()} */}
-                    <p className="btn btn-light font-weight-bold recipe-name">{this.props.recipesData[this.props.count]["name"]}</p>
+                    <p className="h4 font-weight-bold recipe-name">{this.props.recipesData[this.props.count]["name"]}</p>
                     {this.displaySummary()}
                     <div className="emotions">
-                        <img src={Like} height="20px" width="20px" alt=""></img>
-                        <img src={Dislike} height="20px" width="20px" alt=""></img>
+                        <button onClick={()=>this.recipeLiked()}><img src={this.likeImage()} height="20px" width="20px" alt=""></img></button>
+                        <button onClick={()=>this.recipeDisliked()}><img src={this.dislikeImage()} height="20px" width="20px" alt=""></img></button>
                     </div>
                     {/* add to shopping cart button */}
                     <button onClick={this.props.recipeAdd} className="btn btn-dark font-weight-bold">Add To Recipe Book</button>

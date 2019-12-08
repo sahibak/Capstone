@@ -2,6 +2,7 @@ import React from "react";
 import "./recipeBookListStyle.scss";
 // import RecipeInBook from "./recipeInBook/recipeInBook.js";
 import Sun from "../../../assets/sun-with-face.svg";
+import { Link } from "react-router-dom";
 
 export default class RecipeBookList extends React.Component{
     
@@ -10,14 +11,16 @@ export default class RecipeBookList extends React.Component{
         console.log("recipes displayed props", this.props.recipes)
         let recipeBookList = []
         for (let i= 0; i < this.props.recipes.length; i++){
-            let { name, time, food, image } =  this.props.recipes[i]
+            let { name, time, food, image, id } =  this.props.recipes[i]
             recipeBookList.push(
+                <Link to={"/"+id}>
                 <article key={this.props.recipes[i]["id"]} className="each-recipe shadow bg-white rounded">
                     <img className="recipe-image" src={image} alt=""/>
                     <span>{name}</span>
                     {this.imageToUse(food)}
                     <span>{time} mins</span>
                 </article>
+                </Link>
             )
         }
         return recipeBookList
