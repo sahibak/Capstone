@@ -9,40 +9,53 @@ import ArrowL from "../../assets/arrow-left.svg";
 
 export default class Recipes extends React.Component{
     state = {
-        count: 0
+        count: Math.random()*Math.floor(this.props.recipesData.length),
+        recipeadded: false
     }
 
     componentDidMount(){
         // get recipes' data on mounting
         this.props.getRecipes();
+    }    
+
+    // To update the counter of recipes, so app can swipe to next one
+    componentDidUpdate(_,prevState){
+        if(prevState.count === this.state.count){
+            console.log("update ran")
+            let newCountValue = prevState.count+1;
+            // if there is no new recipe to load, the recipe showcase will start from the beginning
+            newCountValue >= this.props.recipesData.length ? this.setState({count: 0}) : this.setState({count:newCountValue});
+        }
     }
-       
-    // when the user swipes for the next recipe
-    recipeSwipe = (event) => {
-        event.preventDefault();
+
+    // To swipe to next recipe
+    recipeSwipe(event){
+        event.preventDefault()
         let newCountValue = this.state.count+1;
         // if there is no new recipe to load, the recipe showcase will start from the beginning
         newCountValue >= this.props.recipesData.length ? this.setState({count: 0}) : this.setState({count:newCountValue});
     }
+    
 
-    // when the user adds a recipe to shopping cart
-    recipeAdd = (event) => {
-        event.preventDefault();
-        console.log("in add function")
-        console.log(this.props.recipesData[this.state.count])
-        // posting data on shopping cart
-        axios.post("http://localhost:8080/shoppingcart", {
-            id: this.props.recipesData[this.state.count]["id"],
-            // ingredientList: this.props.recipesData[this.state.count]["ingredientList"],
-            ingredients: this.props.recipesData[this.state.count]["ingredients"]
-        })
-        .then((response) => {
-            console.log(response.data)
-            // showing the next recipe
-            this.recipeSwipe(event)
-        })
-        .catch((error)=> {console.log(error)})
-    }
+    // // when the user adds a recipe to shopping cart
+    // recipeAdd = (event) => {
+    //     event.preventDefault();
+    //     console.log("in add shopping cartfunction")
+    //     console.log(this.props.recipesData[this.state.count])
+    //     // posting data on shopping cart
+    //     axios.post("http://localhost:8080/shoppingcart", {
+    //         id: this.props.recipesData[this.state.count]["id"],
+    //         // ingredientList: this.props.recipesData[this.state.count]["ingredientList"],
+    //         ingredients: this.props.recipesData[this.state.count]["ingredients"]
+    //     })
+    //     .then((response) => {
+    //         console.log("shopping cart added on server")
+    //         console.log(response.data)
+    //         // showing the next recipe
+    //         this.recipeSwipe(event)
+    //     })
+    //     .catch((error)=> {console.log(error)})
+    // }
 
     render(){
         if(this.props.dataCaptured === true){
@@ -52,8 +65,8 @@ export default class Recipes extends React.Component{
                     {/* <p className="oval"></p> */}
                     {/* <button className="btn btn-success">test</button> */}
                     <RecipeImageBckgrnd className="circle" recipeImage={this.props.recipesData[this.state.count]["image"]}></RecipeImageBckgrnd>
-                    <button className="next-recipe-swipe" onClick={this.recipeSwipe}><img src={ArrowL} alt="arrow left"/></button>
-                    <RecipeCard recipesData={this.props.recipesData} count={this.state.count} recipeAdd ={this.recipeAdd}></RecipeCard>
+                    <button className="next-recipe-swipe" onClick={(event) => this.recipeSwipe(event)}><img src={ArrowL} alt="arrow left"/></button>
+                    <RecipeCard recipesData={this.props.recipesData} count={this.state.count} recipeAdd ={this.props.recipeAdd}></RecipeCard>
                     {/* <Footer></Footer> */}
                 </section>
                 {/* <Footer></Footer> */}

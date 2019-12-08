@@ -70,13 +70,29 @@ export default class App extends React.Component{
     // }
   }
 
+  // when the user adds a recipe to shopping cart
+  recipeAdd = (event,index) => {
+    event.preventDefault();
+    // posting data on shopping cart
+    axios.post("http://localhost:8080/shoppingcart", {
+        id: this.state.recipesData[index]["id"]
+    })
+    .then((response) => {
+      console.log("shopping status updated", response.data)
+      this.setState({
+        recipesData: response.data
+      })
+    })
+    .catch((error)=> {console.log(error)})
+  }
+
   render(){
       return (
         <div className="App">
           <BrowserRouter>
             <Switch>
                 <Route path="/search" exact render = {(props) => <SearchPage {...props} userSelection={this.userSelection}></SearchPage>}></Route>
-                <Route path="/" exact render = {() => <Recipes userSearch= {this.state.userSearch} userInput={this.state.userInput} getRecipes={this.getRecipes} recipesData={this.state.recipesData} dataCaptured={this.state.dataCaptured}></Recipes>}></Route>
+                <Route path="/" exact render = {() => <Recipes userSearch= {this.state.userSearch} userInput={this.state.userInput} getRecipes={this.getRecipes} recipesData={this.state.recipesData} dataCaptured={this.state.dataCaptured} recipeAdd={this.recipeAdd}></Recipes>}></Route>
                 <Route path="/shoppingcart" exact component = {ShoppingCart}></Route>
                 <Route path="/recipebook" exact component = {RecipeBook}></Route>
                 {/* <Route path="/recipe" render={(this.state.recipesData) => <Recipe recipesData={this.state.recipesData}></Recipe>}></Route> */}

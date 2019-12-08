@@ -35,7 +35,7 @@ router.post("/",(request,response) => {
             break;
         }
     }
-    response.send("items posted")
+    response.send(recipes)
 })
 
 // GET Request

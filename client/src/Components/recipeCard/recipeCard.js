@@ -6,6 +6,7 @@ import Dislike from '../../assets/dislike-active.svg';
 import "./recipeCardStyle.scss";
 import Sun from "../../assets/sun-with-face.svg";
 import Timer from "../../assets/timer-clock.svg";
+import RightArrow from "../../assets/rightArrow.svg";
 // import Crop from "../../assets/crop.png";
 
 export default class RecipeCard extends React.Component{
@@ -20,7 +21,6 @@ export default class RecipeCard extends React.Component{
         // getting the details from the props, for the recipe to be displayed 
         let recipeDetails = this.props.recipesData[this.props.count]
         // getting ingredient list
-        console.log(recipeDetails)
         let ingredients = recipeDetails["ingredients"]
         // for every item in ingridients, run the loop and create JSX
         for (let i=0; i<ingredients.length; i++){
@@ -57,9 +57,7 @@ export default class RecipeCard extends React.Component{
 
     // Overview: Display recipe summary - food and time to cook
     displaySummary(){
-        
         let {food, time} = this.props.recipesData[this.props.count]
-        console.log(food, time)
         if(food === "breakfast"){
             return (
                 <p><img src={Sun} alt=""/> <img src={Timer} alt=""/>{time} mins</p>
@@ -80,30 +78,18 @@ export default class RecipeCard extends React.Component{
     }
 
     likeImage(){
-        if(this.state.liked==="true"){
+        console.log("getting class")
+        console.log(this.props.recipesData[this.props.count]["name"])
+        console.log(this.props.recipesData[this.props.count]["shopping"])
+        
+        if(this.props.recipesData[this.props.count]["shopping"] === true){
             return Like
+        } else {
+            return NotLike
         }
-            return  NotLike
-    }
-    recipeLiked(){
-        this.setState({
-            liked:"true"
-        })
-    }
-    dislikeImage(){
-        if(this.state.disliked==="true"){
-            return Dislike
-        }
-            return  NotDislike
-    }
-    recipeDisliked(){
-        this.setState({
-            disliked:"true"
-        })
     }
 
     render(){
-        console.log(this.props.recipesData)
         return(
             <>
                 <article className="ingredient__all">
@@ -113,12 +99,16 @@ export default class RecipeCard extends React.Component{
                     {/* {this.displayIngredients()} */}
                     <p className="h4 font-weight-bold recipe-name">{this.props.recipesData[this.props.count]["name"]}</p>
                     {/* {this.displaySummary()} */}
-                    <div className="emotions">
+                    {/* <div className="emotions">
                         <button onClick={()=>this.recipeLiked()}><img src={this.likeImage()} height="20px" width="20px" alt=""></img></button>
                         <button onClick={()=>this.recipeDisliked()}><img src={this.dislikeImage()} height="20px" width="20px" alt=""></img></button>
-                    </div>
+                    </div> */}
                     {/* add to shopping cart button */}
-                    <button onClick={this.props.recipeAdd} className="btn btn-dark font-weight-bold">Add To Recipe Book</button>
+                    <div>
+                        <button onClick={(event) => this.props.recipeAdd(event,this.props.count)}><img src={this.likeImage()} height="32px" width="32px" alt=""></img> </button>
+                        {/* swipe to next recipe button */}
+                        <button onClick={(event) => this.props.recipeAdd(event,this.props.count)}><img src={RightArrow} height="32px" width="32px" alt=""></img> </button>
+                    </div>    
                 </article>
                 {/* <ul>{this.displayRecipeSteps()}</ul> */}
             </>

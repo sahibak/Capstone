@@ -1,6 +1,8 @@
 .circle-dim{
-    height: 200px;
-    width: 350px;
+    
+    height: 300px;
+    width: 100vw;
+    // width: 350px;
     overflow: hidden;
     opacity: .2;
     
@@ -15,13 +17,13 @@
         // height: 100%;
         object-fit: cover;
         position: relative;
-        top: -140px;
+        top: -100px;
     }
     
 }
 
-.recipe_add-to-shopping-cart{
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-}
+// .recipe_add-to-shopping-cart{
+//     width: 100%;
+//     display: flex;
+//     justify-content: flex-end;
+// }
