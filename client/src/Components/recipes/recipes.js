@@ -56,7 +56,7 @@ export default class Recipes extends React.Component{
                     <RecipeCard recipesData={this.props.recipesData} count={this.state.count} recipeAdd ={this.recipeAdd}></RecipeCard>
                     {/* <Footer></Footer> */}
                 </section>
-                <Footer></Footer>
+                {/* <Footer></Footer> */}
                 </>
             )
         } else {

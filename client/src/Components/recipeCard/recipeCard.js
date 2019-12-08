@@ -112,7 +112,7 @@ export default class RecipeCard extends React.Component{
                      {/* <img className="z-depth-2 ingredient__heroImage" src={Crop} alt=""/> */}
                     {/* {this.displayIngredients()} */}
                     <p className="h4 font-weight-bold recipe-name">{this.props.recipesData[this.props.count]["name"]}</p>
-                    {this.displaySummary()}
+                    {/* {this.displaySummary()} */}
                     <div className="emotions">
                         <button onClick={()=>this.recipeLiked()}><img src={this.likeImage()} height="20px" width="20px" alt=""></img></button>
                         <button onClick={()=>this.recipeDisliked()}><img src={this.dislikeImage()} height="20px" width="20px" alt=""></img></button>

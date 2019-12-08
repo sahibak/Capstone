@@ -22,37 +22,37 @@ export default class SearchPage extends React.Component{
         return(
             <div className="container">
                 <form className="form" onSubmit={this.searchSubmit} >
-                    <div className="input-field col s2 searchbar">
-                        <i className="material-icons prefix">search</i>
+                    <div className="input-field s2 searchbar">
                         <input type="text" className="autocomplete" name="searchbar" placeholder="Enter Search"></input>
+                        <button type="submit"><i className="material-icons prefix">search</i></button>
                     </div>
                     <div>
-                        <p className="label font-weight-bold">Food Category</p>
-                        <div className ="space-between">
-                        <label className="fancy-checkbox">
-                            <input type="checkbox" name="category1" value="Vegetarian"/>
-                                <img className="checked" src={GreenSelected} alt=""/>
-                                <img className="unchecked" src={Green} alt=""/>
-                        </label>
-                        <label className="fancy-checkbox">
-                            <input type="checkbox" name="category2" value="Vegan"/>
-                                <img className="checked" src={VeganSelected} alt=""/>
-                                <img className="unchecked" src={Vegan} alt=""/>
-                        </label>
-                        <label className="fancy-checkbox">
-                            <input type="checkbox" name="category3" value="Fish"/>
-                                <img className="checked" src={FishOff} alt=""/>
-                                <img className="unchecked" src={Fish} alt=""/>
-                        </label>
+                        <p className="cat font-weight-bold">Food Category</p>
+                        <div className ="category-group">
+                            <label className="fancy-checkbox">
+                                <input type="checkbox" name="category1" value="Vegetarian"/>
+                                    <img className="checked icon" src={GreenSelected} alt=""/>
+                                    <img className="unchecked icon" src={Green} alt=""/>
+                            </label>
+                            <label className="fancy-checkbox">
+                                <input type="checkbox" name="category2" value="Vegan"/>
+                                    <img className="checked icon" src={VeganSelected} alt=""/>
+                                    <img className="unchecked icon" src={Vegan} alt=""/>
+                            </label>
+                            <label className="fancy-checkbox">
+                                <input type="checkbox" name="category3" value="Fish"/>
+                                    <img className="checked icon" src={FishOff} alt=""/>
+                                    <img className="unchecked icon" src={Fish} alt=""/>
+                            </label>
                         </div>
                     </div>
                     <div>
-                        <p className="label font-weight-bold">Allergies</p>
-                        <div className ="space-between">
+                        <p className="cat font-weight-bold">Allergies</p>
+                        <div className="category-group">
                             <label className="fancy-checkbox">
                                 <input type="checkbox" name="allergy1" value="Peanuts"/>
-                                <img className="checked" src={PeanutOff} alt=""/>
-                                <img className="unchecked" src={Peanut} alt=""/>
+                                <img className="checked icon" src={PeanutOff} alt=""/>
+                                <img className="unchecked icon" src={Peanut} alt=""/>
                             </label>
                             
                             <label>
@@ -65,12 +65,33 @@ export default class SearchPage extends React.Component{
                             </label>
                             <label className="fancy-checkbox">
                                 <input type="checkbox" name="allergy4" value="Shellfish"/>
-                                <img className="checked" src={ShellfishOff} alt=""/>
-                                <img className="unchecked" src={Shellfish} alt=""/>
+                                <img className="checked icon" src={ShellfishOff} alt=""/>
+                                <img className="unchecked icon" src={Shellfish} alt=""/>
                             </label>
                         </div>
+                        <div>
+                        <p className="cat font-weight-bold">Type</p>
+                        <div className="category-group">
+                            <label className="fancy-checkbox">
+                                <input type="checkbox" name="allergy1" value="Peanuts"/>
+                                <img className="checked icon" src={PeanutOff} alt=""/>
+                                <img className="unchecked icon" src={Peanut} alt=""/>
+                            </label>
+                            <label className="fancy-checkbox">
+                                <input type="checkbox" name="allergy1" value="Peanuts"/>
+                                <img className="checked icon" src={PeanutOff} alt=""/>
+                                <img className="unchecked icon" src={Peanut} alt=""/>
+                            </label>
+                            <label className="fancy-checkbox">
+                                <input type="checkbox" name="allergy1" value="Peanuts"/>
+                                <img className="checked icon" src={PeanutOff} alt=""/>
+                                <img className="unchecked icon" src={Peanut} alt=""/>
+                            </label>
+                            
+                        </div>
+                        </div>
                     </div>
-                    <button className="btn btn-dark font-weight-bold" type="submit">Submit</button>
+                    {/* <button className="btn btn-dark font-weight-bold" type="submit">Submit</button> */}
                 </form>
                 {/* <Footer className="footer-class"></Footer> */}
              </div>
