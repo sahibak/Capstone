@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import Footer from "../footer/footer.js";
+// import Footer from "../footer/footer.js";
 import "./shoppingCartStyle.scss"
 
 export default class ShoppingCart extends React.Component{
@@ -41,7 +41,7 @@ export default class ShoppingCart extends React.Component{
             for (let n = 0; n<ingredientsForRecipe.length; n++){
                 let itemName = ingredientsForRecipe[n]["name"]
                 let qty = ingredientsForRecipe[n]["qty"]
-                let unit = ingredientsForRecipe[n]["unit"]
+                // let unit = ingredientsForRecipe[n]["unit"]
                 let categoryToCheck = ingredientsForRecipe[n]["category"]
                 
                 // cheking if the category exists as a key, if category doesnt exist creating empty obj

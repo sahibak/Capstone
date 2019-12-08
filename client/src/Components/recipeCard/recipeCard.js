@@ -56,19 +56,19 @@ export default class RecipeCard extends React.Component{
         console.log(food, time)
         if(food === "breakfast"){
             return (
-                <p><img src={Sun}/> <img src={Timer}/>{time} mins</p>
+                <p><img src={Sun} alt=""/> <img src={Timer} alt=""/>{time} mins</p>
             )
         } else if (food === "lunch"){
             return (
-                <p><img src={Sun}/> {time} mins</p>
+                <p><img src={Sun} alt=""/> {time} mins</p>
             )
         } else if (food === "dinner"){
             return (
-                <p><img src={Sun}/> {time} mins</p>
+                <p><img src={Sun} alt=""/> {time} mins</p>
             )
         } else if (food === "dessert"){
             return (
-                <p><img src={Sun}/> {time} mins</p>
+                <p><img src={Sun} alt=""/> {time} mins</p>
             )
         }
     }

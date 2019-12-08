@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
-import "./style.scss"
+import RecipeBookList from "./recipeBookList/recipeBookList.js";
+import "./recipeBookStyle.scss";
 
 export default class RecipeBook extends React.Component{
     state = {
@@ -22,6 +23,13 @@ export default class RecipeBook extends React.Component{
     render(){
         return(
             <>
+                <h1>GroSure</h1>
+                <h1>My Recipe Book</h1>
+                <h1>This Week</h1>
+                <article>
+                    <RecipeBookList recipes={this.state.recipes}></RecipeBookList>
+                </article>
             </>
         )
     }
+}

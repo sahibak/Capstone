@@ -1,6 +1,6 @@
 import React from "react";
 import"./recipeImageBckgrndStyles.scss";
-import Crop from "../../assets/crop.png";
+// import Crop from "../../assets/crop.png";
 
 export default class RecipeImageBckgrnd extends React.Component{
     render(){

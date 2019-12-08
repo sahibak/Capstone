@@ -4,6 +4,7 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 import SearchPage from './Components/searchPage/searchPage';
 import Recipes from './Components/recipes/recipes.js';
 import ShoppingCart from "./Components/shoppingCart/shoppingCart.js";
+import RecipeBook from "./Components/recipeBook/recipeBook.js";
 import axios from "axios";
 // import 'materialize-css/dist/css/materialize.min.css';
 
@@ -76,7 +77,7 @@ export default class App extends React.Component{
                 <Route path="/search" exact render = {(props) => <SearchPage {...props} userSelection={this.userSelection}></SearchPage>}></Route>
                 <Route path="/" exact render = {() => <Recipes userSearch= {this.state.userSearch} userInput={this.state.userInput} getRecipes={this.getRecipes} recipesData={this.state.recipesData} dataCaptured={this.state.dataCaptured}></Recipes>}></Route>
                 <Route path="/shoppingcart" exact component = {ShoppingCart}></Route>
-                <Route path="/recipebook" exact component = {ShoppingCart}></Route>
+                <Route path="/recipebook" exact component = {RecipeBook}></Route>
             </Switch>
         </BrowserRouter>
         </div>

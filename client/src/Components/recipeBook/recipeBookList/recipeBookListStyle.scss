@@ -1,0 +1,15 @@
+.recipe-image{
+    height: 50px;
+    width:50px;
+    border-radius: 50%;
+    position: relative;
+    object-fit: cover;
+}
+
+.each-recipe{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding:10px;
+    margin:10px;
+}
