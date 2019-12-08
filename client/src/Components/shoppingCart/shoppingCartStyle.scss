@@ -21,12 +21,10 @@
     color: white;
 }
 
-.royclass {
-    background-color: blue;
-}
-
 .shoppingCart{
     padding-top: 150px;
+    height: 500px;
+    overflow: scroll;
 }
 
 .label{
@@ -34,6 +32,7 @@
     margin-top: 20px;
 }
 
-.std-card{
-    
+.purchased{
+    opacity: 0.5;
+    text-decoration: line-through;
 }

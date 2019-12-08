@@ -14,7 +14,6 @@ export default class ShoppingCart extends React.Component{
     componentDidMount(){
         axios.get("http://localhost:8080/shoppingcart")
         .then(response => {
-            console.log("shoppin",response.data)
             this.setState({
                 recipeIngredientsList: response.data
             })
@@ -69,8 +68,8 @@ export default class ShoppingCart extends React.Component{
         let i = 0
         let shoppingIngredients = []
         this.renderingList = this.renderingIngredient()
-        // Overview: looping over each key(category) and getting items obj (obj of ingredients)
-        //  looping over items obj to get key (item name) and value (qty)
+        // Overview: looping over each key(category) and getting items-obj (obj of ingredients)
+        //  looping over items-obj to get key (item name) and value (qty)
 
         // returning list of category keys
         let categoryList = Object.keys(this.renderingList)
@@ -85,8 +84,8 @@ export default class ShoppingCart extends React.Component{
             for (let item in itemsObj){
                 let qty = itemsObj[item]
                 shoppingIngredients.push(
-                    <ul key={item} className={`${this.determineCategory(category)}`}>
-                        <li className="shadow p-3 mb-2 font-weight-bold rounded " onClick={(event) => this.itemPurchased(item,qty)} >{item} {qty}</li>
+                    <ul key={item} onClick={(event) => this.itemPurchased(item,qty, category,event)} className={`${this.determineCategory(category)}`}>
+                        <li className="shadow p-3 mb-2 font-weight-bold rounded "  >{item} {qty}</li>
                     </ul>
                 )
                 i ++
@@ -110,26 +109,49 @@ export default class ShoppingCart extends React.Component{
     }
 
     // Overview: once the item is clicked, it is assumed to be purchased and moved to the bottom of the list
-    itemPurchased(item,qty){
+    itemPurchased(item,qty, category,event){
+        console.log(event)
         for (let i =0; i<this.shoppingList.length; i++){
             for (let n =0; n<this.shoppingList[i].length; n++){ 
-                if(this.shoppingList[i][n]["key"] === item){
-                    this.shoppingList[i].splice(n,1)
+               if(this.shoppingList[i][n]["key"] === item){ 
+                   console.log(this.shoppingList[i][n])
+                   console.log(this.shoppingList[i][n]["key"])
+                   console.log(typeof this.shoppingList[i][n] )
+                   this.shoppingList[i].splice(n,1)
+                //    delete this.shoppingList[i][n]
+                   console.log(this.shoppingList[i])
                     this.shoppingList.push(
-                        <ul key={item} className="roysclass">
-                            <li onClick={(event) => this.itemPurchased(item,qty)} >{item} {qty}</li>
+                        <ul key={item} className={` purchased ${this.determineCategory(category)}`}>
+                            <li className="shadow p-3 mb-2 font-weight-bold rounded">{item} {qty}</li>
                         </ul>
                     )
+                   break;
+                
+                
+                //     this.shoppingList[i].splice(n,1)
+                //     this.setState({
+                //         shoppingCart: this.shoppingList
+                //     })
+                //     // this.shoppingList.push(
+                //     //     <ul key={item} className="roysclass">
+                //     //         <li onClick={(event) => this.itemPurchased(item,qty)} >{item} {qty}</li>
+                //     //     </ul>
+                //     // )
+                //     // console.log(this.shoppingList)
+                //     // console.log("----------------------")
                 }
             }
-        }                 
+        }    
+        console.log(this.shoppingList)             
         this.setState({
             shoppingCart: this.shoppingList
         })
+       
     }    
 
     render(){
         if(this.state.recipeIngredientsList.length>0){
+            console.log("render")
             return(
                 <>
                     <div className="shoppingCart">
