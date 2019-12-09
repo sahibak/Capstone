@@ -1,5 +1,6 @@
 import React from "react";
 import "./recipeInBookStyle.scss";
+import NavBarSingle from "../navBarSingle/navBarSingle.js";
 // import Sun from "../../assets/sun-with-face.svg";
 import axios from "axios";
 import RecipeImageBckgrndRIB from "../recipeImageBckgrndRIB/recipeImageBckgrndRIB.js";
@@ -72,6 +73,7 @@ export default class RecipeInBook extends React.Component{
         if(this.state.dataReceived == true){
             return(
                 <>
+                    <NavBarSingle></NavBarSingle>
                     <RecipeImageBckgrndRIB recipeImage={this.state.recipeData[0]["image"]}></RecipeImageBckgrndRIB>
                     <img className="z-depth-1 ingredient__heroImageRIB" src={this.state.recipeData[0]["image"]} alt=""/>
                     <RecipeCardRIB recipe={this.state.recipeData[0]}></RecipeCardRIB>
