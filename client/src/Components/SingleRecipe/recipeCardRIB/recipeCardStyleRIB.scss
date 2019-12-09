@@ -1,4 +1,12 @@
 .ingredient{
+    &__Image{
+        box-sizing: border-box;
+        height: 32px;
+        border-radius: 50px;
+        width: 32px;
+        margin: 5px;
+        margin-right: 10px;
+    }
  
 
     &__all{
@@ -20,6 +28,18 @@
         position: relative;
         // top: -20vh;
         object-fit: cover;
+    }
+
+    &__Group{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    &__List{
+        height: 32px;
+        box-sizing: content-box;
+        margin-bottom: 0px;
     }
 }
 
