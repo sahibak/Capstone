@@ -41,7 +41,7 @@ export default class ShoppingCart extends React.Component{
             for (let n = 0; n<ingredientsForRecipe.length; n++){
                 let itemName = ingredientsForRecipe[n]["name"]
                 let qty = ingredientsForRecipe[n]["qty"]
-                // let unit = ingredientsForRecipe[n]["unit"]
+                let unit = ingredientsForRecipe[n]["unit"]
                 let categoryToCheck = ingredientsForRecipe[n]["category"]
                 
                 // cheking if the category exists as a key, if category doesnt exist creating empty obj
@@ -50,10 +50,11 @@ export default class ShoppingCart extends React.Component{
                 }
                 // cheking if the item exists under the category, if item doesnt exist adding it in and initializing it to zero
                 if (!(itemName in renderingList[categoryToCheck])) {
-                    renderingList[categoryToCheck][itemName] = 0
+                    renderingList[categoryToCheck][itemName] = [Number(0)]
+                    renderingList[categoryToCheck][itemName].push(unit)
                 }
                 // updating the qty of the item
-                renderingList[categoryToCheck][itemName] += Number(qty)
+                renderingList[categoryToCheck][itemName][0] += Number(qty)
             }
         }
         return(renderingList)
