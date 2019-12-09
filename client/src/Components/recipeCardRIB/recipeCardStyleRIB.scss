@@ -48,3 +48,11 @@
 .doNotDisplay{
     display:none;
 }
+
+.recipeCard{
+    position: relative;
+    top:-35vh;
+    background-color: #FDFFFC;
+    overflow:scroll;
+    height:70vh;
+}
