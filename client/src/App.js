@@ -2,12 +2,12 @@ import React from 'react';
 import './App.css';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import SearchPage from './Components/searchPage/searchPage';
-import Recipes from './Components/recipes/recipes.js';
+import Recipes from './Components/AllRecipes/recipes/recipes.js';
 import ShoppingCart from "./Components/shoppingCart/shoppingCart.js";
-import RecipeBook from "./Components/recipeBook/recipeBook.js";
+import RecipeBook from "./Components/RecipeBookComponents/recipeBook/recipeBook.js";
 import axios from "axios";
 // import Recipe from "./Components/recipe/recipe.js";
-import RecipeInBook from "./Components/recipeInBook/recipeInBook.js";
+import RecipeInBook from "./Components/SingleRecipe/recipeInBook/recipeInBook.js";
 // import 'materialize-css/dist/css/materialize.min.css';
 
 export default class App extends React.Component{

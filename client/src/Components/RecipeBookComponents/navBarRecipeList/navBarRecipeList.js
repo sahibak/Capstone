@@ -1,7 +1,7 @@
 import React from "react";
-import "../navBar/navBar.scss";
-import Recipes from "../../assets/recipes.svg";
-import ShoppingCart from "../../assets/shopping-cart.svg";
+import "./navBarRecipeList.scss";
+import Recipes from "../../../assets/recipes.svg";
+import ShoppingCart from "../../../assets/shopping-cart.svg";
 import { Link } from "react-router-dom";
 
 export default class NavBarRecipeList extends React.Component{

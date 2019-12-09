@@ -1,12 +1,12 @@
 import React from "react";
 import RecipeCard from "../recipeCard/recipeCard.js";
 import RecipeImageBckgrnd from "../recipeImageBckgrnd/recipeImageBckgrnd.js";
-import axios from "axios";
-import Footer from "../../footer/footer.js";
+// import axios from "axios";
+// import Footer from "../../footer/footer.js";
 import "./recipeStyle.scss";
-import ArrowL from "../../assets/arrow-left.svg";
+// import ArrowL from "../../assets/arrow-left.svg";
 import NavBar from "../navBar/navBar.js";
-import Ingredients from "../../ingredients/ingredients.js";
+// import Ingredients from "../../ingredients/ingredients.js";
 
 
 export default class Recipes extends React.Component{
