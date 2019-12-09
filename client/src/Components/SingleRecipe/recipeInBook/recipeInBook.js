@@ -2,8 +2,8 @@ import React from "react";
 import "./recipeInBookStyle.scss";
 import Sun from "../../assets/sun-with-face.svg";
 import axios from "axios";
-import RecipeImageBckgrndRIB from "../recipeImageBckgrndRIB/recipeImageBckgrndRIB";
-import RecipeCardRIB from "../recipeCardRIB/recipeCardRIB";
+import RecipeImageBckgrndRIB from "../recipeImageBckgrndRIB/recipeImageBckgrndRIB.js";
+import RecipeCardRIB from "../recipeCardRIB/recipeCardRIB.js";
 
 export default class RecipeInBook extends React.Component{
     state = {

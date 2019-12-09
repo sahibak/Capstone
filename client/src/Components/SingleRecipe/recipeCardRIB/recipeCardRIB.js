@@ -7,7 +7,7 @@ import "./recipeCardStyleRIB.scss";
 import Sun from "../../assets/sun-with-face.svg";
 import Timer from "../../assets/timer-clock.svg";
 import RightArrow from "../../assets/rightArrow.svg";
-import Ingredients from "../ingredients/ingredients";
+import Ingredients from "../../ingredients/ingredients";
 // import Crop from "../../assets/crop.png";
 import Circle from "../../assets/circle.svg";
 import CircleCheck from "../../assets/check-circle.svg";

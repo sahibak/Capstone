@@ -1,7 +1,7 @@
 import React from "react";
 import "../navBar/navBar.scss";
 import Recipes from "../../assets/recipes.svg";
-import Search from "../../assets/search.svg";
+import ShoppingCart from "../../assets/shopping-cart.svg";
 import { Link } from "react-router-dom";
 
 export default class NavBarRecipeList extends React.Component{
@@ -10,7 +10,7 @@ export default class NavBarRecipeList extends React.Component{
             <>
                 <div className="navBar">
                 <Link to="/"><img src={Recipes}/></Link>
-                <Link to="/search"><img src={Search}/></Link>
+                <Link to="/shoppingcart"><img src={ShoppingCart}/></Link>
                 </div>
             </>
         )
