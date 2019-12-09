@@ -1,7 +1,8 @@
 import React from "react";
 import axios from "axios";
 // import Footer from "../footer/footer.js";
-import "./shoppingCartStyle.scss"
+import "./shoppingCartStyle.scss";
+import NavBar from "../AllRecipes/navBar/navBar.js";
 
 export default class ShoppingCart extends React.Component{
     state = {
@@ -154,6 +155,7 @@ export default class ShoppingCart extends React.Component{
             console.log("render")
             return(
                 <>
+                    <NavBar></NavBar>
                     <div className="shoppingCart">
                         {this.state.shoppingCart}
                     </div>
