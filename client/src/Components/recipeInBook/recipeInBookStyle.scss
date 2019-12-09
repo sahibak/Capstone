@@ -29,3 +29,15 @@
 .doNotDisplay{
     display:none;
 }
+
+.ingredient{
+
+    &__heroImage{
+        height: 230px;
+        width:230px;
+        border-radius: 50%;
+        position: relative;
+        // top: -20vh;
+        object-fit: cover;
+    }
+}
