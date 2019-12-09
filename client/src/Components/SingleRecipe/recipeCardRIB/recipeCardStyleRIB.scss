@@ -75,7 +75,8 @@
     top:-35vh;
     background-color: #FDFFFC;
     overflow:scroll;
-    height:70vh;
+    height:64vh;
+    border-radius: 0px 100px 0px 0px;
 }
 
 .steps{
@@ -93,9 +94,12 @@
 
 .stdStyle{
     text-align: left;
-    height: 60px;
-    padding: 5px;
+    height: 100px;
+    padding: 10px;
     border-top:#FFB045 2px solid;
     /* border-radius: 10px; */
     border-bottom:#FFB045 2px solid;
+    overflow:hidden;
+    margin-bottom: 5px;
+    border-radius: 10px;
 }

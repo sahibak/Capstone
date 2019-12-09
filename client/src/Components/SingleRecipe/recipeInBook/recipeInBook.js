@@ -73,7 +73,7 @@ export default class RecipeInBook extends React.Component{
             return(
                 <>
                     <RecipeImageBckgrndRIB recipeImage={this.state.recipeData[0]["image"]}></RecipeImageBckgrndRIB>
-                    <img className="z-depth-1 ingredient__heroImage" src={this.state.recipeData[0]["image"]} alt=""/>
+                    <img className="z-depth-1 ingredient__heroImageRIB" src={this.state.recipeData[0]["image"]} alt=""/>
                     <RecipeCardRIB recipe={this.state.recipeData[0]}></RecipeCardRIB>
                 </>
             )
