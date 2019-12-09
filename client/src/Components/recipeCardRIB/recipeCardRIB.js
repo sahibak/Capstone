@@ -9,13 +9,21 @@ import Timer from "../../assets/timer-clock.svg";
 import RightArrow from "../../assets/rightArrow.svg";
 import Ingredients from "../ingredients/ingredients";
 // import Crop from "../../assets/crop.png";
+import Circle from "../../assets/circle.svg";
+import CircleCheck from "../../assets/check-circle.svg";
 
 
 
 export default class RecipeCardRIB extends React.Component{
     state={
-        liked:"false",
-        disliked:"false"
+        steps:{}
+    }
+
+    componentDidMount(){
+        console.log("this.props.recipe",this.props.recipe)
+        this.setState({
+            steps: this.props.recipe["recipe"]
+        })
     }
     
     displayIngredients(){
@@ -28,13 +36,13 @@ export default class RecipeCardRIB extends React.Component{
             let { name, qty, unit, image } = ingredients[i]
             ingredientList.push(
                 <>
-                    <div key = {i} className="ingredient__Group">
-                        <img className="z-depth-4 ingredient__Image" src={image} alt=""/>
+                    {/* <div key = {i} className="ingredient__Group">
+                        <img className="z-depth-4 ingredient__Image" src={image} alt=""/> */}
                         <ul className="ingredient__List">
-                            <li key = {i}>{name}</li>
-                            <li className="ingredient__Qty">{qty} {unit}</li>
+                            <li key = {i}>{name} - {qty} {unit}</li>
+                            {/* <li className="ingredient__Qty"></li> */}
                         </ul>
-                    </div>
+                    {/* </div> */}
                 </>
             )
         }   
@@ -44,25 +52,56 @@ export default class RecipeCardRIB extends React.Component{
     displayRecipeSteps(){
         let recipeList = []
         // getting the recipe steps 
-        let recipeSteps = this.props.recipe["recipe"]
+        let recipeSteps = this.state.steps
         // for steps in recipe, run loop and create JSX
-        for (let i=0; i<recipeSteps.length; i++){
+        for (let i=1; i<=Object.keys(this.state.steps).length; i++){
+            let currentStepNumber = "Step"+i
+            let currentStep = this.state.steps[currentStepNumber]
+            let currentStepStatus = this.state.steps[currentStepNumber][1]
             recipeList.push(
-                 <li key = {i}>{recipeSteps[i]}</li>
+                 <li onClick = {() => this.completedStep(currentStepNumber)} className={this.displayImage(currentStepNumber)} key={currentStepNumber}>
+                     {/* <img src={this.displayImage(currentStepNumber)} alt=""/>*/}
+                    {currentStep}</li> 
             )
         }
         return recipeList; 
     }
 
+    completedStep(currentStepNumber){
+        let allSteps = this.state.steps
+        // updating the status of the step
+        allSteps[currentStepNumber][1] = !allSteps[currentStepNumber][1]
+        // updating state
+        this.setState({
+            steps: allSteps
+        })
+    }
+
+    displayImage(currentStepNumber){
+        if(this.state.steps[currentStepNumber][1]=== true){
+            // return CircleCheck
+            return "completed stdStyle"
+        } else{
+            // return Circle
+            return "pending stdStyle"
+        }
+    }
+
     render(){
-        console.log(this.props.recipe)
+        if(this.state.steps){
+            return(
+                <>
+                    <article className="recipeCard">
+                    <p className="h4 font-weight-bold recipe-name">{this.props.recipe["name"]}</p>
+                        <div>{this.displayIngredients()}</div>
+                        <ul>{this.displayRecipeSteps()}</ul>
+                    </article>
+                </>
+            )
+        }
         return(
             <>
-                <article className="recipeCard">
-                <p className="h4 font-weight-bold recipe-name">{this.props.recipe["name"]}</p>
-                    <div>{this.displayIngredients()}</div>
-                    <ul>{this.displayRecipeSteps()}</ul>
-                </article>
+            <p>Nothing to show</p>
             </>
         )
     }

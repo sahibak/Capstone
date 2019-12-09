@@ -50,9 +50,32 @@
 }
 
 .recipeCard{
+    padding:10px;
     position: relative;
     top:-35vh;
     background-color: #FDFFFC;
     overflow:scroll;
     height:70vh;
+}
+
+.steps{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.completed{
+    text-decoration: line-through;
+    text-decoration-color: #FFB045;
+    // transition-property: text-decoration;
+}
+
+.stdStyle{
+    text-align: left;
+    height: 60px;
+    padding: 5px;
+    border-top:#FFB045 2px solid;
+    /* border-radius: 10px; */
+    border-bottom:#FFB045 2px solid;
 }

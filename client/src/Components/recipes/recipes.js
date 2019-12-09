@@ -76,6 +76,7 @@ export default class Recipes extends React.Component{
                     {/* <Ingredients recipeDetails={this.props.recipesData[this.state.count]}></Ingredients> */}
                     {/* <Footer></Footer> */}
                 </section>
+                <
                 {/* <Footer></Footer> */}
                 </>
             )

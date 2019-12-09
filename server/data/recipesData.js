@@ -13,8 +13,7 @@ module.exports = [
         "shopping":"",
         "favorite": "",
         "image":"https://image.shutterstock.com/image-photo/healthy-food-clean-eating-selection-260nw-722718097.jpg",
-        "recipe": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec quam sed massa efficitur euismod. Donec accumsan, orci sit amet aliquet gravida, quam ex fermentum urna, ac varius orci velit cursus arcu.","Nulla tristique mauris at urna finibus vestibulum. Nulla dapibus blandit pretium. Quisque lorem ipsum, rhoncus eget tellus vitae, commodo euismod sem. Aenean tempus turpis fermentum diam imperdiet sodales. Donec ipsum nulla, posuere non augue eget, posuere sodales nunc. Nulla eget ex vel dolor suscipit cursus sit amet vel nisl.","Nulla varius ligula vitae orci tincidunt dapibus.","Vestibulum rhoncus nibh nisi, a fermentum erat lacinia quis. Duis volutpat at dui sed molestie. Etiam in elit Nullam vitae mi ipsum.","Integer est libero, aliquet at lacus id, luctus sodales ex. Proin et venenatis purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi facilisis molestie ex, sed dignissim tortor porta nec. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce pulvinar risus eget tincidunt semper. Aenean a nisi quis odio porttitor faucibus. Nunc fringilla viverra erat id scelerisque. Donec luctus vehicula nisi, tempor interdum ipsum dictum vel. Curabitur lacus erat, dignissim iaculis massa et, vehicula malesuada."],
-        "ingredientList": ["eggplant","pasta"],
+        "recipe": {Step1:["Lorem ipsum dolor sit amet, consectetur adipiscing elit.",false],Step2:["Lorem ipsum dolor sit amet, consectetur adipiscing elit.",false],Step3:["Lorem ipsum dolor sit amet, consectetur adipiscing elit.",false]},
         "ingredients":[
             {
                 "name":"eggplant",
@@ -111,7 +110,7 @@ module.exports = [
         "food":"dessert",
         "shopping":"",
         "image":"https://static01.nyt.com/images/2019/01/17/dining/mc-red-lentil-soup/merlin_146234352_d7bc8486-b067-4cff-a4c0-7741f166fb60-articleLarge.jpg",
-        "recipe": "dfjhsfksjhfskfhskfhdskjfhsdjfnfkjsdfns",
+        "recipe": {Step1:["Lorem ipsum dolor sit amet, consectetur adipiscing elit.",false],Step2:["Lorem ipsum dolor sit amet, consectetur adipiscing elit.",false],Step3:["Lorem ipsum dolor sit amet, consectetur adipiscing elit.",false]},
         "ingredientList": ["potato","rice"],
         "ingredients":[
             {
@@ -139,7 +138,7 @@ module.exports = [
         "food":"dessert",
         "shopping":"",
         "image":"https://static01.nyt.com/images/2019/01/17/dining/mc-red-lentil-soup/merlin_146234352_d7bc8486-b067-4cff-a4c0-7741f166fb60-articleLarge.jpg",
-        "recipe": "dfjhsfksjhfskfhskfhdskjfhsdjfnfkjsdfns",
+        "recipe": {Step1:["Lorem ipsum dolor sit amet, consectetur adipiscing elit.",false],Step2:["Lorem ipsum dolor sit amet, consectetur adipiscing elit.",false],Step3:["Lorem ipsum dolor sit amet, consectetur adipiscing elit.",false]},
         "ingredientList": ["potato","rice"],
         "ingredients":[
             {
@@ -167,7 +166,7 @@ module.exports = [
         "food":"dessert",
         "shopping":"",
         "image":"https://static01.nyt.com/images/2019/01/17/dining/mc-red-lentil-soup/merlin_146234352_d7bc8486-b067-4cff-a4c0-7741f166fb60-articleLarge.jpg",
-        "recipe": "dfjhsfksjhfskfhskfhdskjfhsdjfnfkjsdfns",
+        "recipe": {Step1:["Lorem ipsum dolor sit amet, consectetur adipiscing elit.",false],Step2:["Lorem ipsum dolor sit amet, consectetur adipiscing elit.",false],Step3:["Lorem ipsum dolor sit amet, consectetur adipiscing elit.",false]},
         "ingredientList": ["potato","rice"],
         "ingredients":[
             {
