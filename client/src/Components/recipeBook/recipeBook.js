@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import RecipeBookList from "./recipeBookList/recipeBookList.js";
 import "./recipeBookStyle.scss";
+import NavBarRecipeList from "../navBarRecipeList/navBarRecipeList.js";
 
 
 export default class RecipeBook extends React.Component{
@@ -25,8 +26,7 @@ export default class RecipeBook extends React.Component{
         return(
             <>
                 <h1>GroSure</h1>
-                <h1>My Recipe Book</h1>
-                <h1>This Week</h1>
+                <NavBarRecipeList></NavBarRecipeList>
                 <article>
                     <RecipeBookList recipes={this.state.recipes}></RecipeBookList>
                 </article>

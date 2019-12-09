@@ -1,10 +1,17 @@
-.recipe-image{
-    height: 50px;
-    width:50px;
-    border-radius: 50%;
-    position: relative;
-    object-fit: cover;
-}
+.recipe{
+    &-image{
+        height: 50px;
+        width:50px;
+        border-radius: 50%;
+        position: relative;
+        object-fit: cover;
+        margin-right: 10px;
+    }
+    &-list{
+        // height: 95vh;
+        overflow: scroll;
+    }
+}   
 
 .each-recipe{
     display: flex;
@@ -12,4 +19,13 @@
     align-items: center;
     padding:10px;
     margin:10px;
+    border-radius: 10px;
+    background-color: #FDFFFC;
+
+    &-details{
+        display: flex;
+        align-items: center;
+        flex-basis: 60%;
+        justify-content: flex-start;
+    }
 }

@@ -13,13 +13,17 @@ export default class RecipeBookList extends React.Component{
         for (let i= 0; i < this.props.recipes.length; i++){
             let { name, time, food, image, id } =  this.props.recipes[i]
             recipeBookList.push(
-                <Link to={"/"+id}>
-                <article key={this.props.recipes[i]["id"]} className="each-recipe shadow bg-white rounded">
-                    <img className="recipe-image" src={image} alt=""/>
-                    <span>{name}</span>
-                    {this.imageToUse(food)}
-                    <span>{time} mins</span>
-                </article>
+                <Link to={"/"+id} key={this.props.recipes[i]["id"]}>
+                <section  className="each-recipe shadow">
+                    <article className="each-recipe-details">
+                        <img className="recipe-image" src={image} alt=""/>
+                        <span>{name}</span>
+                    </article>
+                    <article>
+                        {this.imageToUse(food)}
+                        <span>{time} mins</span>
+                    </article>
+                </section>
                 </Link>
             )
         }
@@ -43,7 +47,7 @@ export default class RecipeBookList extends React.Component{
     render(){
         return(
             <>
-                <div>{this.displayRecipeCards()}</div>
+                <div className="recipe-list">{this.displayRecipeCards()}</div>
                 
             </>
         )
