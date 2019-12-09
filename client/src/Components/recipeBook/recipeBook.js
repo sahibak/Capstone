@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import RecipeBookList from "./recipeBookList/recipeBookList.js";
+import RecipeBookList from "../recipeBookList/recipeBookList.js";
 import "./recipeBookStyle.scss";
 import NavBarRecipeList from "../navBarRecipeList/navBarRecipeList.js";
 

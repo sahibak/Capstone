@@ -7,7 +7,7 @@ import ShoppingCart from "./Components/shoppingCart/shoppingCart.js";
 import RecipeBook from "./Components/recipeBook/recipeBook.js";
 import axios from "axios";
 import Recipe from "./Components/recipe/recipe.js";
-import RecipeInBook from "./Components/recipeBook/recipeBookList/recipeInBook/recipeInBook.js";
+import RecipeInBook from "./Components/recipeInBook/recipeInBook.js";
 // import 'materialize-css/dist/css/materialize.min.css';
 
 export default class App extends React.Component{

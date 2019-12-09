@@ -26,3 +26,8 @@ app.use("/shoppingcart",shoppingCartRoute);
 // // POST request for recipe book
 // const recipeBookRoute = require("./routes/recipeBookRoute.js");
 // app.use("/recipebook",recipeBookRoute);
+
+
+// GET request for a single recipe
+const recipeRoute = require("./routes/recipeRoute.js");
+app.use("/recipe",recipeRoute);

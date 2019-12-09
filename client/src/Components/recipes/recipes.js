@@ -6,6 +6,7 @@ import Footer from "../footer/footer.js";
 import "./recipeStyle.scss";
 import ArrowL from "../../assets/arrow-left.svg";
 import NavBar from "../navBar/navBar.js";
+import Ingredients from "../ingredients/ingredients.js";
 
 
 export default class Recipes extends React.Component{
@@ -72,6 +73,7 @@ export default class Recipes extends React.Component{
                     <NavBar></NavBar>
                     {/* <button className="next-recipe-swipe" onClick={(event) => this.recipeSwipe(event)}><img src={ArrowL} alt="arrow left"/></button> */}
                     <RecipeCard recipesData={this.props.recipesData} count={this.state.count} recipeAdd ={this.props.recipeAdd}></RecipeCard>
+                    {/* <Ingredients recipeDetails={this.props.recipesData[this.state.count]}></Ingredients> */}
                     {/* <Footer></Footer> */}
                 </section>
                 {/* <Footer></Footer> */}

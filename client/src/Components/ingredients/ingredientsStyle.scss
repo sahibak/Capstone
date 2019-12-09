@@ -1,0 +1,47 @@
+.ingredient{
+
+    // position: relative;
+    // top:-25vh;
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+    height: 200px;
+    // justify-content: flex-start;
+
+
+    &__Grouping{
+        display: flex;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        width: 200px;
+        overflow: visible;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin-right:20px;
+
+    }
+
+    &__List {
+        text-align: left;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    &__Qty{
+        opacity: .3;
+    }
+
+    &__Image{
+        box-sizing: border-box;
+        height: 70px;
+        border-radius: 50px;
+        width: 70px;
+        margin: 5px;
+    }
+
+    &__Name{
+        text-align: center;
+    }
+}

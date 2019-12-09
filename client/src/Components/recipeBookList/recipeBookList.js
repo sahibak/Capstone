@@ -1,7 +1,7 @@
 import React from "react";
 import "./recipeBookListStyle.scss";
 // import RecipeInBook from "./recipeInBook/recipeInBook.js";
-import Sun from "../../../assets/sun-with-face.svg";
+import Sun from "../../assets/sun-with-face.svg";
 import { Link } from "react-router-dom";
 
 export default class RecipeBookList extends React.Component{

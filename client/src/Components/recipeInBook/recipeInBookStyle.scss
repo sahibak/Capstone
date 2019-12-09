@@ -1,0 +1,31 @@
+.ingredient{
+    &__Group{
+        display: flex;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    &__List {
+        text-align: left;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    &__Qty{
+        opacity: .3;
+    }
+
+    &__Image{
+        height: 70px;
+        border-radius: 50px;
+        width: 70px;
+        margin: 5px;
+    }
+}
+
+.doNotDisplay{
+    display:none;
+}
