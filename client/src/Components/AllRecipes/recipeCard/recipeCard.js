@@ -81,10 +81,6 @@ export default class RecipeCard extends React.Component{
     }
 
     likeImage(){
-        console.log("getting class")
-        console.log(this.props.recipesData[this.props.count]["name"])
-        console.log(this.props.recipesData[this.props.count]["shopping"])
-        
         if(this.props.recipesData[this.props.count]["shopping"] === true){
             return Like
         } else {

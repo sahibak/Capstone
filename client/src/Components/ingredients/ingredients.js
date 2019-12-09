@@ -13,10 +13,10 @@ export default class Ingredients extends React.Component{
             let { name, qty, unit, image } = ingredients[i]
             ingredientList.push(
                 <>
-                    <div className="ingredient__Grouping">
-                        <img className="z-depth-1 ingredient__Image" src={image} alt=""/>
-                        <ul className="ingredient__List">
-                            <li className="ingredient__Name" key={i}>{name}</li>
+                    <div key={`parent+${i}`} className="ingredient__Grouping">
+                        <img key={`img+${i}`} className="z-depth-1 ingredient__Image" src={image} alt=""/>
+                        <ul key={`parentul+${i}`} className="ingredient__List">
+                            <li key={`li+${i}`} className="ingredient__Name" >{name}</li>
                             {/* <li className="ingredient__Qty">{qty} {unit}</li> */}
                         </ul>
                     </div>
@@ -27,12 +27,10 @@ export default class Ingredients extends React.Component{
     }
 
     render(){
-        console.log("ingre",this.props.recipeDetails["ingredients"],!this.props.recipeDetails)
         if(this.props.recipeDetails){
-            console.log("if stt ran")
             return(
                 <div className="ingredient">
-                {this.displayIngredients()}
+                    {this.displayIngredients()}
                 </div>
             )
         }

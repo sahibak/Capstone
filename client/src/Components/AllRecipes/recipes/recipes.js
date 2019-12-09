@@ -22,7 +22,7 @@ export default class Recipes extends React.Component{
 
     // To update the counter of recipes, so app can swipe to next one
     componentDidUpdate(_,prevState){
-        if (prevState.count === this.state.count){
+        if (prevState.count !== this.state.count){
             // let randomNumber = Math.floor(Math.random() * Math.floor(this.props.recipesData.length))
             // let newCountValue = 0
             // randomNumber===prevState.count ? newCountValue = prevState.count+1 : newCountValue = randomNumber

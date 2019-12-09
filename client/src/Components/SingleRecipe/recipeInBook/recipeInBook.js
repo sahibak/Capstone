@@ -54,14 +54,12 @@ export default class RecipeInBook extends React.Component{
         return ingredientList;     
     }
     visible(event){
-        console.log("ran click")
         event.preventDefault()
         this.setState({
             visible:!this.state.visible
         })        
     }
     addClass(){
-        console.log("ran",this.state.visible)
         if(this.state.visible === true){
             return "display"
         } else {
@@ -70,7 +68,7 @@ export default class RecipeInBook extends React.Component{
     }
 
     render(){
-        if(this.state.dataReceived == true){
+        if(this.state.dataReceived === true){
             return(
                 <>
                     <NavBarSingle></NavBarSingle>
