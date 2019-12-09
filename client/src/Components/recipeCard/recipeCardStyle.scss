@@ -33,7 +33,7 @@
         align-items: center;
         padding-bottom: 50px;
         position: relative;
-        top: -22vh;
+        top: -20vh;
     }
 
     &__heroImage{
@@ -57,4 +57,14 @@
 
 .recipe-name{
     padding-top: 60px;
+}
+
+.action-items{
+    // padding-top:20px;
+
+    &-img{
+        width: 72px;
+        padding: 20px;
+        height: 72px;
+    }
 }

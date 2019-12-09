@@ -48,7 +48,63 @@ module.exports = [
     },
     {
         "id": "00002",
-        "name": "Curry",
+        "name": "Curry1",
+        "type":"indian",
+        "category": "Vegan",
+        "feeds":5,
+        "allergy": ["Dairy","Gluten"],
+        "time": "20",
+        "food":"dessert",
+        "shopping":"",
+        "image":"https://static01.nyt.com/images/2019/01/17/dining/mc-red-lentil-soup/merlin_146234352_d7bc8486-b067-4cff-a4c0-7741f166fb60-articleLarge.jpg",
+        "recipe": "dfjhsfksjhfskfhskfhdskjfhsdjfnfkjsdfns",
+        "ingredientList": ["potato","rice"],
+        "ingredients":[
+            {
+                "name":"potato",
+                "category": "produce",
+                "qty":"1",
+                "unit":"pound" 
+            },
+            {
+                "name":"rice",
+                "category": "dry item",
+                "qty":"1",
+                "unit":"box" 
+            },
+        ]
+    },
+    {
+        "id": "00003",
+        "name": "Curry2",
+        "type":"indian",
+        "category": "Vegan",
+        "feeds":5,
+        "allergy": ["Dairy","Gluten"],
+        "time": "20",
+        "food":"dessert",
+        "shopping":"",
+        "image":"https://static01.nyt.com/images/2019/01/17/dining/mc-red-lentil-soup/merlin_146234352_d7bc8486-b067-4cff-a4c0-7741f166fb60-articleLarge.jpg",
+        "recipe": "dfjhsfksjhfskfhskfhdskjfhsdjfnfkjsdfns",
+        "ingredientList": ["potato","rice"],
+        "ingredients":[
+            {
+                "name":"potato",
+                "category": "produce",
+                "qty":"1",
+                "unit":"pound" 
+            },
+            {
+                "name":"rice",
+                "category": "dry item",
+                "qty":"1",
+                "unit":"box" 
+            },
+        ]
+    },
+    {
+        "id": "00004",
+        "name": "Curry3",
         "type":"indian",
         "category": "Vegan",
         "feeds":5,

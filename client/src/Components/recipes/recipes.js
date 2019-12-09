@@ -10,7 +10,7 @@ import NavBar from "../navBar/navBar.js";
 
 export default class Recipes extends React.Component{
     state = {
-        count: Math.random()*Math.floor(this.props.recipesData.length),
+        count: 0,
         recipeadded: false
     }
 
@@ -21,9 +21,12 @@ export default class Recipes extends React.Component{
 
     // To update the counter of recipes, so app can swipe to next one
     componentDidUpdate(_,prevState){
-        if(prevState.count === this.state.count){
-            console.log("update ran")
-            let newCountValue = prevState.count+1;
+        if (prevState.count === this.state.count){
+            // let randomNumber = Math.floor(Math.random() * Math.floor(this.props.recipesData.length))
+            // let newCountValue = 0
+            // randomNumber===prevState.count ? newCountValue = prevState.count+1 : newCountValue = randomNumber
+            // console.log("random", randomNumber, "newCountVal", newCountValue,"len", this.props.recipesData.length)
+            let newCountValue = prevState.count+1;   
             // if there is no new recipe to load, the recipe showcase will start from the beginning
             newCountValue >= this.props.recipesData.length ? this.setState({count: 0}) : this.setState({count:newCountValue});
         }

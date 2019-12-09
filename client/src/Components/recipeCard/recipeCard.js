@@ -104,10 +104,11 @@ export default class RecipeCard extends React.Component{
                         <button onClick={()=>this.recipeDisliked()}><img src={this.dislikeImage()} height="20px" width="20px" alt=""></img></button>
                     </div> */}
                     {/* add to shopping cart button */}
-                    <div>
-                        <button onClick={(event) => this.props.recipeAdd(event,this.props.count)}><img src={this.likeImage()} height="32px" width="32px" alt=""></img> </button>
+                    <div className="action-items">
                         {/* swipe to next recipe button */}
-                        <button onClick={(event) => this.props.recipeAdd(event,this.props.count)}><img src={RightArrow} height="32px" width="32px" alt=""></img> </button>
+                        <button onClick={(event) => this.props.recipeAdd(event,this.props.count)}><img className="action-items-img" src={RightArrow} height="32px" width="32px" alt=""></img> </button>
+                        {/* add to shopping cart */}
+                        <button onClick={(event) => this.props.recipeAdd(event,this.props.count)}><img className="action-items-img" src={this.likeImage()} height="32px" width="32px" alt=""></img> </button>
                     </div>    
                 </article>
                 {/* <ul>{this.displayRecipeSteps()}</ul> */}

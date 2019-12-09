@@ -15,12 +15,12 @@ export default class App extends React.Component{
     recipesData:[],
     userInput:[],
     userSearch: "",
-    dataCaptured: false
+    dataCaptured: false,
+    count: 0
   }
 
   // function to capture the search parameters
   userSelection = (event)=>{
-    console.log("userselection func")
     event.preventDefault();
     let userInput = []
     // getting input from search field
@@ -61,10 +61,10 @@ export default class App extends React.Component{
           }
       })
       .then((response)=> {
-          console.log("axios",response.data)
           this.setState({
               recipesData:response.data,
-              dataCaptured: true
+              dataCaptured: true, 
+              count: Math.floor(Math.random() * Math.floor(response.data.length))
           })
       })
       .catch((error)=> console.log(error));
@@ -79,7 +79,6 @@ export default class App extends React.Component{
         id: this.state.recipesData[index]["id"]
     })
     .then((response) => {
-      console.log("shopping status updated", response.data)
       this.setState({
         recipesData: response.data
       })
@@ -93,7 +92,7 @@ export default class App extends React.Component{
           <BrowserRouter>
             <Switch>
                 <Route path="/search" exact render = {(props) => <SearchPage {...props} userSelection={this.userSelection}></SearchPage>}></Route>
-                <Route path="/" exact render = {() => <Recipes userSearch= {this.state.userSearch} userInput={this.state.userInput} getRecipes={this.getRecipes} recipesData={this.state.recipesData} dataCaptured={this.state.dataCaptured} recipeAdd={this.recipeAdd}></Recipes>}></Route>
+                <Route path="/" exact render = {() => <Recipes userSearch= {this.state.userSearch} userInput={this.state.userInput} getRecipes={this.getRecipes} recipesData={this.state.recipesData} dataCaptured={this.state.dataCaptured} recipeAdd={this.recipeAdd} count={this.state.count}></Recipes>}></Route>
                 <Route path="/shoppingcart" exact component = {ShoppingCart}></Route>
                 <Route path="/recipebook" exact component = {RecipeBook}></Route>
                 <Route path="/:id" exact component={RecipeInBook}></Route>

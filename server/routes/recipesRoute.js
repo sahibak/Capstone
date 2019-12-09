@@ -60,5 +60,6 @@ filterBasedOnUserPreferances = (userInput, userSearch) => {
             updatedRecipesData = recipesData
         }
     }
+    updatedRecipesData.sort(() => Math.random() - 0.5)
     return updatedRecipesData
 }
