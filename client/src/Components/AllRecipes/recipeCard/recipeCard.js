@@ -1,8 +1,8 @@
 import React from "react";
 import Like from '../../../assets/like.svg';
-import NotLike from '../../../assets/notlike.svg';
+import LikeActive from '../../../assets/like-active.svg';
 // import NotDislike from '../../assets/dislike-outline.svg';
-// import Dislike from '../../assets/dislike-active.svg';
+import Dislike from '../../../assets/dislike.svg';
 import "./recipeCardStyle.scss";
 import Sun from "../../../assets/sun-with-face.svg";
 import Timer from "../../../assets/timer-clock.svg";
@@ -82,9 +82,9 @@ export default class RecipeCard extends React.Component{
 
     likeImage(){
         if(this.props.recipesData[this.props.count]["shopping"] === true){
-            return Like
+            return LikeActive
         } else {
-            return NotLike
+            return Like
         }
     }
 
@@ -105,7 +105,7 @@ export default class RecipeCard extends React.Component{
                     {/* add to shopping cart button */}
                     <div className="action-items">
                         {/* swipe to next recipe button */}
-                        <button className="action-items-btn" onClick={(event) => this.props.recipeSwipe(event)}><img className="action-items-img" src={RightArrow} alt=""></img> </button>
+                        <button className="action-items-btn" onClick={(event) => this.props.recipeSwipe(event)}><img className="action-items-img"src={Dislike} alt=""></img> </button>
                         {/* add to shopping cart */}
                         <button className="action-items-btn" onClick={(event) => this.props.recipeAdd(event,this.props.count)}><img className="action-items-img" src={this.likeImage()} alt=""></img> </button>
                     </div>    
