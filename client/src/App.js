@@ -78,10 +78,17 @@ export default class App extends React.Component{
         id: this.state.recipesData[index]["id"]
     })
     .then((response) => {
+      console.log(this.state.count, this.state.recipesData.length)
+      if(this.state.count === this.state.recipesData.length-1){
       this.setState({
         recipesData: response.data,
-        count: this.state.count + 1
-      })
+        count: 0
+      })}
+      else {
+        this.setState({
+          recipesData: response.data,
+          count: this.state.count + 1
+      })}
     })
     .catch((error)=> {console.log(error)})
   }
