@@ -37,7 +37,7 @@ export default class RecipeCardRIB extends React.Component{
             ingredientList.push(
                 <>
                     <div key = {i} className="ingredient__Group">
-                        <img className="z-depth-4 ingredient__Image" src={image} alt=""/>
+                        <img className="z-depth-1 ingredient__Image shadow p-3 mb-5" src={image} alt=""/>
                         <ul className="ingredient__List">
                             <li key = {i}>{name} - {qty} {unit}</li>
                             {/* <li className="ingredient__Qty"></li> */}
