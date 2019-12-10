@@ -6,7 +6,6 @@
 
 .produceClass{
     background-color: green;
-    margin:1px;
     padding: 0px;
     border-radius: 4px;
     color: white;
@@ -16,7 +15,6 @@
 
 .dryGoodsClass{
     background-color: brown;
-    margin:1px;
     padding: 0px;
     border-radius: 4px;
     color: white;
@@ -31,6 +29,7 @@
 .label{
     display: flex;
     margin-top: 20px;
+    padding-left:10px;
 }
 
 .purchased{
@@ -43,6 +42,14 @@
     margin-bottom: 10px;
     display: flex;
     align-items: center;
-    border-radius: 10px;
+    // border-radius: 10px;
     padding: 10px;
+}
+
+.ingredient__Image{
+    box-sizing: border-box;
+    height: 70px;
+    border-radius: 50px;
+    width: 70px;
+    margin: 5px;
 }

@@ -43,6 +43,7 @@ export default class ShoppingCart extends React.Component{
                 let qty = ingredientsForRecipe[n]["qty"]
                 let unit = ingredientsForRecipe[n]["unit"]
                 let categoryToCheck = ingredientsForRecipe[n]["category"]
+                let image  = ingredientsForRecipe[n]["image"]
                 
                 // cheking if the category exists as a key, if category doesnt exist creating empty obj
                 if (!(categoryToCheck in renderingList)) {
@@ -52,6 +53,7 @@ export default class ShoppingCart extends React.Component{
                 if (!(itemName in renderingList[categoryToCheck])) {
                     renderingList[categoryToCheck][itemName] = [Number(0)]
                     renderingList[categoryToCheck][itemName].push(unit)
+                    renderingList[categoryToCheck][itemName].push(image)
                 }
                 // updating the qty of the item
                 renderingList[categoryToCheck][itemName][0] += Number(qty)
@@ -81,16 +83,24 @@ export default class ShoppingCart extends React.Component{
             this.shoppingList.push(
                 <div className ="label font-weight-bold" key={i+category}>{category}</div>
             )
-
+            
+            // running function to get starting rgb color for the cat
+            let color = this.determineCatForBck(category)
+            let n = 0
+            
             let itemsObj = this.renderingList[category]
             for (let item in itemsObj){
-                let qty = itemsObj[item]
+                let colorList =this.adjustingColor(n,color)
+                console.log("in main",colorList)
+                let qty = itemsObj[item][0]
+                let unit = itemsObj[item][1]
+                let image = itemsObj[item][2]
                 shoppingIngredients.push(
-                    <ul key={item} onClick={(event) => this.itemPurchased(item,qty, category,event)} className={`${this.determineCategory(category)}`}>
-                        <li className=""  >{item} {qty}</li>
+                    <ul key={item} onClick={(event) => this.itemPurchased(item,qty, category,event)} style = {{backgroundColor:colorList}} className={`${this.determineCategory(category)}`}>
+                        <li style = {{color:"white"}} className=""  ><img className ="z-depth-1 ingredient__Image"src={image}/> {item} - {qty} {unit}</li>
                     </ul>
                 )
-                i ++
+                n++
             }
             this.shoppingList.push(shoppingIngredients)
             shoppingIngredients = []
@@ -99,7 +109,35 @@ export default class ShoppingCart extends React.Component{
             shoppingCart: this.shoppingList,
             status: true
         })
-    }    
+    }   
+    
+    determineCatForBck(category){
+        if(category === "produce"){
+            return [[46,164,140],[65,229,196]]
+        } else if (category === "dry item"){
+            return [[181,133,22],[243,178,24]]
+        }
+    }
+
+    adjustingColor(i,color){
+        console.log("i",i)
+        if (i==0){
+            let color1 = color[0][0]
+            let color2 = color[0][1]
+            let color3 = color[0][2]
+            let colorStr = "rgb("+color1+","+color2+","+color3+")"
+            console.log("in func", colorStr)
+            return colorStr
+       } else {
+           let update = color[0][1] + 10
+           let color1 = color[0][0]
+            let color2 = update
+            let color3 = color[0][2]
+            let colorStr = "rgb("+color1+","+color2+","+color3+")"
+            console.log("in func", colorStr)
+            return colorStr
+       }
+    }
 
     // determing styling class based on category type
     determineCategory(category){
