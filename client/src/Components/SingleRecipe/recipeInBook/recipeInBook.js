@@ -15,7 +15,7 @@ export default class RecipeInBook extends React.Component{
     
     componentDidMount(){
         // GET request for recipes to render on Main component
-        axios.get("http://192.168.2.15:8080/recipe",{
+        axios.get("http://localhost:8080/recipe",{
             params: {
                 id: this.props.match.params.id,
                 visible: false
@@ -38,7 +38,7 @@ export default class RecipeInBook extends React.Component{
         let ingredients = this.state.recipeData[0]["ingredients"]
         // for every item in ingridients, run the loop and create JSX
         for (let i=0; i<ingredients.length; i++){
-            let { name, qty, unit, image } = ingredients[i]
+            let { name, qty, unit} = ingredients[i] // image
             ingredientList.push(
                 <>
                     <div className="ingredient__Group">
@@ -68,7 +68,7 @@ export default class RecipeInBook extends React.Component{
     }
 
     render(){
-        if(this.state.dataReceived === true){
+        if(this.state.dataReceived === true && this.state.recipeData.length>0){
             return(
                 <>
                     <NavBarSingle></NavBarSingle>

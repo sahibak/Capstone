@@ -99,7 +99,7 @@ export default class ShoppingCart extends React.Component{
                 let image = itemsObj[item][2]
                 shoppingIngredients.push(
                     <ul key={item} onClick={(event) => this.itemPurchased(item,qty, category,event)} style = {{backgroundColor:colorList}} className={`${this.determineCategory(category)}`}>
-                        <li style = {{color:"white"}} className=""  ><img className ="z-depth-1 ingredient__Image"src={image}/> {item} - {qty} {unit}</li>
+                        <li style = {{color:"white"}} className=""  ><img className ="z-depth-1 ingredient__Image"src={image} alt=""/> {item} - {qty} {unit}</li>
                     </ul>
                 )
                 n++
@@ -126,9 +126,9 @@ export default class ShoppingCart extends React.Component{
         let startColor2 = color[0][1]
         let startColor3 = color[0][2]
 
-        let endColor1 = color[1][0]
+        // let endColor1 = color[1][0]
         let endColor2 = color[1][1]
-        let endColor3 = color[1][2]
+        // let endColor3 = color[1][2]
 
         let jump = Math.floor((endColor2 - startColor2)/len)
 

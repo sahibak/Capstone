@@ -1,7 +1,7 @@
 import React from "react";
 import "./recipeBookListStyle.scss";
 // import RecipeInBook from "./recipeInBook/recipeInBook.js";
-import Sun from "../../../assets/sun-with-face.svg";
+// import Sun from "../../../assets/sun-with-face.svg";
 import Trash from "../../../assets/trash.svg";
 import { Link } from "react-router-dom";
 
@@ -12,7 +12,7 @@ export default class RecipeBookList extends React.Component{
         console.log("recipes displayed props", this.props.recipes)
         let recipeBookList = []
         for (let i= 0; i < this.props.recipes.length; i++){
-            let { name, time, food, image, id } =  this.props.recipes[i]
+            let { name, image, id } =  this.props.recipes[i]
             recipeBookList.push(
                 <section  key={id} className="each-recipe shadow">
                      <Link to={"/"+id} key={this.props.recipes[i]["id"]}>

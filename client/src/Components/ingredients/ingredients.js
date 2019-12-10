@@ -10,7 +10,7 @@ export default class Ingredients extends React.Component{
         let ingredients = this.props.recipeDetails["ingredients"]
         // for every item in ingridients, run the loop and create JSX
         for (let i=0; i<ingredients.length; i++){
-            let { name, qty, unit, image } = ingredients[i]
+            let { name, image } = ingredients[i] // qty, unit
             ingredientList.push(
                 <>
                     <div key={`parent+${i}`} className="ingredient__Grouping">

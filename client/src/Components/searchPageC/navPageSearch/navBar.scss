@@ -1,14 +1,14 @@
-.navBar{
+.navBarSearch{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     z-index: 1;
     position: fixed;
-    // left: 0px;
-    // top: 15px;
+    left: 0px;
+    top: 15px;
     width: 100%;
     padding: 5px;
-    background: rgb(236,241,244);
+
 }
 
 .navIcon{

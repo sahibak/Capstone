@@ -37,7 +37,7 @@ export default class RecipeCardRIB extends React.Component{
             ingredientList.push(
                 <>
                     <div key = {i} className="ingredient__Group">
-                        <img className="z-depth-1 ingredient__Image shadow p-3 mb-5" src={image} alt=""/>
+                        <img className="z-depth-1 ingredient__Image" src={image} alt=""/>
                         <ul className="ingredient__List">
                             <li key = {i}>{name} - {qty} {unit}</li>
                             {/* <li className="ingredient__Qty"></li> */}
@@ -52,12 +52,12 @@ export default class RecipeCardRIB extends React.Component{
     displayRecipeSteps(){
         let recipeList = []
         // getting the recipe steps 
-        let recipeSteps = this.state.steps
+        // let recipeSteps = this.state.steps
         // for steps in recipe, run loop and create JSX
         for (let i=1; i<=Object.keys(this.state.steps).length; i++){
             let currentStepNumber = "Step"+i
             let currentStep = this.state.steps[currentStepNumber]
-            let currentStepStatus = this.state.steps[currentStepNumber][1]
+            // let currentStepStatus = this.state.steps[currentStepNumber][1]
             recipeList.push(
                  <li onClick = {() => this.completedStep(currentStepNumber)} className={this.displayImage(currentStepNumber)} key={currentStepNumber}>
                      {/* <img src={this.displayImage(currentStepNumber)} alt=""/>*/}

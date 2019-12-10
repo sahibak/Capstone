@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import SearchPage from './Components/searchPage/searchPage';
+import SearchPage from './Components/searchPageC/searchPage/searchPage';
 import Recipes from './Components/AllRecipes/recipes/recipes.js';
 import ShoppingCart from "./Components/shoppingCart/shoppingCart.js";
 import RecipeBook from "./Components/RecipeBookComponents/recipeBook/recipeBook.js";
@@ -54,7 +54,7 @@ export default class App extends React.Component{
 
   // GET request for recipes to render on Main component
   getRecipes = () => {
-    axios.get("http://localhost:8080/recipes",{
+    axios.get("http://10.32.113.143:8080/recipes",{
         params: {
             userInput: this.state.userInput,
             userSearch: this.state.userSearch
@@ -74,7 +74,7 @@ export default class App extends React.Component{
     console.log("ran add")
     event.preventDefault();
     // posting data on shopping cart
-    axios.post("http://localhost:8080/shoppingcart", {
+    axios.post("http://10.32.113.143:8080/shoppingcart", {
         id: this.state.recipesData[index]["id"]
     })
     .then((response) => {

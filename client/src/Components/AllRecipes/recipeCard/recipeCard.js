@@ -6,7 +6,7 @@ import Dislike from '../../../assets/dislike.svg';
 import "./recipeCardStyle.scss";
 import Sun from "../../../assets/sun-with-face.svg";
 import Timer from "../../../assets/timer-clock.svg";
-import RightArrow from "../../../assets/rightArrow.svg";
+// import RightArrow from "../../../assets/rightArrow.svg";
 import Ingredients from "../../ingredients/ingredients.js";
 // import Crop from "../../assets/crop.png";
 

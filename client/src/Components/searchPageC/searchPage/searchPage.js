@@ -1,18 +1,19 @@
 import React from "react";
 import "./searchPageStyle.scss";
-import Peanut from "../../assets/peanut-outline.svg";
-import PeanutOff from "../../assets/peanut-off-outline.svg";
-import Green from "../../assets/vegetarian.svg";
-import GreenSelected from "../../assets/vegetarian-selected.svg";
-import Vegan from "../../assets/vegan.svg";
-import VeganSelected from "../../assets/vegan-selected.svg";
-import Shellfish from "../../assets/shellfish.svg";
-import ShellfishOff from "../../assets/shellfish-selected.svg";
-import Fish from "../../assets/fish.svg";
-import FishOff from "../../assets/fish-selected.svg";
-import Search from "../../assets/search.svg";
-import Wheat from "../../assets/wheat.svg";
-import WheatA from "../../assets/wheat-active.svg";
+import Peanut from "../../../assets/peanut-outline.svg";
+import PeanutOff from "../../../assets/peanut-off-outline.svg";
+import Green from "../../../assets/vegetarian.svg";
+import GreenSelected from "../../../assets/vegetarian-selected.svg";
+import Vegan from "../../../assets/vegan.svg";
+import VeganSelected from "../../../assets/vegan-selected.svg";
+// import Shellfish from "../../assets/shellfish.svg";
+// import ShellfishOff from "../../assets/shellfish-selected.svg";
+import Fish from "../../../assets/fish.svg";
+import FishOff from "../../../assets/fish-selected.svg";
+import Search from "../../../assets/search.svg";
+import Wheat from "../../../assets/wheat.svg";
+import WheatA from "../../../assets/wheat-active.svg";
+import NavBar from "../navPageSearch/navBar.js";
 
 export default class SearchPage extends React.Component{
 
@@ -24,6 +25,7 @@ export default class SearchPage extends React.Component{
     render(){
         return(
             <div className="container">
+                <NavBar></NavBar>
                 <form className="form" onSubmit={this.searchSubmit} >
                     <div className="input-field s2 searchbar">
                         <input type="text" className="autocomplete" name="searchbar" placeholder="Enter Search"></input>
