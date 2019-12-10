@@ -25,11 +25,13 @@ export default class RecipeBook extends React.Component{
     render(){
         return(
             <>
+            <div className="container">
                 <h1>GroSure</h1>
                 <NavBarRecipeList></NavBarRecipeList>
                 <article>
                     <RecipeBookList recipes={this.state.recipes}></RecipeBookList>
                 </article>
+            </div>
             </>
         )
     }

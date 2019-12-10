@@ -1,7 +1,7 @@
 import React from "react";
 import "./navBarRecipeList.scss";
-import Recipes from "../../../assets/recipes.svg";
-import ShoppingCart from "../../../assets/shopping-cart.svg";
+import Recipes from "../../../assets/recipe.svg";
+import Bag from "../../../assets/bag.svg";
 import { Link } from "react-router-dom";
 
 export default class NavBarRecipeList extends React.Component{
@@ -9,8 +9,8 @@ export default class NavBarRecipeList extends React.Component{
         return(
             <>
                 <div className="navBar">
-                <Link to="/"><img src={Recipes} alt=""/></Link>
-                <Link to="/shoppingcart"><img src={ShoppingCart} alt=""/></Link>
+                <Link to="/"><img className= "navIcon" src={Recipes} alt=""/></Link>
+                <Link to="/shoppingcart"><img className= "navIcon" src={Bag} alt=""/></Link>
                 </div>
             </>
         )
