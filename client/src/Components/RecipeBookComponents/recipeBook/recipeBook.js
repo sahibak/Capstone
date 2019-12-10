@@ -14,12 +14,27 @@ export default class RecipeBook extends React.Component{
     componentDidMount(){
         axios.get("http://192.168.2.15:8080/shoppingcart")
         .then(response => {
-            console.log("shoppin",response.data)
             this.setState({
                 recipes: response.data
             })
         })
         .catch(error => {console.log(error)})
+    }
+
+    updateSelection = (event,index) => {
+        console.log("ran update")
+        event.preventDefault();
+        // posting data on shopping cart
+        axios.post("http://192.168.2.15:8080/shoppingcart/remove", {
+            id: index
+        })
+        .then((response) => {
+            console.log("received",response.data)
+            this.setState({
+            recipes: response.data
+            })
+        })
+        .catch((error)=> {console.log(error)})
     }
 
     render(){
@@ -29,7 +44,7 @@ export default class RecipeBook extends React.Component{
                 <h1>GroSure</h1>
                 <NavBarRecipeList></NavBarRecipeList>
                 <article>
-                    <RecipeBookList recipes={this.state.recipes}></RecipeBookList>
+                    <RecipeBookList updateSelection = {this.updateSelection} recipes={this.state.recipes}></RecipeBookList>
                 </article>
             </div>
             </>

@@ -13,37 +13,21 @@ export default class RecipeBookList extends React.Component{
         for (let i= 0; i < this.props.recipes.length; i++){
             let { name, time, food, image, id } =  this.props.recipes[i]
             recipeBookList.push(
-                <section  className="each-recipe shadow">
+                <section  key={id} className="each-recipe shadow">
                      <Link to={"/"+id} key={this.props.recipes[i]["id"]}>
                     <article className="each-recipe-details">
                         <img className="recipe-image" src={image} alt=""/>
                         <span>{name}</span>
                     </article>
                     </Link>
-                    <article className="delete">
-                        {this.imageToUse(food)}
+                    <article onClick={(event) => this.props.updateSelection(event,id)} className="delete">
                         <span>{time} mins</span>
                     </article>
                 </section>
-              
             )
         }
         return recipeBookList
-    }
-
-    // Overview: based on the recipe, deciding image to show
-    imageToUse(food){
-        console.log("ran this",food)
-        if(food === "breakfast"){
-            return (<img className="recipe-image" src={Sun} alt=""/>)
-        } else if (food === "lunch"){
-            return  (<img className="recipe-image" src={Sun} alt=""/>)
-        } else if (food === "dinner"){
-            return  (<img className="recipe-image" src={Sun} alt=""/>)
-        } else if (food === "dessert"){
-            return  (<img className="recipe-image" src={Sun} alt=""/>)
-        }
-    }   
+    }  
 
     render(){
         return(

@@ -55,3 +55,27 @@ router.get("/",(request,response) => {
     }
     response.send(recipesToSend)
 })
+
+// POST request- removing recipes from shopping cart from recipebook
+router.post("/remove",(request,response) => {
+    console.log("posting data on shopping cart")
+    for (let i = 0; i<recipes.length; i++){
+        if(recipes[i]["id"] == request.body.id && !recipes[i]["shopping"]){
+            console.log("entered if")
+            recipes[i]["shopping"] = true;
+            break;
+        }
+        else if (recipes[i]["id"] == request.body.id){
+            console.log("entered else")
+            recipes[i]["shopping"] = false;
+            break;
+        }
+    }
+    let recipesToSend = [];
+    for (let i =0; i<recipes.length; i++){
+        if (recipes[i]["shopping"] == true){
+            recipesToSend.push(recipes[i])
+        }
+    }
+    response.send(recipesToSend)
+})
