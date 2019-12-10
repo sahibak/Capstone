@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 // import Footer from "../footer/footer.js";
 import "./shoppingCartStyle.scss";
-import NavBar from "../AllRecipes/navBar/navBar.js";
+import NavBar from "./navBarSC/navBarSC.js";
 
 export default class ShoppingCart extends React.Component{
     state = {
@@ -13,7 +13,7 @@ export default class ShoppingCart extends React.Component{
 
     // overview: on Component mounting, running axios request to get data from the server and setting state
     componentDidMount(){
-        axios.get("http://localhost:8080/shoppingcart")
+        axios.get("http://10.32.113.143:8080/shoppingcart")
         .then(response => {
             this.setState({
                 recipeIngredientsList: response.data

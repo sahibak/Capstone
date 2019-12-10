@@ -9,7 +9,7 @@ export default class NavBarRecipeList extends React.Component{
     render(){
         return(
             <>
-                <div className="navBar">
+                <div className="navBarSR">
                 <Link to="/"><img className= "navIcon" src={Recipes} alt=""/></Link>
                 <img className= "logo" src={Logo} alt=""/>
                 <Link to="/shoppingcart"><img className= "navIcon" src={Bag} alt=""/></Link>
