@@ -30,10 +30,13 @@ recipes = require("../data/recipesData.js")
 // POST Request
 router.post("/",(request,response) => {
     for (let i =0; i<recipes.length; i++){
-        if(recipes[i]["id"] == request.body.id){
+        if(recipes[i]["id"] == request.body.id && !recipes[i]["shopping"]){
             recipes[i]["shopping"] = true;
-            break;
         }
+        else{
+            recipes[i]["shopping"] = false;
+        }
+        break;
     }
     response.send(recipes)
 })

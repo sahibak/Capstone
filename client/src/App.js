@@ -54,7 +54,6 @@ export default class App extends React.Component{
 
   // GET request for recipes to render on Main component
   getRecipes = () => {
-    
     axios.get("http://192.168.2.15:8080/recipes",{
         params: {
             userInput: this.state.userInput,
