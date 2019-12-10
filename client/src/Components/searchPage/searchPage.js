@@ -2,14 +2,15 @@ import React from "react";
 import "./searchPageStyle.scss";
 import Peanut from "../../assets/peanut-outline.svg";
 import PeanutOff from "../../assets/peanut-off-outline.svg";
-import Green from "../../assets/green.svg";
-import GreenSelected from "../../assets/green-selected.svg";
+import Green from "../../assets/vegetarian.svg";
+import GreenSelected from "../../assets/vegetarian-selected.svg";
 import Vegan from "../../assets/vegan.svg";
 import VeganSelected from "../../assets/vegan-selected.svg";
 import Shellfish from "../../assets/shellfish.svg";
 import ShellfishOff from "../../assets/shellfish-selected.svg";
 import Fish from "../../assets/fish.svg";
-import FishOff from "../../assets/fishOff.svg";
+import FishOff from "../../assets/fish-selected.svg";
+import Search from "../../assets/search.svg";
 
 export default class SearchPage extends React.Component{
 
@@ -24,25 +25,25 @@ export default class SearchPage extends React.Component{
                 <form className="form" onSubmit={this.searchSubmit} >
                     <div className="input-field s2 searchbar">
                         <input type="text" className="autocomplete" name="searchbar" placeholder="Enter Search"></input>
-                        <button type="submit"><i className="material-icons prefix">search</i></button>
+                        <button className="btn" type="submit"><img className="img" src={Search} alt=""/></button>
                     </div>
                     <div>
                         <p className="cat font-weight-bold">Food Category</p>
                         <div className ="category-group">
                             <label className="fancy-checkbox">
                                 <input type="checkbox" name="category1" value="Vegetarian"/>
-                                    <img className="checked icon" src={GreenSelected} alt=""/>
-                                    <img className="unchecked icon" src={Green} alt=""/>
+                                    <img className="checked icon icon-box" src={GreenSelected} alt=""/>
+                                    <img className="unchecked icon icon-box" src={Green} alt=""/>
                             </label>
                             <label className="fancy-checkbox">
                                 <input type="checkbox" name="category2" value="Vegan"/>
-                                    <img className="checked icon" src={VeganSelected} alt=""/>
-                                    <img className="unchecked icon" src={Vegan} alt=""/>
+                                    <img className="checked icon icon-box" src={VeganSelected} alt=""/>
+                                    <img className="unchecked icon icon-box" src={Vegan} alt=""/>
                             </label>
                             <label className="fancy-checkbox">
                                 <input type="checkbox" name="category3" value="Fish"/>
-                                    <img className="checked icon" src={FishOff} alt=""/>
-                                    <img className="unchecked icon" src={Fish} alt=""/>
+                                    <img className="checked icon icon-box" src={FishOff} alt=""/>
+                                    <img className="unchecked icon icon-box" src={Fish} alt=""/>
                             </label>
                         </div>
                     </div>
@@ -51,8 +52,8 @@ export default class SearchPage extends React.Component{
                         <div className="category-group">
                             <label className="fancy-checkbox">
                                 <input type="checkbox" name="allergy1" value="Peanuts"/>
-                                <img className="checked icon" src={PeanutOff} alt=""/>
-                                <img className="unchecked icon" src={Peanut} alt=""/>
+                                <img className="checked icon icon-box" src={PeanutOff} alt=""/>
+                                <img className="unchecked icon icon-box" src={Peanut} alt=""/>
                             </label>
                             
                             <label>
@@ -65,8 +66,8 @@ export default class SearchPage extends React.Component{
                             </label>
                             <label className="fancy-checkbox">
                                 <input type="checkbox" name="allergy4" value="Shellfish"/>
-                                <img className="checked icon" src={ShellfishOff} alt=""/>
-                                <img className="unchecked icon" src={Shellfish} alt=""/>
+                                <img className="checked icon icon-box" src={ShellfishOff} alt=""/>
+                                <img className="unchecked icon icon-box" src={Shellfish} alt=""/>
                             </label>
                         </div>
                         <div>
@@ -74,13 +75,13 @@ export default class SearchPage extends React.Component{
                         <div className="category-group">
                             <label className="fancy-checkbox">
                                 <input type="checkbox" name="allergy1" value="Peanuts"/>
-                                <img className="checked icon" src={PeanutOff} alt=""/>
-                                <img className="unchecked icon" src={Peanut} alt=""/>
+                                <img className="checked icon icon-box" src={PeanutOff} alt=""/>
+                                <img className="unchecked icon icon-box" src={Peanut} alt=""/>
                             </label>
                             <label className="fancy-checkbox">
                                 <input type="checkbox" name="allergy1" value="Peanuts"/>
-                                <img className="checked icon" src={PeanutOff} alt=""/>
-                                <img className="unchecked icon" src={Peanut} alt=""/>
+                                <img className="checked icon icon-box" src={PeanutOff} alt=""/>
+                                <img className="unchecked icon icon-box" src={Peanut} alt=""/>
                             </label>
                             <label className="fancy-checkbox">
                                 <input type="checkbox" name="allergy1" value="Peanuts"/>
