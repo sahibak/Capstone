@@ -81,7 +81,7 @@ export default class ShoppingCart extends React.Component{
         categoryList.forEach(category => {
             //pushing product category into shoppping cart render
             this.shoppingList.push(
-                <div className ="label font-weight-bold" key={i+category}>{category}</div>
+                <div className={this.determineCategory(category)} key={i+category}>{category}</div>
             )
             
             // running function to get starting rgb color for the cat
