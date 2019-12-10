@@ -88,9 +88,11 @@ export default class ShoppingCart extends React.Component{
             let color = this.determineCatForBck(category)
             let n = 0
             
+            
             let itemsObj = this.renderingList[category]
+            let len = Object.keys(itemsObj).length
             for (let item in itemsObj){
-                let colorList =this.adjustingColor(n,color)
+                let colorList ="rgb("+this.adjustingColor(n,color,len)+")"
                 console.log("in main",colorList)
                 let qty = itemsObj[item][0]
                 let unit = itemsObj[item][1]
@@ -119,24 +121,18 @@ export default class ShoppingCart extends React.Component{
         }
     }
 
-    adjustingColor(i,color){
-        console.log("i",i)
-        if (i==0){
-            let color1 = color[0][0]
-            let color2 = color[0][1]
-            let color3 = color[0][2]
-            let colorStr = "rgb("+color1+","+color2+","+color3+")"
-            console.log("in func", colorStr)
-            return colorStr
-       } else {
-           let update = color[0][1] + 10
-           let color1 = color[0][0]
-            let color2 = update
-            let color3 = color[0][2]
-            let colorStr = "rgb("+color1+","+color2+","+color3+")"
-            console.log("in func", colorStr)
-            return colorStr
-       }
+    adjustingColor(i, color, len){
+        let startColor1 = color[0][0]
+        let startColor2 = color[0][1]
+        let startColor3 = color[0][2]
+
+        let endColor1 = color[1][0]
+        let endColor2 = color[1][1]
+        let endColor3 = color[1][2]
+
+        let jump = Math.floor((endColor2 - startColor2)/len)
+
+        return String([startColor1, startColor2 + (i*jump), startColor3])
     }
 
     // determing styling class based on category type
