@@ -29,14 +29,18 @@ router.use(express.json());
 recipes = require("../data/recipesData.js")
 // POST Request
 router.post("/",(request,response) => {
-    for (let i =0; i<recipes.length; i++){
+    console.log("posting data on shopping cart")
+    for (let i = 0; i<recipes.length; i++){
         if(recipes[i]["id"] == request.body.id && !recipes[i]["shopping"]){
+            console.log("entered if")
             recipes[i]["shopping"] = true;
+            break;
         }
-        else{
+        else if (recipes[i]["id"] == request.body.id){
+            console.log("entered else")
             recipes[i]["shopping"] = false;
+            break;
         }
-        break;
     }
     response.send(recipes)
 })
