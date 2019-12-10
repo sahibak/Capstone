@@ -2,6 +2,7 @@ import React from "react";
 import "./recipeBookListStyle.scss";
 // import RecipeInBook from "./recipeInBook/recipeInBook.js";
 import Sun from "../../../assets/sun-with-face.svg";
+import Trash from "../../../assets/trash.svg";
 import { Link } from "react-router-dom";
 
 export default class RecipeBookList extends React.Component{
@@ -21,7 +22,7 @@ export default class RecipeBookList extends React.Component{
                     </article>
                     </Link>
                     <article onClick={(event) => this.props.updateSelection(event,id)} className="delete">
-                        <span>{time} mins</span>
+                        <img className="trash" src={Trash} alt=""/>
                     </article>
                 </section>
             )

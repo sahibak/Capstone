@@ -12,7 +12,7 @@ export default class RecipeBook extends React.Component{
 
     // overview: on Component mounting, running axios request to get data from the server and setting state
     componentDidMount(){
-        axios.get("http://192.168.2.15:8080/shoppingcart")
+        axios.get("http://localhost:8080/shoppingcart")
         .then(response => {
             this.setState({
                 recipes: response.data
@@ -25,7 +25,7 @@ export default class RecipeBook extends React.Component{
         console.log("ran update")
         event.preventDefault();
         // posting data on shopping cart
-        axios.post("http://192.168.2.15:8080/shoppingcart/remove", {
+        axios.post("http://localhost:8080/shoppingcart/remove", {
             id: index
         })
         .then((response) => {
@@ -41,7 +41,6 @@ export default class RecipeBook extends React.Component{
         return(
             <>
             <div className="container">
-                <h1>GroSure</h1>
                 <NavBarRecipeList></NavBarRecipeList>
                 <article>
                     <RecipeBookList updateSelection = {this.updateSelection} recipes={this.state.recipes}></RecipeBookList>

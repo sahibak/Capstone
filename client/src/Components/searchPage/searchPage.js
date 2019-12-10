@@ -11,6 +11,8 @@ import ShellfishOff from "../../assets/shellfish-selected.svg";
 import Fish from "../../assets/fish.svg";
 import FishOff from "../../assets/fish-selected.svg";
 import Search from "../../assets/search.svg";
+import Wheat from "../../assets/wheat.svg";
+import WheatA from "../../assets/wheat-active.svg";
 
 export default class SearchPage extends React.Component{
 
@@ -55,19 +57,14 @@ export default class SearchPage extends React.Component{
                                 <img className="checked icon icon-box" src={PeanutOff} alt=""/>
                                 <img className="unchecked icon icon-box" src={Peanut} alt=""/>
                             </label>
-                            
-                            <label>
+                            <label className="fancy-checkbox">
                                 <input type="checkbox" name="allergy2" value="Gluten"/>
-                                <span>Gluten</span>
+                                <img className="checked icon icon-box" src={WheatA} alt=""/>
+                                <img className="unchecked icon icon-box" src={Wheat} alt=""/>
                             </label>
                             <label>
                                 <input type="checkbox" name="allergy3" value="Dairy"/>
                                 <span>Dairy</span>
-                            </label>
-                            <label className="fancy-checkbox">
-                                <input type="checkbox" name="allergy4" value="Shellfish"/>
-                                <img className="checked icon icon-box" src={ShellfishOff} alt=""/>
-                                <img className="unchecked icon icon-box" src={Shellfish} alt=""/>
                             </label>
                         </div>
                         {/* <div>
