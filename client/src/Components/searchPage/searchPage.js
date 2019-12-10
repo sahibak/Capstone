@@ -70,7 +70,7 @@ export default class SearchPage extends React.Component{
                                 <img className="unchecked icon icon-box" src={Shellfish} alt=""/>
                             </label>
                         </div>
-                        <div>
+                        {/* <div>
                         <p className="cat font-weight-bold">Type</p>
                         <div className="category-group">
                             <label className="fancy-checkbox">
@@ -90,7 +90,7 @@ export default class SearchPage extends React.Component{
                             </label>
                             
                         </div>
-                        </div>
+                        </div> */}
                     </div>
                     {/* <button className="btn btn-dark font-weight-bold" type="submit">Submit</button> */}
                 </form>
