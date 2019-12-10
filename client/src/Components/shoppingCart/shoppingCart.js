@@ -13,7 +13,7 @@ export default class ShoppingCart extends React.Component{
 
     // overview: on Component mounting, running axios request to get data from the server and setting state
     componentDidMount(){
-        axios.get("http://localhost:8080/shoppingcart")
+        axios.get("http://192.168.2.15:8080/shoppingcart")
         .then(response => {
             this.setState({
                 recipeIngredientsList: response.data
@@ -79,7 +79,7 @@ export default class ShoppingCart extends React.Component{
         categoryList.forEach(category => {
             //pushing product category into shoppping cart render
             this.shoppingList.push(
-                <p className ="label font-weight-bold" key={i+category}>{category}</p>
+                <div className ="label font-weight-bold" key={i+category}>{category}</div>
             )
 
             let itemsObj = this.renderingList[category]
@@ -87,7 +87,7 @@ export default class ShoppingCart extends React.Component{
                 let qty = itemsObj[item]
                 shoppingIngredients.push(
                     <ul key={item} onClick={(event) => this.itemPurchased(item,qty, category,event)} className={`${this.determineCategory(category)}`}>
-                        <li className="shadow p-3 mb-2 font-weight-bold rounded "  >{item} {qty}</li>
+                        <li className=""  >{item} {qty}</li>
                     </ul>
                 )
                 i ++
@@ -104,9 +104,9 @@ export default class ShoppingCart extends React.Component{
     // determing styling class based on category type
     determineCategory(category){
         if(category==="produce"){
-            return "produceClass"
+            return "produceClass item_design"
         } else if (category==="dry item"){
-            return "dryGoodsClass"
+            return "dryGoodsClass item_design"
         }
     }
 

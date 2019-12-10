@@ -20,21 +20,21 @@ export default class Recipes extends React.Component{
         this.props.getRecipes();
     }    
 
-    // To update the counter of recipes, so app can swipe to next one
-    componentDidUpdate(_,prevState){
-        if (prevState.count !== this.state.count){
-            // let randomNumber = Math.floor(Math.random() * Math.floor(this.props.recipesData.length))
-            // let newCountValue = 0
-            // randomNumber===prevState.count ? newCountValue = prevState.count+1 : newCountValue = randomNumber
-            // console.log("random", randomNumber, "newCountVal", newCountValue,"len", this.props.recipesData.length)
-            let newCountValue = prevState.count+1;   
-            // if there is no new recipe to load, the recipe showcase will start from the beginning
-            newCountValue >= this.props.recipesData.length ? this.setState({count: 0}) : this.setState({count:newCountValue});
-        }
-    }
+    // // To update the counter of recipes, so app can swipe to next one
+    // componentDidUpdate(_,prevState){
+    //     if (prevState.count !== this.state.count){
+    //         // let randomNumber = Math.floor(Math.random() * Math.floor(this.props.recipesData.length))
+    //         // let newCountValue = 0
+    //         // randomNumber===prevState.count ? newCountValue = prevState.count+1 : newCountValue = randomNumber
+    //         // console.log("random", randomNumber, "newCountVal", newCountValue,"len", this.props.recipesData.length)
+    //         let newCountValue = prevState.count+1;   
+    //         // if there is no new recipe to load, the recipe showcase will start from the beginning
+    //         newCountValue >= this.props.recipesData.length ? this.setState({count: 0}) : this.setState({count:newCountValue});
+    //     }
+    // }
 
     // To swipe to next recipe
-    recipeSwipe(event){
+    recipeSwipe = (event) =>{
         event.preventDefault()
         let newCountValue = this.state.count+1;
         // if there is no new recipe to load, the recipe showcase will start from the beginning
@@ -72,7 +72,7 @@ export default class Recipes extends React.Component{
                     <RecipeImageBckgrnd className="circle" recipeImage={this.props.recipesData[this.state.count]["image"]}></RecipeImageBckgrnd>
                     <NavBar></NavBar>
                     {/* <button className="next-recipe-swipe" onClick={(event) => this.recipeSwipe(event)}><img src={ArrowL} alt="arrow left"/></button> */}
-                    <RecipeCard recipesData={this.props.recipesData} count={this.state.count} recipeAdd ={this.props.recipeAdd}></RecipeCard>
+                    <RecipeCard recipesData={this.props.recipesData} count={this.state.count} recipeAdd ={this.props.recipeAdd} recipeSwipe ={this.recipeSwipe}></RecipeCard>
                     {/* <Ingredients recipeDetails={this.props.recipesData[this.state.count]}></Ingredients> */}
                     {/* <Footer></Footer> */}
                 </section>

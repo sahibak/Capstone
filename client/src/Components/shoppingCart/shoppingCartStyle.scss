@@ -10,6 +10,7 @@
     padding: 0px;
     border-radius: 4px;
     color: white;
+    margin-bottom:10px;
 
 }
 
@@ -23,7 +24,7 @@
 
 .shoppingCart{
     padding-top: 150px;
-    height: 500px;
+    height: 600px;
     overflow: scroll;
 }
 
@@ -35,4 +36,13 @@
 .purchased{
     opacity: 0.5;
     text-decoration: line-through;
+}
+
+.item_design{
+    height: 60px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
 }

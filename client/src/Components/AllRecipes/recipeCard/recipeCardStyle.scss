@@ -33,15 +33,25 @@
 }
 
 .recipe-name{
-    // padding-top: 60px;
+    padding-top: 20px;
 }
 
 .action-items{
-    // padding-top:20px;
+    // height: 0px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    &-img{
-        width: 72px;
-        padding: 20px;
+    &-btn{
+        width: 100%;
+        // padding: 20px;
         height: 72px;
+        border: none;
+        background: none;
+    }
+
+    &__img{
+        height: 50px;
     }
 }

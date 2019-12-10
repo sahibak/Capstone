@@ -54,28 +54,27 @@ export default class App extends React.Component{
 
   // GET request for recipes to render on Main component
   getRecipes = () => {
-      axios.get("http://localhost:8080/recipes",{
-          params: {
-              userInput: this.state.userInput,
-              userSearch: this.state.userSearch
-          }
-      })
-      .then((response)=> {
-          this.setState({
-              recipesData:response.data,
-              dataCaptured: true, 
-              count: Math.floor(Math.random() * Math.floor(response.data.length))
-          })
-      })
-      .catch((error)=> console.log(error));
-    // }
+    
+    axios.get("http://192.168.2.15:8080/recipes",{
+        params: {
+            userInput: this.state.userInput,
+            userSearch: this.state.userSearch
+        }
+    })
+    .then((response)=> {
+        this.setState({
+            recipesData:response.data,
+            dataCaptured: true
+        })
+    })
+    .catch((error)=> console.log(error));
   }
 
   // when the user adds a recipe to shopping cart
   recipeAdd = (event,index) => {
     event.preventDefault();
     // posting data on shopping cart
-    axios.post("http://localhost:8080/shoppingcart", {
+    axios.post("http://192.168.2.15:8080/shoppingcart", {
         id: this.state.recipesData[index]["id"]
     })
     .then((response) => {
