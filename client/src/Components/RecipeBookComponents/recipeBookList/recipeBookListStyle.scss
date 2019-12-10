@@ -15,7 +15,7 @@
 
 .each-recipe{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     padding:10px;
     margin:10px;
@@ -28,4 +28,8 @@
         flex-basis: 60%;
         justify-content: flex-start;
     }
+}
+
+.delete{
+
 }

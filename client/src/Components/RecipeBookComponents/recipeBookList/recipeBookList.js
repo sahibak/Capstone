@@ -13,18 +13,19 @@ export default class RecipeBookList extends React.Component{
         for (let i= 0; i < this.props.recipes.length; i++){
             let { name, time, food, image, id } =  this.props.recipes[i]
             recipeBookList.push(
-                <Link to={"/"+id} key={this.props.recipes[i]["id"]}>
                 <section  className="each-recipe shadow">
+                     <Link to={"/"+id} key={this.props.recipes[i]["id"]}>
                     <article className="each-recipe-details">
                         <img className="recipe-image" src={image} alt=""/>
                         <span>{name}</span>
                     </article>
-                    <article>
+                    </Link>
+                    <article className="delete">
                         {this.imageToUse(food)}
                         <span>{time} mins</span>
                     </article>
                 </section>
-                </Link>
+              
             )
         }
         return recipeBookList
