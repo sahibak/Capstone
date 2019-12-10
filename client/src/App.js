@@ -71,6 +71,7 @@ export default class App extends React.Component{
 
   // when the user adds a recipe to shopping cart
   recipeAdd = (event,index) => {
+    console.log("ran add")
     event.preventDefault();
     // posting data on shopping cart
     axios.post("http://localhost:8080/shoppingcart", {
@@ -78,11 +79,29 @@ export default class App extends React.Component{
     })
     .then((response) => {
       this.setState({
-        recipesData: response.data
+        recipesData: response.data,
+        count: this.state.count + 1
       })
     })
     .catch((error)=> {console.log(error)})
   }
+
+  // componentDidUpdate(_,prevState){
+  //   if(prevState.count !== this.state.count){
+  //     let newCountValue = this.state.count+1;
+  //     // if there is no new recipe to load, the recipe showcase will start from the beginning
+  //     newCountValue >= this.recipesData.length ? this.setState({count: 0}) : this.setState({count:newCountValue});
+  //   }
+  // }
+
+  // To swipe to next recipe
+  recipeSwipe = (event) =>{
+    console.log("ran swipe")
+    event.preventDefault()
+    let newCountValue = this.state.count+1;
+    // if there is no new recipe to load, the recipe showcase will start from the beginning
+    newCountValue >= this.state.recipesData.length ? this.setState({count: 0}) : this.setState({count:newCountValue});
+}
 
   render(){
       return (
@@ -90,7 +109,7 @@ export default class App extends React.Component{
           <BrowserRouter>
             <Switch>
                 <Route path="/search" exact render = {(props) => <SearchPage {...props} userSelection={this.userSelection}></SearchPage>}></Route>
-                <Route path="/" exact render = {() => <Recipes userSearch= {this.state.userSearch} userInput={this.state.userInput} getRecipes={this.getRecipes} recipesData={this.state.recipesData} dataCaptured={this.state.dataCaptured} recipeAdd={this.recipeAdd} count={this.state.count}></Recipes>}></Route>
+                <Route path="/" exact render = {() => <Recipes userSearch= {this.state.userSearch} userInput={this.state.userInput} recipeSwipe={this.recipeSwipe} getRecipes={this.getRecipes} recipesData={this.state.recipesData} dataCaptured={this.state.dataCaptured} recipeAdd={this.recipeAdd} count={this.state.count}></Recipes>}></Route>
                 <Route path="/shoppingcart" exact component = {ShoppingCart}></Route>
                 <Route path="/recipebook" exact component = {RecipeBook}></Route>
                 <Route path="/:id" exact component={RecipeInBook}></Route>

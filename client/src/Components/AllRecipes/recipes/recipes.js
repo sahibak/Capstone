@@ -33,13 +33,13 @@ export default class Recipes extends React.Component{
     //     }
     // }
 
-    // To swipe to next recipe
-    recipeSwipe = (event) =>{
-        event.preventDefault()
-        let newCountValue = this.state.count+1;
-        // if there is no new recipe to load, the recipe showcase will start from the beginning
-        newCountValue >= this.props.recipesData.length ? this.setState({count: 0}) : this.setState({count:newCountValue});
-    }
+    // // To swipe to next recipe
+    // recipeSwipe = (event) =>{
+    //     event.preventDefault()
+    //     let newCountValue = this.state.count+1;
+    //     // if there is no new recipe to load, the recipe showcase will start from the beginning
+    //     newCountValue >= this.props.recipesData.length ? this.setState({count: 0}) : this.setState({count:newCountValue});
+    // }
     
 
     // // when the user adds a recipe to shopping cart
@@ -69,10 +69,10 @@ export default class Recipes extends React.Component{
                 <section className="body">  
                     {/* <p className="oval"></p> */}
                     {/* <button className="btn btn-success">test</button> */}
-                    <RecipeImageBckgrnd className="circle" recipeImage={this.props.recipesData[this.state.count]["image"]}></RecipeImageBckgrnd>
+                    <RecipeImageBckgrnd className="circle" recipeImage={this.props.recipesData[this.props.count]["image"]}></RecipeImageBckgrnd>
                     <NavBar></NavBar>
                     {/* <button className="next-recipe-swipe" onClick={(event) => this.recipeSwipe(event)}><img src={ArrowL} alt="arrow left"/></button> */}
-                    <RecipeCard recipesData={this.props.recipesData} count={this.state.count} recipeAdd ={this.props.recipeAdd} recipeSwipe ={this.recipeSwipe}></RecipeCard>
+                    <RecipeCard recipesData={this.props.recipesData} count={this.props.count} recipeAdd ={this.props.recipeAdd} recipeSwipe ={this.props.recipeSwipe}></RecipeCard>
                     {/* <Ingredients recipeDetails={this.props.recipesData[this.state.count]}></Ingredients> */}
                     {/* <Footer></Footer> */}
                 </section>

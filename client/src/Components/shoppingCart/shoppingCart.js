@@ -13,7 +13,7 @@ export default class ShoppingCart extends React.Component{
 
     // overview: on Component mounting, running axios request to get data from the server and setting state
     componentDidMount(){
-        axios.get("http://192.168.2.15:8080/shoppingcart")
+        axios.get("http://localhost:8080/shoppingcart")
         .then(response => {
             this.setState({
                 recipeIngredientsList: response.data
