@@ -63,7 +63,7 @@ export default class Recipes extends React.Component{
     // }
 
     render(){
-        if(this.props.dataCaptured === true){
+        if(this.props.dataCaptured === true&this.props.recipesData.length>0){
             return(
                 <>
                 <section className="body">  
@@ -82,7 +82,10 @@ export default class Recipes extends React.Component{
             )
         } else {
             return(
+                <>
+                <NavBar></NavBar>
                 <p>"no data"</p>
+                </>
             )
         }
     }
