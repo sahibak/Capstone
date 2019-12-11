@@ -79,6 +79,8 @@ export default class ShoppingCart extends React.Component{
 
         // returning list of category keys
         let categoryList = Object.keys(this.renderingList)
+        // sorting category list to ensure others comes at bottom
+        categoryList.sort(function(a,b){if(a==="others"){return 1}else if(b==="others"){return -1}})
         // getting obj of items under each category
         categoryList.forEach(category => {
             console.log(category)
