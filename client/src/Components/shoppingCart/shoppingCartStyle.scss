@@ -12,6 +12,7 @@
     // margin-bottom:10px;
     font-size: 20px;
     text-align: center;
+    font-size: 2em;
 
 }
 
@@ -21,6 +22,8 @@
     // border-radius: 4px;
     color:#FDFFFC;
     font-size: 20px;
+    font-size: 2em;
+
 }
 
 .meatsClass{
@@ -29,6 +32,7 @@
     // border-radius: 4px;
     color:#FDFFFC;
     font-size: 20px;
+    font-size: 2em;
 }
 
 .dairyClass{
@@ -37,6 +41,7 @@
     // border-radius: 4px;
     color:#FDFFFC;
     font-size: 20px;
+    font-size: 2em;
 }
 
 .nutsClass{
@@ -45,12 +50,14 @@
     // border-radius: 4px;
     color:#FDFFFC;
     font-size: 20px;
+    font-size: 2em;
 }
 
 .shoppingCart{
     padding-top: 100px;
     height: 525px;
     overflow: scroll;
+    
 }
 
 .label{
@@ -62,6 +69,7 @@
 .purchased{
     opacity: 0.5;
     text-decoration: line-through;
+    font-size: 1.25em;
 }
 
 .item_design{
@@ -87,4 +95,8 @@ ul{
 
 .scContainer{
     padding-top: 100px;
+}
+
+.items{
+    font-size: 1.25em;
 }
