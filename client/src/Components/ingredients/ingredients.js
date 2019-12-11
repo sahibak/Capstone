@@ -15,7 +15,7 @@ export default class Ingredients extends React.Component{
                 <>
                     <div key={`parent+${i}`} className="ingredient__Grouping">
                         <img key={`img+${i}`} className="z-depth-1 ingredient__Image" src={image} alt=""/>
-                        <ul key={`parentul+${i}`} className="ingredient__List">
+                        <ul key={`parentul+${i}`} className="ingredient__ListM">
                             <li key={`li+${i}`} className="ingredient__Name" >{name}</li>
                             {/* <li className="ingredient__Qty">{qty} {unit}</li> */}
                         </ul>

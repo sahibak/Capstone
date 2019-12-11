@@ -5,8 +5,9 @@
     display: flex;
     width: 100%;
     overflow-x: scroll;
-    height: 200px;
+    // height: 200px;
     // justify-content: flex-start;
+    font-size:1.25em;
 
 
     &__Grouping{
@@ -22,11 +23,12 @@
 
     }
 
-    &__List {
+    &__ListM {
         text-align: left;
         display: flex;
         justify-content: center;
         flex-direction: column;
+        height: auto;
     }
 
     &__Qty{
@@ -43,5 +45,6 @@
 
     &__Name{
         text-align: center;
+        height: auto;
     }
 }

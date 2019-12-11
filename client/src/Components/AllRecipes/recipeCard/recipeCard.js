@@ -9,7 +9,7 @@ import Check from "../../../assets/check.svg";
 // import RightArrow from "../../../assets/rightArrow.svg";
 import Ingredients from "../../ingredients/ingredients.js";
 // import Crop from "../../assets/crop.png";
-import Arrow from "../../../assets/scrollArrow.svg";
+// import Arrow from "../../../assets/scrollArrow.svg";
 
 
 export default class RecipeCard extends React.Component{
@@ -107,10 +107,11 @@ export default class RecipeCard extends React.Component{
                         {/* swipe to next recipe button */}
                         <button className="action-items-btn" onClick={(event) => this.props.recipeSwipe(event)}><img className="action-items-img"src={Dislike} alt=""></img> </button>
                         {/* add to shopping cart */}
-                        <button className="action-items-btn" onClick={(event) => this.props.recipeAdd(event,this.props.count)}><img className="action-items-img" src={this.likeImage()} alt=""></img> </button>
+                        <button className="action-items-btn check" onClick={(event) => this.props.recipeAdd(event,this.props.count)}><img className="action-items-img" src={this.likeImage()} alt=""></img> </button>
                     </div>    
-                    <p className="arrow"><img src={Arrow} alt=""/></p>
+                    
                     <Ingredients recipeDetails={this.props.recipesData[this.props.count]}></Ingredients>
+                    {/* <p className="arrow"><img src={Arrow} alt=""/></p> */}
                 </article>
                 {/* <ul>{this.displayRecipeSteps()}</ul> */}
             </>

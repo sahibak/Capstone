@@ -41,6 +41,7 @@
         height: 32px;
         box-sizing: content-box;
         margin-bottom: 0px;
+        font-size: 1.5em;
     }
 }
 
@@ -95,7 +96,7 @@
 
 .stdStyle{
     text-align: left;
-    height: 100px;
+    height: auto;
     padding: 10px;
     border-top:#FFB045 2px solid;
     /* border-radius: 10px; */
@@ -103,4 +104,5 @@
     overflow:hidden;
     margin-bottom: 5px;
     border-radius: 10px;
+    font-size: 1.25em;
 }

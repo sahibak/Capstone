@@ -25,8 +25,15 @@
     &-details{
         display: flex;
         align-items: center;
-        flex-basis: 60%;
+        // flex-basis: 60%;
         justify-content: flex-start;
+        font-size: 1.5em;
+       
+        text-decoration: none;
+    }
+
+    &-details:hover{
+        text-decoration: none;
     }
 }
 

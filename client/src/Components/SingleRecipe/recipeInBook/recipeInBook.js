@@ -69,13 +69,16 @@ export default class RecipeInBook extends React.Component{
     }
 
     render(){
+        console.log("recipeInBook",this.state.recipeData)
         if(this.state.dataReceived === true && this.state.recipeData.length>0){
+            console.log("if ran")
+            let { image, name, recipe, ingredients } = this.state.recipeData[0]
             return(
                 <>
                     <NavBarSingle></NavBarSingle>
-                    <RecipeImageBckgrndRIB recipeImage={this.state.recipeData[0]["image"]}></RecipeImageBckgrndRIB>
-                    <img className="z-depth-1 ingredient__heroImageRIB" src={this.state.recipeData[0]["image"]} alt=""/>
-                    <RecipeCardRIB recipe={this.state.recipeData[0]}></RecipeCardRIB>
+                    <RecipeImageBckgrndRIB recipeImage={image}></RecipeImageBckgrndRIB>
+                    <img className="z-depth-1 ingredient__heroImageRIB" src={image} alt=""/>
+                    <RecipeCardRIB recipe={recipe} name={name} ingredients={ingredients}></RecipeCardRIB>
                 </>
             )
         } else{

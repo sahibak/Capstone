@@ -22,7 +22,8 @@ export default class RecipeCardRIB extends React.Component{
     componentDidMount(){
         console.log("this.props.recipe",this.props.recipe)
         this.setState({
-            steps: this.props.recipe["recipe"]
+            // steps: this.props.recipe["recipe"]
+            steps: this.props.recipe
         })
     }
     
@@ -30,7 +31,7 @@ export default class RecipeCardRIB extends React.Component{
         // empty list to push JSX into
         let ingredientList = []
         // getting ingredient list
-        let ingredients = this.props.recipe["ingredients"]
+        let ingredients = this.props.ingredients
         // for every item in ingridients, run the loop and create JSX
         for (let i=0; i<ingredients.length; i++){
             let { name, qty, unit, image } = ingredients[i]
@@ -54,9 +55,13 @@ export default class RecipeCardRIB extends React.Component{
         // getting the recipe steps 
         // let recipeSteps = this.state.steps
         // for steps in recipe, run loop and create JSX
-        for (let i=0; i<=Object.keys(this.state.steps).length; i++){
-            let currentStepNumber = String(i)
+        for (let i=0; i<Object.keys(this.state.steps).length; i++){
+            console.log("i",i)
+            let currentStepNumber = i
+            console.log(currentStepNumber)
+            console.log(this.state.steps)
             let currentStep = this.state.steps[currentStepNumber]
+            console.log("current step", currentStep)
             // let currentStepStatus = this.state.steps[currentStepNumber][1]
             recipeList.push(
                  <li onClick = {() => this.completedStep(currentStepNumber)} className={this.displayImage(currentStepNumber)} key={currentStepNumber}>
@@ -89,10 +94,12 @@ export default class RecipeCardRIB extends React.Component{
 
     render(){
         if(this.state.steps){
+            console.log("in if",this.state.steps)
+            console.log(Object.keys(this.state.steps).length)
             return(
                 <>
                     <article className="recipeCard">
-                    <p className="h4 font-weight-bold recipe-name">{this.props.recipe["name"]}</p>
+                    <p className="h4 font-weight-bold recipe-name">{this.props.name}</p>
                         <div>{this.displayIngredients()}</div>
                         <ul>{this.displayRecipeSteps()}</ul>
                     </article>
