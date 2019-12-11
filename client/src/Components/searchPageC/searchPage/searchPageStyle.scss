@@ -3,6 +3,7 @@
   color: #2F404E;
   overflow: scroll;
   margin:0px;
+  
 }
 
 .iconsForCat {
@@ -29,14 +30,17 @@
   display: none;
 }
 
-.container {
-  background-image: url("../../../assets/background.jpg");
+.containerSP{
+  // background-image: url("../../../assets/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
   width: 100%;
   min-height: 100vh;
   text-align: center;
+  padding-top:90px;
+  padding-left:10px;
+  padding-right: 10px;
 }
 
 .form {
@@ -60,6 +64,7 @@
   display: flex;
   margin-bottom: 0px;
   margin-top: 0px;
+  font-size: 1.5em;
 }
 
 .autocomplete{
@@ -112,4 +117,8 @@
 
 .img{
   height: 40px;
+}
+
+.fc{
+  margin-bottom: 20px;
 }

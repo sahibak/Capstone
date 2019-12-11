@@ -84,7 +84,7 @@ export default class Recipes extends React.Component{
             return(
                 <>
                 <NavBar></NavBar>
-                <p>"no data"</p>
+                <p className="rText"> Curating recipes for you...</p>
                 </>
             )
         }

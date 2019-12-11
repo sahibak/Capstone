@@ -39,15 +39,25 @@ export default class RecipeBook extends React.Component{
     }
 
     render(){
-        return(
+        if(this.state.recipes.length>0){
+            return(
+                <>
+                <div className="containerRB">
+                    <NavBarRecipeList></NavBarRecipeList>
+                    <article className="recipeBook">
+                        <RecipeBookList updateSelection = {this.updateSelection} recipes={this.state.recipes}></RecipeBookList>
+                    </article>
+                </div>
+                </>
+            )
+        } else{
+            return(
             <>
-            <div className="containerRB">
+                <div className="containerRB"></div>
                 <NavBarRecipeList></NavBarRecipeList>
-                <article className="recipeBook">
-                    <RecipeBookList updateSelection = {this.updateSelection} recipes={this.state.recipes}></RecipeBookList>
-                </article>
-            </div>
+                <p className="rbText"> Putting together your recipebook...</p>
             </>
-        )
+            )
+        }
     }
 }

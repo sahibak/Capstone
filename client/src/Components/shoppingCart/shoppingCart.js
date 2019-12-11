@@ -213,7 +213,8 @@ export default class ShoppingCart extends React.Component{
         else{
             return(
                 <>
-                    <p>Nothing to return</p>
+                    <NavBar></NavBar>
+                    <p className="scText"> Building your shopping cart...</p>
                 </>
             )
         }

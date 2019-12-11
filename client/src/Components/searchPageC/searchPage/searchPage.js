@@ -24,7 +24,7 @@ export default class SearchPage extends React.Component{
 
     render(){
         return(
-            <div className="container">
+            <div className="containerSP">
                 <NavBar></NavBar>
                 <form className="form" onSubmit={this.searchSubmit} >
                     <div className="input-field s2 searchbar">
@@ -33,7 +33,7 @@ export default class SearchPage extends React.Component{
                     </div>
                     <div>
                         <p className="cat font-weight-bold">Food Category</p>
-                        <div className ="category-group">
+                        <div className ="category-group fc">
                             <label className="fancy-checkbox">
                                 <input type="checkbox" name="category1" value="vegetarian"/>
                                     <img className="checked icon icon-box" src={GreenSelected} alt=""/>
