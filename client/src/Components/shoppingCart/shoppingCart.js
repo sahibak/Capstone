@@ -41,7 +41,7 @@ export default class ShoppingCart extends React.Component{
             let ingredientsForRecipe = this.state.recipeIngredientsList[i]["ingredients"]
             // loop over the each ingredient in ingredientsForRecipe
             for (let n = 0; n<ingredientsForRecipe.length; n++){
-                let itemName = ingredientsForRecipe[n]["name"]
+                let itemName = (ingredientsForRecipe[n]["name"]).toLowerCase()
                 let qty = ingredientsForRecipe[n]["qty"]
                 let unit = ingredientsForRecipe[n]["unit"]
                 let categoryToCheck = ingredientsForRecipe[n]["category"]
@@ -103,8 +103,8 @@ export default class ShoppingCart extends React.Component{
                 let unit = itemsObj[item][1]
                 let image = itemsObj[item][2]
                 shoppingIngredients.push(
-                    <ul key={item} onClick={(event) => this.itemPurchased(item,qty, category,event)} style = {{backgroundColor:colorList}} className={`${this.determineCategory(category)}`}>
-                        <li style = {{color:"white"}} className=""  ><img className ="z-depth-1 ingredient__Image"src={image} alt=""/> {item} - {qty} {unit}</li>
+                    <ul key={category} onClick={(event) => this.itemPurchased(item,qty, category,event)} style = {{backgroundColor:colorList}} className={`${this.determineCategory(category)}`}>
+                        <li key={item}style = {{color:"white"}} className=""  ><img className ="z-depth-1 ingredient__ImageSC"src={image} alt=""/> {item} - {qty} {unit}</li>
                     </ul>
                 )
                 n++

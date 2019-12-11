@@ -35,17 +35,17 @@ export default class SearchPage extends React.Component{
                         <p className="cat font-weight-bold">Food Category</p>
                         <div className ="category-group">
                             <label className="fancy-checkbox">
-                                <input type="checkbox" name="category1" value="Vegetarian"/>
+                                <input type="checkbox" name="category1" value="vegetarian"/>
                                     <img className="checked icon icon-box" src={GreenSelected} alt=""/>
                                     <img className="unchecked icon icon-box" src={Green} alt=""/>
                             </label>
                             <label className="fancy-checkbox">
-                                <input type="checkbox" name="category2" value="Vegan"/>
+                                <input type="checkbox" name="category2" value="vegan"/>
                                     <img className="checked icon icon-box" src={VeganSelected} alt=""/>
                                     <img className="unchecked icon icon-box" src={Vegan} alt=""/>
                             </label>
                             <label className="fancy-checkbox">
-                                <input type="checkbox" name="category3" value="Fish"/>
+                                <input type="checkbox" name="category3" value="fish"/>
                                     <img className="checked icon icon-box" src={FishOff} alt=""/>
                                     <img className="unchecked icon icon-box" src={Fish} alt=""/>
                             </label>
@@ -55,17 +55,17 @@ export default class SearchPage extends React.Component{
                         <p className="cat font-weight-bold">Allergies</p>
                         <div className="category-group">
                             <label className="fancy-checkbox">
-                                <input type="checkbox" name="allergy1" value="Peanuts"/>
+                                <input type="checkbox" name="allergy1" value="nuts"/>
                                 <img className="checked icon icon-box" src={PeanutOff} alt=""/>
                                 <img className="unchecked icon icon-box" src={Peanut} alt=""/>
                             </label>
                             <label className="fancy-checkbox">
-                                <input type="checkbox" name="allergy2" value="Gluten"/>
+                                <input type="checkbox" name="allergy2" value="gluten"/>
                                 <img className="checked icon icon-box" src={WheatA} alt=""/>
                                 <img className="unchecked icon icon-box" src={Wheat} alt=""/>
                             </label>
                             <label>
-                                <input type="checkbox" name="allergy3" value="Dairy"/>
+                                <input type="checkbox" name="allergy3" value="dairy"/>
                                 <span>Dairy</span>
                             </label>
                         </div>

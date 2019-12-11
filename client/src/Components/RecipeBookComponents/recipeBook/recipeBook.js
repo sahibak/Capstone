@@ -41,7 +41,7 @@ export default class RecipeBook extends React.Component{
     render(){
         return(
             <>
-            <div className="container">
+            <div className="containerRB">
                 <NavBarRecipeList></NavBarRecipeList>
                 <article className="recipeBook">
                     <RecipeBookList updateSelection = {this.updateSelection} recipes={this.state.recipes}></RecipeBookList>

@@ -14,9 +14,9 @@ export default class Ingredients extends React.Component{
             ingredientList.push(
                 <>
                     <div key={`parent+${i}`} className="ingredient__Grouping">
-                        <img key={`img+${i}`} className="z-depth-1 ingredient__Image" src={image} alt=""/>
+                        <img key={`img+${i}`} className="z-depth-1 ingredient__ImageM" src={image} alt=""/>
                         <ul key={`parentul+${i}`} className="ingredient__ListM">
-                            <li key={`li+${i}`} className="ingredient__Name" >{name}</li>
+                            <li key={`li+${i}`} className="ingredient__Name" >{this.trimString(name)}</li>
                             {/* <li className="ingredient__Qty">{qty} {unit}</li> */}
                         </ul>
                     </div>
@@ -24,6 +24,13 @@ export default class Ingredients extends React.Component{
             )
         }   
         return ingredientList;     
+    }
+    
+    trimString(name){
+        if(name.length > 10){
+            return name.substring(0, 7)+"..." 
+        } 
+         return name
     }
 
     render(){

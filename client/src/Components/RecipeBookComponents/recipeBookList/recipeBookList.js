@@ -18,7 +18,7 @@ export default class RecipeBookList extends React.Component{
                      <Link to={"/"+id} key={this.props.recipes[i]["id"]}>
                     <article className="each-recipe-details">
                         <img className="recipe-image" src={image} alt=""/>
-                        <span>{name}</span>
+                        <span className="title">{name}</span>
                     </article>
                     </Link>
                     <article onClick={(event) => this.props.updateSelection(event,id)} className="delete">

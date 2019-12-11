@@ -79,13 +79,14 @@
     align-items: center;
     // border-radius: 10px;
     padding: 10px;
+    height: auto;;
 }
 
-.ingredient__Image{
+.ingredient__ImageSC{
     box-sizing: border-box;
-    height: 70px;
+    height: 45px;
     border-radius: 50px;
-    width: 70px;
+    width: 45px;
     margin: 5px;
 }
 
