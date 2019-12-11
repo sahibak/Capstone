@@ -9,6 +9,7 @@ import axios from "axios";
 // import Recipe from "./Components/recipe/recipe.js";
 import RecipeInBook from "./Components/SingleRecipe/recipeInBook/recipeInBook.js";
 // import 'materialize-css/dist/css/materialize.min.css';
+import LandingPage from "./Components/LandingPage/landingPage.js";
 
 export default class App extends React.Component{
   state= {
@@ -116,11 +117,13 @@ export default class App extends React.Component{
         <div className="App">
           <BrowserRouter>
             <Switch>
+                <Route path="/landing" exact component={LandingPage}></Route>
                 <Route path="/search" exact render = {(props) => <SearchPage {...props} userSelection={this.userSelection}></SearchPage>}></Route>
                 <Route path="/" exact render = {() => <Recipes userSearch= {this.state.userSearch} userInput={this.state.userInput} recipeSwipe={this.recipeSwipe} getRecipes={this.getRecipes} recipesData={this.state.recipesData} dataCaptured={this.state.dataCaptured} recipeAdd={this.recipeAdd} count={this.state.count}></Recipes>}></Route>
                 <Route path="/shoppingcart" exact component = {ShoppingCart}></Route>
                 <Route path="/recipebook" exact component = {RecipeBook}></Route>
                 <Route path="/:id" exact component={RecipeInBook}></Route>
+                
                 {/* <Route path="/recipe" render={(this.state.recipesData) => <Recipe recipesData={this.state.recipesData}></Recipe>}></Route> */}
             </Switch>
         </BrowserRouter>
