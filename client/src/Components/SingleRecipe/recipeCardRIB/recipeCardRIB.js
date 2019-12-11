@@ -54,8 +54,8 @@ export default class RecipeCardRIB extends React.Component{
         // getting the recipe steps 
         // let recipeSteps = this.state.steps
         // for steps in recipe, run loop and create JSX
-        for (let i=1; i<=Object.keys(this.state.steps).length; i++){
-            let currentStepNumber = "Step"+i
+        for (let i=0; i<=Object.keys(this.state.steps).length; i++){
+            let currentStepNumber = String(i)
             let currentStep = this.state.steps[currentStepNumber]
             // let currentStepStatus = this.state.steps[currentStepNumber][1]
             recipeList.push(

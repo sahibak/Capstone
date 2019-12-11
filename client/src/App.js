@@ -19,6 +19,7 @@ export default class App extends React.Component{
     count: 0
   }
 
+  url = "192.168.2.15" 
   // function to capture the search parameters
   userSelection = (event)=>{
     event.preventDefault();
@@ -54,7 +55,7 @@ export default class App extends React.Component{
 
   // GET request for recipes to render on Main component
   getRecipes = () => {
-    axios.get("http://10.32.113.143:8080/recipes",{
+    axios.get("http://"+this.url+":8080/recipes",{
         params: {
             userInput: this.state.userInput,
             userSearch: this.state.userSearch
@@ -74,7 +75,7 @@ export default class App extends React.Component{
     console.log("ran add")
     event.preventDefault();
     // posting data on shopping cart
-    axios.post("http://10.32.113.143:8080/shoppingcart", {
+    axios.post("http://"+this.url+":8080/shoppingcart", {
         id: this.state.recipesData[index]["id"]
     })
     .then((response) => {

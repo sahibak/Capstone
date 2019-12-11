@@ -1,15 +1,15 @@
 import React from "react";
-import Like from '../../../assets/like.svg';
+// import Like from '../../../assets/like.svg';
 import LikeActive from '../../../assets/like-active.svg';
 // import NotDislike from '../../assets/dislike-outline.svg';
 import Dislike from '../../../assets/dislike.svg';
 import "./recipeCardStyle.scss";
-import Sun from "../../../assets/sun-with-face.svg";
-import Timer from "../../../assets/timer-clock.svg";
+import Check from "../../../assets/check.svg";
+// import Timer from "../../../assets/timer-clock.svg";
 // import RightArrow from "../../../assets/rightArrow.svg";
 import Ingredients from "../../ingredients/ingredients.js";
 // import Crop from "../../assets/crop.png";
-
+import Arrow from "../../../assets/scrollArrow.svg";
 
 
 export default class RecipeCard extends React.Component{
@@ -58,33 +58,33 @@ export default class RecipeCard extends React.Component{
         return recipeList; 
     }
 
-    // Overview: Display recipe summary - food and time to cook
-    displaySummary(){
-        let {food, time} = this.props.recipesData[this.props.count]
-        if(food === "breakfast"){
-            return (
-                <p><img src={Sun} alt=""/> <img src={Timer} alt=""/>{time} mins</p>
-            )
-        } else if (food === "lunch"){
-            return (
-                <p><img src={Sun} alt=""/> {time} mins</p>
-            )
-        } else if (food === "dinner"){
-            return (
-                <p><img src={Sun} alt=""/> {time} mins</p>
-            )
-        } else if (food === "dessert"){
-            return (
-                <p><img src={Sun} alt=""/> {time} mins</p>
-            )
-        }
-    }
+    // // Overview: Display recipe summary - food and time to cook
+    // displaySummary(){
+    //     let {food, time} = this.props.recipesData[this.props.count]
+    //     if(food === "breakfast"){
+    //         return (
+    //             <p><img src={Sun} alt=""/> <img src={Timer} alt=""/>{time} mins</p>
+    //         )
+    //     } else if (food === "lunch"){
+    //         return (
+    //             <p><img src={Sun} alt=""/> {time} mins</p>
+    //         )
+    //     } else if (food === "dinner"){
+    //         return (
+    //             <p><img src={Sun} alt=""/> {time} mins</p>
+    //         )
+    //     } else if (food === "dessert"){
+    //         return (
+    //             <p><img src={Sun} alt=""/> {time} mins</p>
+    //         )
+    //     }
+    // }
 
     likeImage(){
         if(this.props.recipesData[this.props.count]["shopping"] === true){
             return LikeActive
         } else {
-            return Like
+            return Check
         }
     }
 
@@ -109,6 +109,7 @@ export default class RecipeCard extends React.Component{
                         {/* add to shopping cart */}
                         <button className="action-items-btn" onClick={(event) => this.props.recipeAdd(event,this.props.count)}><img className="action-items-img" src={this.likeImage()} alt=""></img> </button>
                     </div>    
+                    <p className="arrow"><img src={Arrow} alt=""/></p>
                     <Ingredients recipeDetails={this.props.recipesData[this.props.count]}></Ingredients>
                 </article>
                 {/* <ul>{this.displayRecipeSteps()}</ul> */}

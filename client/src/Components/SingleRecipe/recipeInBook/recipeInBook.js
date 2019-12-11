@@ -12,10 +12,11 @@ export default class RecipeInBook extends React.Component{
         dataReceived: false
     }
     
+    url= "192.168.2.15"
     
     componentDidMount(){
         // GET request for recipes to render on Main component
-        axios.get("http://localhost:8080/recipe",{
+        axios.get("http://"+this.url+":8080/recipe",{
             params: {
                 id: this.props.match.params.id,
                 visible: false

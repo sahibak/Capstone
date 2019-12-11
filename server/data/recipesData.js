@@ -1,7 +1,4 @@
-// let img = require("../assets/pic.jpg")
-
-module.exports = 
-[
+module.exports=[
     {
       "allergy": "",
       "category": "Dessert",
@@ -25458,4 +25455,5 @@ module.exports =
       "type": "Japanese"
     }
   ]
+
   

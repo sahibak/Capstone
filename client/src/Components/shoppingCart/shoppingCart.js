@@ -11,9 +11,11 @@ export default class ShoppingCart extends React.Component{
         status: ""
     }
 
+    url = "192.168.2.15"
+
     // overview: on Component mounting, running axios request to get data from the server and setting state
     componentDidMount(){
-        axios.get("http://10.32.113.143:8080/shoppingcart")
+        axios.get("http://"+this.url+":8080/shoppingcart")
         .then(response => {
             this.setState({
                 recipeIngredientsList: response.data
@@ -79,6 +81,7 @@ export default class ShoppingCart extends React.Component{
         let categoryList = Object.keys(this.renderingList)
         // getting obj of items under each category
         categoryList.forEach(category => {
+            console.log(category)
             //pushing product category into shoppping cart render
             this.shoppingList.push(
                 <div className={this.determineCategory(category)} key={i+category}>{category}</div>
@@ -116,7 +119,7 @@ export default class ShoppingCart extends React.Component{
     determineCatForBck(category){
         if(category === "produce"){
             return [[46,164,140],[65,229,196]]
-        } else if (category === "dry item"){
+        } else if (category === "others" || category === "meats" || category === "dairy" || category === "nuts"){
             return [[181,133,22],[243,178,24]]
         }
     }
@@ -139,8 +142,14 @@ export default class ShoppingCart extends React.Component{
     determineCategory(category){
         if(category==="produce"){
             return "produceClass item_design"
-        } else if (category==="dry item"){
-            return "dryGoodsClass item_design"
+        } else if (category==="others"){
+            return "othersClass item_design"
+        } else if (category==="meats"){
+            return "meatsClass item_design"
+        } else if (category==="dairy"){
+            return "dairyClass item_design"
+        } else if (category==="nuts"){
+            return "nutsClass item_design"
         }
     }
 
@@ -192,7 +201,9 @@ export default class ShoppingCart extends React.Component{
                 <>
                     <NavBar></NavBar>
                     <div className="shoppingCart">
+                        <div className="scContainer">
                         {this.state.shoppingCart}
+                        </div>
                     </div>
                 </>
             )
